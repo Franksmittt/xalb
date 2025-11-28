@@ -6,42 +6,42 @@ export default function ResourcesPage() {
       title: 'Material Guide',
       description: 'Complete guide to vinyl types, substrates, and finishes for outdoor durability and indoor applications.',
       category: 'Production',
-      href: '#',
+      href: '/resources/material-guide',
       icon: '📋',
     },
     {
       title: 'Print-Ready Checklist',
       description: 'File preparation standards, color profiles, and resolution requirements for flawless production runs.',
       category: 'Design',
-      href: '#',
+      href: '/resources/print-ready-checklist',
       icon: '✅',
     },
     {
       title: 'Signage Bylaws: Gauteng',
       description: 'Local regulations, permit requirements, and compliance guidelines for signage installation.',
       category: 'Installation',
-      href: '#',
+      href: '/resources/signage-bylaws',
       icon: '📜',
     },
     {
       title: 'Vehicle Branding Laws',
       description: 'South African road traffic regulations for vehicle wraps, fleet numbering, and mobile advertising.',
       category: 'Fleet',
-      href: '#',
+      href: '/resources/vehicle-branding-laws',
       icon: '🚗',
     },
     {
       title: 'UV Protection Ratings',
       description: 'Material durability charts and fade-resistance data for long-term outdoor signage performance.',
       category: 'Production',
-      href: '#',
+      href: '/resources/uv-protection',
       icon: '☀️',
     },
     {
       title: 'Installation Timeline Calculator',
       description: 'Estimate project timelines based on scope, material availability, and site access requirements.',
       category: 'Planning',
-      href: '#',
+      href: '/resources/timeline-calculator',
       icon: '⏱️',
     },
   ];
@@ -125,10 +125,10 @@ export default function ResourcesPage() {
                     <div className="flex items-center gap-4">
                       <span className="text-xs text-slate-400">{guide.readTime}</span>
                       <Link
-                        href="#"
+                        href="/resources"
                         className="inline-flex items-center text-sm font-semibold text-[#00F5FF] hover:text-[#67E8F9] transition-colors"
                       >
-                        Read Guide →
+                        View All Resources →
                       </Link>
                     </div>
                   </div>
