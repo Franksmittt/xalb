@@ -10,11 +10,11 @@ const quickLinks = [
 ];
 
 const services = [
-  'Large Format Printing',
-  'Signage & Safety Systems',
-  'Laser Cutting & Fabrication',
-  'Vehicle + Fleet Branding',
-  'Corporate Identity & Design',
+  { label: 'Large Format Printing', href: '/solutions/large-format-printing' },
+  { label: 'Signage & Safety Systems', href: '/solutions/large-format-printing' },
+  { label: 'Laser Cutting & Fabrication', href: '/solutions/fabrication' },
+  { label: 'Vehicle + Fleet Branding', href: '/solutions/fleet-branding' },
+  { label: 'Corporate Identity & Design', href: '/solutions/design' },
 ];
 
 export default function Footer() {
@@ -78,7 +78,11 @@ export default function Footer() {
             <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Services</p>
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               {services.map((service) => (
-                <li key={service}>{service}</li>
+                <li key={service.href}>
+                  <Link href={service.href} className="hover:text-white transition-colors">
+                    {service.label}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
