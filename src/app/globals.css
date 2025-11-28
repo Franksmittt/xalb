@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #03050d;
+  --foreground: #f8fafc;
+  --primary: #0F172A;
+  --secondary: #FF6B00;
+  --tertiary: #94A3B8;
+  --accent: #06B6D4;
+  --neon-blue: #00F5FF;
+  --neon-red: #FF1744;
+  --neon-magenta: #FF3CAC;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #010205;
+    --foreground: #f8fafc;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: radial-gradient(circle at 20% 20%, rgba(0, 245, 255, 0.2), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(255, 23, 68, 0.2), transparent 35%),
+    linear-gradient(135deg, #03050d, #050b1d 45%, #12061f);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  background-color: #03050d;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF6B00;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E55A00;
+}
+
+/* Neon selection */
+::selection {
+  background: rgba(0, 245, 255, 0.35);
+  color: #ffffff;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(0, 245, 255, 0.12), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(255, 23, 68, 0.08), transparent 40%),
+    radial-gradient(circle at 30% 80%, rgba(255, 107, 0, 0.06), transparent 45%);
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(40px);
+}
+
