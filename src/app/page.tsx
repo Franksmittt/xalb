@@ -251,9 +251,10 @@ export default function Home() {
               },
             ].map((step, index) => (
               <motion.div key={step.title} variants={itemVariants}>
+                {/* Service Pillars Cards - Background must stay DARK (bg-black) */}
                 <AnimatedCard
                   delay={index * 0.1}
-                  className="text-left group cursor-pointer bg-[#000207] text-white border border-white/25 px-6 py-7 shadow-[0_40px_80px_rgba(0,0,0,0.75)]"
+                  className="text-left group cursor-pointer bg-black text-white border border-white/25 px-6 py-7 shadow-[0_40px_80px_rgba(0,0,0,0.75)]"
                 >
                   <motion.div
                     className={`w-12 h-12 mb-4 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center text-xl shadow-[0_10px_30px_rgba(0,0,0,0.35)]`}

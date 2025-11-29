@@ -27,7 +27,7 @@ export default function AnimatedCard({
         boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
         transition: { duration: 0.3 },
       } : {}}
-      className={`bg-white rounded-xl shadow-lg p-6 border border-gray-100 ${className}`}
+      className={`rounded-xl shadow-lg p-6 ${className}`}
     >
       {children}
     </motion.div>
