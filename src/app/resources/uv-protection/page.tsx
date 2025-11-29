@@ -1,4 +1,13 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Production UV Protection Ratings',
+  description: 'Material durability charts and fade-resistance data for long-term outdoor signage performance. Compare UV protection ratings across different materials.',
+  alternates: {
+    canonical: '/resources/uv-protection',
+  },
+};
 
 export default function UVProtectionPage() {
   const materials = [

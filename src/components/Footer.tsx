@@ -15,6 +15,7 @@ const services = [
   { label: 'Laser Cutting & Fabrication', href: '/solutions/fabrication' },
   { label: 'Vehicle + Fleet Branding', href: '/solutions/fleet-branding' },
   { label: 'Corporate Identity & Design', href: '/solutions/design' },
+  { label: 'Lithographic Printing', href: '/litho-printing' },
 ];
 
 export default function Footer() {

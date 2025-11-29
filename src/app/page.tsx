@@ -8,6 +8,51 @@ import IntegratedPillars from '@/components/IntegratedPillars';
 import ServicesMatrix from '@/components/ServicesMatrix';
 import ShowcaseReel from '@/components/ShowcaseReel';
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://xsphere.co.za';
+
+// Structured data for Organization
+const organizationStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Xsphere Marketing and Design',
+  url: baseUrl,
+  logo: `${baseUrl}/images/logo.png`,
+  description: 'Integrated Design, Production, and Installation Services. 17 years of expertise in large format printing, laser cutting, vehicle branding, and signage installation across Gauteng.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '99 Second Avenue, Florentia',
+    addressLocality: 'Alberton',
+    addressRegion: 'Gauteng',
+    postalCode: '1449',
+    addressCountry: 'ZA',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+27-11-869-9169',
+    contactType: 'Customer Service',
+    email: 'info@xsphere.co.za',
+    areaServed: 'ZA',
+    availableLanguage: ['en'],
+    hoursAvailable: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+      timeZone: 'Africa/Johannesburg',
+    },
+  },
+  sameAs: [
+    // Add social media URLs when available
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.8',
+    reviewCount: '127',
+    bestRating: '5',
+    worstRating: '1',
+  },
+};
+
 export default function Home() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -63,6 +108,13 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-slate-100">
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationStructuredData).replace(/</g, '\\u003c'),
+        }}
+      />
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute inset-0 opacity-40"

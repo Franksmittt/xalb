@@ -1,4 +1,13 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Installation Signage Bylaws: Gauteng',
+  description: 'Local regulations, permit requirements, and compliance guidelines for signage installation in Gauteng. Essential information for planning your signage project.',
+  alternates: {
+    canonical: '/resources/signage-bylaws',
+  },
+};
 
 export default function SignageBylawsPage() {
   const regulations = [

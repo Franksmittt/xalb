@@ -1,4 +1,13 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Fleet Vehicle Branding Laws',
+  description: 'South African road traffic regulations for vehicle wraps, fleet numbering, and mobile advertising. Compliance guidelines for vehicle branding projects.',
+  alternates: {
+    canonical: '/resources/vehicle-branding-laws',
+  },
+};
 
 export default function VehicleBrandingLawsPage() {
   const regulations = [

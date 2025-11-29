@@ -1,4 +1,13 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Production Material Guide',
+  description: 'Complete guide to vinyl types, substrates, and finishes for outdoor durability and indoor applications. Learn about cast vinyl, calendered vinyl, PVC rigid, aluminum composite, and more.',
+  alternates: {
+    canonical: '/resources/material-guide',
+  },
+};
 
 export default function MaterialGuidePage() {
   const materials = [

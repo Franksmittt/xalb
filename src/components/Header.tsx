@@ -20,6 +20,7 @@ export default function Header() {
         { name: 'Fleet Branding', href: '/solutions/fleet-branding' },
         { name: 'Design & Identity', href: '/solutions/design' },
         { name: 'Installation & Logistics', href: '/solutions/installation' },
+        { name: 'Lithographic Printing', href: '/litho-printing' },
       ],
     },
     { name: 'The Work', href: '/work' },

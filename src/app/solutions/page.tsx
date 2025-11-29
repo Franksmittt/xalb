@@ -60,6 +60,36 @@ export default function SolutionsPage() {
                 </div>
               </Link>
             ))}
+            
+            {/* Litho Printing Card */}
+            <Link
+              href="/litho-printing"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl hover:border-[#00F5FF]/50 transition-all duration-300"
+            >
+              <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-[#00F5FF]/20 via-[#2D9CFF]/20 to-[#FF1744]/20">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Lithographic Printing</h3>
+                  <p className="text-sm text-slate-300 line-clamp-2">High-volume offset printing for brochures, catalogs, and corporate materials.</p>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-slate-300 text-sm mb-4 leading-relaxed line-clamp-2">
+                  Traditional offset printing delivering superior quality, color accuracy, and cost-effectiveness for large print runs.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-2.5 py-1 text-xs rounded-md bg-white/5 text-slate-400 border border-white/5">
+                    10 days
+                  </span>
+                  <span className="px-2.5 py-1 text-xs rounded-md bg-white/5 text-slate-400 border border-white/5">
+                    1000+ units
+                  </span>
+                </div>
+                <span className="inline-flex items-center text-sm font-semibold text-[#00F5FF] group-hover:text-[#67E8F9] transition-colors">
+                  Explore Service →
+                </span>
+              </div>
+            </Link>
           </div>
 
           <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/5 to-[#FF1744]/5 p-8 text-center">

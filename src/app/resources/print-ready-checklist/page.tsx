@@ -1,4 +1,13 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Design Print-Ready Checklist',
+  description: 'File preparation standards, color profiles, and resolution requirements for flawless production runs. Ensure your artwork is print-ready before submission.',
+  alternates: {
+    canonical: '/resources/print-ready-checklist',
+  },
+};
 
 export default function PrintReadyChecklistPage() {
   const checklist = [

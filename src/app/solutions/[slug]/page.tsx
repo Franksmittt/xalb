@@ -1,13 +1,49 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Metadata } from "next";
 import { serviceCatalog, serviceMap } from "@/data/services";
+import StructuredData from "@/components/StructuredData";
 
 type Props = {
   params: { slug: string };
 };
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://xsphere.co.za';
+
 export function generateStaticParams() {
   return serviceCatalog.map((service) => ({ slug: service.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const service = serviceMap[params.slug];
+
+  if (!service) {
+    return {
+      title: 'Service Not Found',
+    };
+  }
+
+  return {
+    title: service.title,
+    description: `${service.tagline}. ${service.summary}`,
+    alternates: {
+      canonical: `${baseUrl}/solutions/${params.slug}`,
+    },
+    openGraph: {
+      title: service.title,
+      description: service.tagline,
+      type: 'website',
+      url: `${baseUrl}/solutions/${params.slug}`,
+      images: [
+        {
+          url: service.heroImage.startsWith('http') ? service.heroImage : `${baseUrl}${service.heroImage}`,
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
+    },
+  };
 }
 
 export default function ServicePage({ params }: Props) {
@@ -17,8 +53,44 @@ export default function ServicePage({ params }: Props) {
     notFound();
   }
 
+  // Structured data for service page
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.summary,
+    provider: {
+      '@type': 'Organization',
+      name: 'Xsphere Marketing and Design',
+      url: baseUrl,
+      telephone: '+27-11-869-9169',
+      email: 'info@xsphere.co.za',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '99 Second Avenue, Florentia',
+        addressLocality: 'Alberton',
+        addressRegion: 'Gauteng',
+        addressCountry: 'ZA',
+      },
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'Gauteng',
+      containedIn: {
+        '@type': 'Country',
+        name: 'South Africa',
+      },
+    },
+    serviceType: 'Printing and Signage Services',
+    offers: {
+      '@type': 'Offer',
+      description: `Lead Time: ${service.leadTime}, Capacity: ${service.capacity}`,
+    },
+  };
+
   return (
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+      <StructuredData data={serviceStructuredData} />
       <section className="relative overflow-hidden px-4 sm:px-6 lg:px-10 py-20">
         <div className="absolute inset-0">
           <div
