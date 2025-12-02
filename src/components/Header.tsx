@@ -117,7 +117,7 @@ export default function Header() {
           transition={{ duration: 3, repeat: Infinity }}
         />
       <nav className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex w-full items-center justify-between h-16">
+        <div className="flex w-full items-center justify-between h-14">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

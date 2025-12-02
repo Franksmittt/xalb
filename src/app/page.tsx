@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import AnimatedButton from '@/components/AnimatedButton';
 import AnimatedCard from '@/components/AnimatedCard';
 import ServiceSlider from '@/components/ServiceSlider';
@@ -133,7 +134,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative lg:h-[calc(100vh-80px)] min-h-[640px] max-h-[860px] flex items-center overflow-hidden px-4 sm:px-6 lg:px-10 py-12">
+      <section className="relative lg:h-[calc(100vh-56px-160px)] min-h-[420px] max-h-[540px] flex items-center overflow-hidden px-4 sm:px-6 lg:px-10 py-6">
         {/* Video-ready overlay */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40" />
@@ -160,7 +161,7 @@ export default function Home() {
           >
             <motion.div variants={itemVariants}>
               <motion.h1
-                className="text-[2.15rem] md:text-[3.2rem] font-extrabold leading-tight"
+                className="text-[1.8rem] md:text-[2.5rem] font-extrabold leading-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
@@ -175,7 +176,7 @@ export default function Home() {
 
             <motion.p
               variants={itemVariants}
-              className="text-[0.95rem] md:text-[1.05rem] text-slate-200/85 max-w-2xl leading-relaxed"
+              className="text-[0.85rem] md:text-[0.95rem] text-slate-200/85 max-w-2xl leading-relaxed"
             >
               We choreograph Design → Production → Installation in one kinetic pipeline. Drop in a looping facility reel for instant proof of control, speed, and precision.
             </motion.p>
@@ -194,7 +195,7 @@ export default function Home() {
 
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-2 gap-3 max-w-sm"
+              className="grid grid-cols-2 gap-2 max-w-sm"
             >
               {[
                 { label: 'Turnaround', value: '3-5 Days' },
@@ -202,15 +203,130 @@ export default function Home() {
                 { label: 'Experience', value: '17 Years' },
                 { label: 'NPS', value: '+72' },
               ].map((stat) => (
-                <div key={stat.label} className="rounded-lg border border-white/10 bg-white/5 px-3.5 py-2.5">
-                  <p className="text-[10px] uppercase tracking-wide text-slate-300">{stat.label}</p>
-                  <p className="text-base font-semibold text-white">{stat.value}</p>
+                <div key={stat.label} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">
+                  <p className="text-[9px] uppercase tracking-wide text-slate-300">{stat.label}</p>
+                  <p className="text-sm font-semibold text-white">{stat.value}</p>
                 </div>
               ))}
             </motion.div>
           </motion.div>
 
           <ServiceSlider />
+        </div>
+      </section>
+
+      {/* Service Icons Section */}
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 pt-10 sm:pt-12">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6"
+          >
+            {[
+              {
+                name: 'Laser Cutting',
+                href: '/solutions/fabrication',
+                icon: (
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="4" width="12" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <path d="M9 8H15M9 11H15M9 14H13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="12" cy="18" r="1.5" fill="currentColor" opacity="0.6"/>
+                    <path d="M12 2V4M12 20V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                ),
+                gradient: 'from-white/10 to-white/5',
+              },
+              {
+                name: 'Large Format',
+                href: '/solutions/large-format-printing',
+                icon: (
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <rect x="5" y="6" width="14" height="12" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <path d="M7 9H17M7 11.5H17M7 14H15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                ),
+                gradient: 'from-white/10 to-white/5',
+              },
+              {
+                name: 'Fleet Branding',
+                href: '/solutions/fleet-branding',
+                icon: (
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 9H20C20.5523 9 21 9.44772 21 10V15C21 15.5523 20.5523 16 20 16H4C3.44772 16 3 15.5523 3 15V10C3 9.44772 3.44772 9 4 9Z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <rect x="5" y="11" width="14" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <circle cx="8" cy="19" r="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <circle cx="16" cy="19" r="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <path d="M6 7L12 4L18 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                gradient: 'from-white/10 to-white/5',
+              },
+              {
+                name: 'Design',
+                href: '/solutions/design',
+                icon: (
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L4 8V16L12 21L20 16V8L12 3Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    <path d="M12 3V21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M4 8L12 13L20 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M4 16L12 21L20 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor" opacity="0.6"/>
+                  </svg>
+                ),
+                gradient: 'from-white/10 to-white/5',
+              },
+              {
+                name: 'Installation',
+                href: '/solutions/installation',
+                icon: (
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <rect x="7" y="7" width="10" height="10" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <path d="M10 10H14M10 12.5H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="12" cy="21" r="1.5" fill="currentColor" opacity="0.6"/>
+                    <path d="M8 4L12 2L16 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                gradient: 'from-white/10 to-white/5',
+              },
+              {
+                name: 'Litho Printing',
+                href: '/litho-printing',
+                icon: (
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <rect x="6" y="7" width="12" height="10" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                    <path d="M8 10H16M8 12.5H16M8 15H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <circle cx="18" cy="7" r="1" fill="currentColor" opacity="0.6"/>
+                  </svg>
+                ),
+                gradient: 'from-white/10 to-white/5',
+              },
+            ].map((service, index) => (
+              <Link key={service.name} href={service.href}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -4 }}
+                  className="flex flex-col items-center justify-center group cursor-pointer"
+                >
+                  <div className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br ${service.gradient} p-3 sm:p-4 flex items-center justify-center mb-3 shadow-md shadow-black/20 group-hover:shadow-lg group-hover:shadow-white/10 transition-all duration-300 border border-white/20 group-hover:border-white/40`}>
+                    <div className="text-white/90 relative z-10">
+                      {service.icon}
+                    </div>
+                    <div className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <p className="text-xs sm:text-sm font-semibold text-white/90 text-center group-hover:text-[#00F5FF] transition-colors">
+                    {service.name}
+                  </p>
+                </motion.div>
+              </Link>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -333,3 +449,4 @@ export default function Home() {
     </main>
   );
 }
+
