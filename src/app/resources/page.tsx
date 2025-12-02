@@ -110,6 +110,42 @@ export default function ResourcesPage() {
           </div>
 
           <div className="mb-16">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-white">Video Tutorials & How-To Guides</h2>
+              <Link
+                href="/tutorials"
+                className="text-sm text-[#00F5FF] hover:text-[#67E8F9] transition-colors"
+              >
+                View All Tutorials →
+              </Link>
+            </div>
+            <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-8 mb-8">
+              <div className="grid md:grid-cols-2 gap-6 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Learn Professional Techniques</h3>
+                  <p className="text-slate-300 mb-4">
+                    Step-by-step tutorials on vehicle wrapping, vinyl application, and signage installation. 
+                    Learn why quality materials matter and avoid costly mistakes.
+                  </p>
+                  <Link
+                    href="/tutorials/vinyl-vehicle-application"
+                    className="inline-flex items-center text-[#00F5FF] hover:text-[#67E8F9] font-semibold transition-colors"
+                  >
+                    Start with Vehicle Wrapping Guide →
+                  </Link>
+                </div>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url('/images/fleet-lineup.png')` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-16">
             <h2 className="text-2xl font-bold text-white mb-6">In-Depth Guides</h2>
             <div className="space-y-4">
               {guides.map((guide) => (

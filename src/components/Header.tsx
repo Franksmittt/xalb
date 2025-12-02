@@ -24,6 +24,7 @@ export default function Header() {
       ],
     },
     { name: 'The Work', href: '/work' },
+    { name: 'Tutorials', href: '/tutorials' },
     { name: 'Resources', href: '/resources' },
   ];
 
