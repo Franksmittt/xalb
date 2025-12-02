@@ -134,7 +134,7 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative lg:h-[calc(100vh-56px-160px)] min-h-[420px] max-h-[540px] flex items-center overflow-hidden px-4 sm:px-6 lg:px-10 py-6">
+      <section className="relative lg:h-[calc(100vh-56px-160px)] min-h-[420px] max-h-[540px] flex items-center overflow-hidden px-4 sm:px-6 lg:px-10 py-8 sm:py-12 lg:py-6">
         {/* Video-ready overlay */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40" />
@@ -195,7 +195,7 @@ export default function Home() {
 
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-2 gap-2 max-w-sm"
+              className="grid grid-cols-2 gap-2 sm:gap-3 max-w-sm"
             >
               {[
                 { label: 'Turnaround', value: '3-5 Days' },
@@ -203,9 +203,9 @@ export default function Home() {
                 { label: 'Experience', value: '17 Years' },
                 { label: 'NPS', value: '+72' },
               ].map((stat) => (
-                <div key={stat.label} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2">
-                  <p className="text-[9px] uppercase tracking-wide text-slate-300">{stat.label}</p>
-                  <p className="text-sm font-semibold text-white">{stat.value}</p>
+                <div key={stat.label} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 sm:px-4 sm:py-2.5">
+                  <p className="text-[9px] sm:text-[10px] uppercase tracking-wide text-slate-300">{stat.label}</p>
+                  <p className="text-sm sm:text-base font-semibold text-white">{stat.value}</p>
                 </div>
               ))}
             </motion.div>
@@ -216,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* Service Icons Section */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-6 pt-10 sm:pt-12">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 pt-12 sm:pt-16">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -331,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* Service Pillars */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pt-12 pb-20">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-16 sm:pb-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             variants={containerVariants}
@@ -404,7 +404,7 @@ export default function Home() {
       <ShowcaseReel />
 
       {/* Customer Experience Metrics */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pb-24">
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
         <div className="max-w-5xl mx-auto space-y-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

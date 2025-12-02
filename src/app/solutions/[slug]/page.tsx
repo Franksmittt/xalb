@@ -125,14 +125,14 @@ export default function ServicePage({ params }: Props) {
               </Link>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {service.highlights.map((highlight) => (
               <div
                 key={highlight.label}
-                className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center"
+                className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 text-center"
               >
                 <p className="text-xs uppercase tracking-[0.3em] text-slate-300">{highlight.label}</p>
-                <p className="text-2xl font-bold text-white mt-2">{highlight.value}</p>
+                <p className="text-xl sm:text-2xl font-bold text-white mt-2">{highlight.value}</p>
               </div>
             ))}
           </div>
@@ -204,13 +204,20 @@ export default function ServicePage({ params }: Props) {
               Swap with your best six shots
             </span>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {service.gallery.map((image, index) => (
               <div
                 key={`${service.slug}-gallery-${index}`}
-                className="aspect-[4/3] rounded-3xl border border-white/10 bg-cover bg-center shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
+                className="aspect-[4/3] rounded-2xl sm:rounded-3xl border border-white/10 bg-cover bg-center shadow-[0_30px_60px_rgba(0,0,0,0.5)] overflow-hidden"
                 style={{ backgroundImage: `linear-gradient(200deg, rgba(3,5,13,0) 20%, rgba(3,5,13,0.8) 100%), url('${image}')` }}
-              />
+              >
+                <img 
+                  src={image} 
+                  alt={`${service.title} gallery image ${index + 1}`}
+                  className="w-full h-full object-cover opacity-0"
+                  loading="lazy"
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -232,7 +239,7 @@ export default function ServicePage({ params }: Props) {
               Reserve a Slot
             </Link>
           </div>
-          <div className="mt-6 grid gap-4 md:grid-cols-4 text-sm text-slate-300">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-4 text-sm text-slate-300">
             {[
               { label: "Brief & Design Sync", value: "Day 0–1" },
               { label: "Production / Fabrication", value: "Day 1–3" },

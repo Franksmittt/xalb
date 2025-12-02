@@ -36,7 +36,7 @@ export default function ShowcaseReel() {
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {showcase.map((item) => (
             <div key={item.label} className="relative overflow-hidden rounded-3xl border border-white/10">
               <div

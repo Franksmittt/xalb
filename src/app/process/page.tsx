@@ -115,7 +115,7 @@ export default function ProcessPage() {
 
       <section className="px-4 sm:px-6 lg:px-10 pb-24">
         <div className="max-w-6xl mx-auto space-y-10">
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
             {perks.map((perk) => (
               <div key={perk.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
                 <h3 className="text-xl font-bold">{perk.title}</h3>
@@ -128,7 +128,7 @@ export default function ProcessPage() {
             {processSteps.map((step) => (
               <div
                 key={step.step}
-                className="rounded-3xl border border-white/10 bg-[#040712]/90 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.55)] grid lg:grid-cols-[auto_1fr] gap-8"
+                className="rounded-3xl border border-white/10 bg-[#040712]/90 p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.55)] grid lg:grid-cols-[auto_1fr] gap-6 lg:gap-8"
               >
                 <div className="flex flex-col items-start gap-2">
                   <span className="text-xs uppercase tracking-[0.5em] text-[#67E8F9]">Step</span>

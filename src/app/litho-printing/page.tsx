@@ -162,7 +162,7 @@ export default function LithoPrintingPage() {
           {/* How It Works */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">How Lithographic Printing Works</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
               <div className="rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl p-8">
                 <h3 className="text-xl font-bold text-white mb-4">The Offset Process</h3>
                 <ol className="space-y-4 text-slate-300">
@@ -219,7 +219,7 @@ export default function LithoPrintingPage() {
           {/* Advantages Grid */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">Key Advantages</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {advantages.map((advantage) => (
                 <div
                   key={advantage.title}
@@ -236,7 +236,7 @@ export default function LithoPrintingPage() {
           {/* Applications */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">Common Applications</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
               {applications.map((category) => (
                 <div
                   key={category.category}
@@ -288,7 +288,7 @@ export default function LithoPrintingPage() {
           <div className="mb-16">
             <div className="rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl p-8 md:p-12">
               <h2 className="text-3xl font-bold text-white mb-8">Technical Specifications</h2>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">Capabilities</h3>
                   <ul className="space-y-3 text-slate-300">

@@ -43,9 +43,9 @@ export default function Footer() {
             <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]">
               Launch a Project
             </Link>
-            <Link href="tel:+27118699169" className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-white/60">
+            <a href="tel:+27118699169" className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-white/60 hover:bg-white/5 transition-all">
               +27 11 869 9169
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -57,7 +57,7 @@ export default function Footer() {
               Alberton, Gauteng
             </p>
             <p className="text-sm text-slate-400">
-              info@xsphere.co.za<br />
+              <a href="mailto:info@xsphere.co.za" className="hover:text-[#00F5FF] transition-colors">info@xsphere.co.za</a><br />
               B-BBEE Level Pending • PTY LTD
             </p>
           </div>
@@ -91,13 +91,20 @@ export default function Footer() {
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Follow</p>
             <div className="mt-3 flex gap-3">
-              {['LinkedIn', 'Instagram', 'YouTube'].map((network) => (
+              {[
+                { name: 'LinkedIn', href: 'https://www.linkedin.com/company/xsphere', icon: 'LI' },
+                { name: 'Instagram', href: 'https://www.instagram.com/xsphere', icon: 'IG' },
+                { name: 'YouTube', href: 'https://www.youtube.com/@xsphere', icon: 'YT' },
+              ].map((network) => (
                 <a
-                  key={network}
-                  href="#"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-sm text-white hover:border-white/50"
+                  key={network.name}
+                  href={network.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-sm text-white hover:border-white/50 hover:bg-white/5 transition-all"
+                  aria-label={`Visit our ${network.name} page`}
                 >
-                  {network.slice(0, 2)}
+                  {network.icon}
                 </a>
               ))}
             </div>

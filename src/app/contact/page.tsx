@@ -48,63 +48,78 @@ export default function ContactPage() {
 
       <section className="px-4 sm:px-6 lg:px-10 pb-24">
         <div className="max-w-6xl mx-auto grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,0.7fr)]">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.4)]">
-            <form className="space-y-5">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.4)]">
+            <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); }}>
               <div className="grid gap-5 sm:grid-cols-2">
-                <label className="block text-sm text-slate-200">
-                  Name
+                <label htmlFor="name" className="block text-sm text-slate-200">
+                  Name <span className="text-[#FF1744]">*</span>
                   <input
+                    id="name"
+                    name="name"
                     type="text"
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00F5FF]"
+                    required
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
                     placeholder="Your name"
                   />
                 </label>
-                <label className="block text-sm text-slate-200">
+                <label htmlFor="company" className="block text-sm text-slate-200">
                   Company
                   <input
+                    id="company"
+                    name="company"
                     type="text"
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00F5FF]"
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
                     placeholder="Organization"
                   />
                 </label>
               </div>
               <div className="grid gap-5 sm:grid-cols-2">
-                <label className="block text-sm text-slate-200">
-                  Email
+                <label htmlFor="email" className="block text-sm text-slate-200">
+                  Email <span className="text-[#FF1744]">*</span>
                   <input
+                    id="email"
+                    name="email"
                     type="email"
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00F5FF]"
+                    required
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
                     placeholder="you@example.com"
                   />
                 </label>
-                <label className="block text-sm text-slate-200">
+                <label htmlFor="phone" className="block text-sm text-slate-200">
                   Phone / WhatsApp
                   <input
+                    id="phone"
+                    name="phone"
                     type="tel"
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00F5FF]"
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
                     placeholder="+27 ..."
                   />
                 </label>
               </div>
-              <label className="block text-sm text-slate-200">
-                Project description
+              <label htmlFor="description" className="block text-sm text-slate-200">
+                Project description <span className="text-[#FF1744]">*</span>
                 <textarea
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00F5FF]"
+                  id="description"
+                  name="description"
+                  required
+                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all resize-y"
                   rows={4}
                   placeholder="Tell us about timelines, outputs, or challenges."
                 />
               </label>
-              <label className="block text-sm text-slate-200">
+              <label htmlFor="assets" className="block text-sm text-slate-200">
                 Asset links (optional)
                 <input
+                  id="assets"
+                  name="assets"
                   type="url"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00F5FF]"
+                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
                   placeholder="Share Drive / Dropbox / Wetransfer"
                 />
               </label>
               <button
                 type="submit"
-                className="w-full rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="w-full rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)] hover:shadow-[0_20px_45px_rgba(0,245,255,0.5)] hover:bg-[#00c3ff] transition-all"
               >
                 Send Inquiry
               </button>
@@ -116,7 +131,17 @@ export default function ContactPage() {
               {contactChannels.map((channel) => (
                 <div key={channel.title}>
                   <p className="text-xs uppercase tracking-[0.3em] text-slate-400">{channel.title}</p>
-                  <p className="text-xl font-semibold mt-2">{channel.value}</p>
+                  {channel.title === 'Call Us' ? (
+                    <a href="tel:+27118699169" className="text-xl font-semibold mt-2 block hover:text-[#00F5FF] transition-colors">
+                      {channel.value}
+                    </a>
+                  ) : channel.title === 'Email' ? (
+                    <a href="mailto:info@xsphere.co.za" className="text-xl font-semibold mt-2 block hover:text-[#00F5FF] transition-colors">
+                      {channel.value}
+                    </a>
+                  ) : (
+                    <p className="text-xl font-semibold mt-2">{channel.value}</p>
+                  )}
                   <p className="text-sm text-slate-300">{channel.description}</p>
                 </div>
               ))}
@@ -133,8 +158,8 @@ export default function ContactPage() {
                 ))}
               </ul>
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:border-white/60"
+                href="/contact#survey"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:border-white/60 transition-all"
               >
                 Request Survey
               </Link>
