@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
@@ -127,18 +128,20 @@ export default function Header() {
             className="flex items-center"
           >
             <Link href="/" className="relative group">
-              <motion.span
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-2xl font-bold bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(174,221,51,0.35)]"
+                className="relative"
               >
-                Xsphere
-              </motion.span>
-              <motion.div
-                className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] shadow-[0_0_8px_rgba(174,221,51,0.8)]"
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.3 }}
-              />
+                <Image
+                  src="/images/Logows.png"
+                  alt="Xsphere Logo"
+                  width={150}
+                  height={50}
+                  className="h-10 w-auto object-contain"
+                  priority
+                />
+              </motion.div>
             </Link>
           </motion.div>
 

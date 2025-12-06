@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -52,7 +53,13 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
           <div className="space-y-4">
-            <div className="text-2xl font-bold text-white">Xsphere</div>
+            <Image
+              src="/images/Logows.png"
+              alt="Xsphere Logo"
+              width={150}
+              height={50}
+              className="h-8 w-auto object-contain"
+            />
             <p className="text-sm text-slate-300">
               99 Second Avenue, Florentia<br />
               Alberton, Gauteng
