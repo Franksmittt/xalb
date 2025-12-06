@@ -73,7 +73,7 @@ export default function ServicesMatrix() {
     <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-24">
       <div className="max-w-6xl mx-auto space-y-10">
         <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Offer Catalogue</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Offer Catalogue</p>
           <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">Full-Stack Capabilities</h2>
           <p className="mt-4 text-slate-300 max-w-3xl mx-auto">
             Xsphere owns the entire communications value chain—from the first sketch to the last rivet. Below is the
@@ -99,7 +99,7 @@ export default function ServicesMatrix() {
               </Link>
 
               <div>
-                <Link href={group.href} className="hover:text-[#00F5FF] transition-colors">
+                <Link href={group.href} className="hover:text-[#AEDD33] transition-colors">
                   <h3 className="text-2xl font-bold text-white">{group.title}</h3>
                 </Link>
                 <p className="mt-2 text-slate-200 leading-relaxed">{group.description}</p>

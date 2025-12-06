@@ -42,6 +42,14 @@ const config: Config = {
           magenta: "#FF3CAC",
           blue: "#2D9CFF",
         },
+        green: {
+          lime: "#AEDD33",      // Light Green (Lime Pop)
+          light: "#B2D942",     // Gradient Start
+          medium: "#4CAF50",    // Medium Green
+          leaf: "#56B847",      // Leaf Green
+          dark: "#2E9346",      // Dark Green
+          forest: "#1E8F40",    // Forest Green (Gradient End)
+        },
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

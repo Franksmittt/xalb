@@ -68,17 +68,17 @@ export default function ResourcesPage() {
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF1744]/10 rounded-full blur-[120px]" />
       </div>
 
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9] mb-4">Knowledge Base</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33] mb-4">Knowledge Base</p>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
               <span className="block text-white">Resources</span>
-              <span className="block bg-gradient-to-r from-[#00F5FF] via-[#2D9CFF] to-[#FF1744] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
                 Everything You Need to Know
               </span>
             </h1>
@@ -94,10 +94,10 @@ export default function ResourcesPage() {
                 <Link
                   key={resource.title}
                   href={resource.href}
-                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl p-6 hover:border-[#00F5FF]/50 transition-all duration-300"
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl p-6 hover:border-[#AEDD33]/50 transition-all duration-300"
                 >
                   <div className="text-4xl mb-4">{resource.icon}</div>
-                  <span className="inline-block px-2.5 py-1 text-xs font-semibold rounded-md bg-[#00F5FF]/10 text-[#00F5FF] mb-3">
+                  <span className="inline-block px-2.5 py-1 text-xs font-semibold rounded-md bg-[#AEDD33]/10 text-[#00F5FF] mb-3">
                     {resource.category}
                   </span>
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00F5FF] transition-colors">
@@ -114,12 +114,12 @@ export default function ResourcesPage() {
               <h2 className="text-2xl font-bold text-white">Video Tutorials & How-To Guides</h2>
               <Link
                 href="/tutorials"
-                className="text-sm text-[#00F5FF] hover:text-[#67E8F9] transition-colors"
+                className="text-sm text-[#00F5FF] hover:text-[#AEDD33] transition-colors"
               >
                 View All Tutorials →
               </Link>
             </div>
-            <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-8 mb-8">
+            <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 mb-8">
               <div className="grid md:grid-cols-2 gap-6 items-center">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-3">Learn Professional Techniques</h3>
@@ -129,7 +129,7 @@ export default function ResourcesPage() {
                   </p>
                   <Link
                     href="/tutorials/vinyl-vehicle-application"
-                    className="inline-flex items-center text-[#00F5FF] hover:text-[#67E8F9] font-semibold transition-colors"
+                    className="inline-flex items-center text-[#00F5FF] hover:text-[#AEDD33] font-semibold transition-colors"
                   >
                     Start with Vehicle Wrapping Guide →
                   </Link>
@@ -162,7 +162,7 @@ export default function ResourcesPage() {
                       <span className="text-xs text-slate-400">{guide.readTime}</span>
                       <Link
                         href="/resources"
-                        className="inline-flex items-center text-sm font-semibold text-[#00F5FF] hover:text-[#67E8F9] transition-colors"
+                        className="inline-flex items-center text-sm font-semibold text-[#00F5FF] hover:text-[#AEDD33] transition-colors"
                       >
                         View All Resources →
                       </Link>
@@ -173,14 +173,14 @@ export default function ResourcesPage() {
             </div>
           </div>
 
-          <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/5 to-[#FF1744]/5 p-8 text-center">
+          <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/5 to-[#1E8F40]/5 p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-3">Need Expert Advice?</h3>
             <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
               Our team can help you choose the right materials, plan your timeline, and navigate compliance requirements.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+              className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
             >
               Schedule a Consultation
             </Link>

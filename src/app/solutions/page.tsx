@@ -6,17 +6,17 @@ export default function SolutionsPage() {
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF1744]/10 rounded-full blur-[120px]" />
       </div>
 
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9] mb-4">Full-Stack Capabilities</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33] mb-4">Full-Stack Capabilities</p>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
               <span className="block text-white">Solutions</span>
-              <span className="block bg-gradient-to-r from-[#00F5FF] via-[#2D9CFF] to-[#FF1744] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
                 Design → Production → Installation
               </span>
             </h1>
@@ -31,7 +31,7 @@ export default function SolutionsPage() {
               <Link
                 key={service.slug}
                 href={`/solutions/${service.slug}`}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl hover:border-[#00F5FF]/50 transition-all duration-300"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl hover:border-[#AEDD33]/50 transition-all duration-300"
               >
                 <div className="aspect-[4/3] relative overflow-hidden">
                   <div
@@ -54,7 +54,7 @@ export default function SolutionsPage() {
                       {service.capacity}
                     </span>
                   </div>
-                  <span className="inline-flex items-center text-sm font-semibold text-[#00F5FF] group-hover:text-[#67E8F9] transition-colors">
+                  <span className="inline-flex items-center text-sm font-semibold text-[#AEDD33] group-hover:text-[#B2D942] transition-colors">
                     Explore Service →
                   </span>
                 </div>
@@ -64,9 +64,9 @@ export default function SolutionsPage() {
             {/* Litho Printing Card */}
             <Link
               href="/litho-printing"
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl hover:border-[#00F5FF]/50 transition-all duration-300"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl hover:border-[#AEDD33]/50 transition-all duration-300"
             >
-              <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-[#00F5FF]/20 via-[#2D9CFF]/20 to-[#FF1744]/20">
+              <div className="aspect-[4/3] relative overflow-hidden bg-gradient-to-br from-[#AEDD33]/20 via-[#4CAF50]/20 to-[#1E8F40]/20">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-2xl font-bold text-white mb-2">Lithographic Printing</h3>
@@ -85,14 +85,14 @@ export default function SolutionsPage() {
                     1000+ units
                   </span>
                 </div>
-                <span className="inline-flex items-center text-sm font-semibold text-[#00F5FF] group-hover:text-[#67E8F9] transition-colors">
+                <span className="inline-flex items-center text-sm font-semibold text-[#AEDD33] group-hover:text-[#B2D942] transition-colors">
                   Explore Service →
                 </span>
               </div>
             </Link>
           </div>
 
-          <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/5 to-[#FF1744]/5 p-8 text-center">
+          <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/5 to-[#1E8F40]/5 p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-3">Ready to Start Your Project?</h3>
             <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
               Book a production slot, request a quote, or schedule a facility tour to see our integrated workflow in
@@ -101,7 +101,7 @@ export default function SolutionsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
               >
                 Get a Quote
               </Link>

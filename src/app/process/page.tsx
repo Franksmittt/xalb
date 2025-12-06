@@ -88,7 +88,7 @@ export default function ProcessPage() {
           <div className="absolute bottom-0 inset-x-0 h-[40%] bg-gradient-to-t from-[#03050d] via-transparent" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Our Process</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Our Process</p>
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
             From first sketch to final install, one team owns the timeline.
           </h1>
@@ -99,7 +99,7 @@ export default function ProcessPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
             >
               Start a Project
             </Link>
@@ -131,7 +131,7 @@ export default function ProcessPage() {
                 className="rounded-3xl border border-white/10 bg-[#040712]/90 p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.55)] grid lg:grid-cols-[auto_1fr] gap-6 lg:gap-8"
               >
                 <div className="flex flex-col items-start gap-2">
-                  <span className="text-xs uppercase tracking-[0.5em] text-[#67E8F9]">Step</span>
+                  <span className="text-xs uppercase tracking-[0.5em] text-[#AEDD33]">Step</span>
                   <span className="text-4xl font-bold">{step.step}</span>
                 </div>
                 <div className="space-y-4">

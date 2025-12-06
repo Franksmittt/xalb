@@ -110,7 +110,7 @@ export default function LithoPrintingPage() {
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF1744]/10 rounded-full blur-[120px]" />
       </div>
 
@@ -118,10 +118,10 @@ export default function LithoPrintingPage() {
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9] mb-4">Print Services</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33] mb-4">Print Services</p>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
               <span className="block text-white">Lithographic Printing</span>
-              <span className="block bg-gradient-to-r from-[#00F5FF] via-[#2D9CFF] to-[#FF1744] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
                 Offset Excellence for High-Volume Projects
               </span>
             </h1>
@@ -129,7 +129,7 @@ export default function LithoPrintingPage() {
               Professional lithographic (offset) printing for superior quality, cost-effective large runs, and consistent color reproduction.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <span className="px-4 py-2 rounded-full bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/30">
+              <span className="px-4 py-2 rounded-full bg-[#AEDD33]/10 text-[#AEDD33] border border-[#AEDD33]/30">
                 Lead Time: 10 Days
               </span>
               <span className="px-4 py-2 rounded-full bg-[#FF6B00]/10 text-[#FF6B00] border border-[#FF6B00]/30">
@@ -167,23 +167,23 @@ export default function LithoPrintingPage() {
                 <h3 className="text-xl font-bold text-white mb-4">The Offset Process</h3>
                 <ol className="space-y-4 text-slate-300">
                   <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#00F5FF]/20 border border-[#00F5FF] text-[#00F5FF] flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] text-[#AEDD33] flex items-center justify-center text-sm font-bold">1</span>
                     <span>Printing plates are created from your digital files—one plate per color (CMYK or spot colors).</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#00F5FF]/20 border border-[#00F5FF] text-[#00F5FF] flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] text-[#AEDD33] flex items-center justify-center text-sm font-bold">2</span>
                     <span>Each plate is mounted on the press cylinder and dampened with water, then inked.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#00F5FF]/20 border border-[#00F5FF] text-[#00F5FF] flex items-center justify-center text-sm font-bold">3</span>
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] text-[#AEDD33] flex items-center justify-center text-sm font-bold">3</span>
                     <span>The inked image transfers (offsets) from the plate to a rubber blanket cylinder.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#00F5FF]/20 border border-[#00F5FF] text-[#00F5FF] flex items-center justify-center text-sm font-bold">4</span>
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] text-[#AEDD33] flex items-center justify-center text-sm font-bold">4</span>
                     <span>The blanket then transfers the image onto the paper as it passes through the press.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#00F5FF]/20 border border-[#00F5FF] text-[#00F5FF] flex items-center justify-center text-sm font-bold">5</span>
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] text-[#AEDD33] flex items-center justify-center text-sm font-bold">5</span>
                     <span>Multiple colors are printed in sequence, with precise registration between color passes.</span>
                   </li>
                 </ol>
@@ -246,7 +246,7 @@ export default function LithoPrintingPage() {
                   <ul className="space-y-2">
                     {category.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-slate-300 text-sm">
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -267,7 +267,7 @@ export default function LithoPrintingPage() {
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                     <div className="flex gap-6">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#FF1744] flex items-center justify-center text-xl font-bold">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] flex items-center justify-center text-xl font-bold">
                         {step.step}
                       </div>
                       <div>
@@ -293,19 +293,19 @@ export default function LithoPrintingPage() {
                   <h3 className="text-xl font-bold text-white mb-4">Capabilities</h3>
                   <ul className="space-y-3 text-slate-300">
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                       <span><strong className="text-white">Sheet Size:</strong> Up to B1 format (707mm × 1000mm)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                       <span><strong className="text-white">Paper Weight:</strong> 80gsm to 400gsm</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                       <span><strong className="text-white">Color:</strong> CMYK + up to 2 PMS spot colors</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                       <span><strong className="text-white">Resolution:</strong> Up to 300 line screen (lpi)</span>
                     </li>
                   </ul>
@@ -340,7 +340,7 @@ export default function LithoPrintingPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/5 to-[#FF1744]/5 p-8 md:p-12 text-center">
+          <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/5 to-[#1E8F40]/5 p-8 md:p-12 text-center">
             <h3 className="text-3xl font-bold text-white mb-4">Ready to Start Your Litho Project?</h3>
             <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
               Get a quote for your high-volume printing project. Our team will review your specifications and provide pricing within 24 hours.
@@ -348,7 +348,7 @@ export default function LithoPrintingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
               >
                 Request a Quote
               </Link>

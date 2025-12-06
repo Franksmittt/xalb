@@ -11,7 +11,7 @@ const pillars = [
       'Digital wireframes that anticipate fabrication tolerances',
       'Brand guardianship and proofing inside 24 hours',
     ],
-    accent: '#00F5FF',
+    accent: '#AEDD33',
   },
   {
     title: 'Production Muscle',
@@ -23,7 +23,7 @@ const pillars = [
       'Laser cutting across acrylic, metals, textiles, composites',
       'Real-time dashboards for events, exhibitions, safety systems',
     ],
-    accent: '#FF3CAC',
+    accent: '#4CAF50',
   },
   {
     title: 'Deployment Mastery',
@@ -58,7 +58,7 @@ export default function IntegratedPillars() {
     <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Integrated Service Advantage</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Integrated Service Advantage</p>
           <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">
             Design → Production → Installation on a Single Rail
           </h2>

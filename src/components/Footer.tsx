@@ -24,14 +24,14 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-[#010308] text-slate-200">
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute -top-20 left-10 w-[28rem] h-[28rem] bg-[#00F5FF]/10 blur-[140px]" />
+        <div className="absolute -top-20 left-10 w-[28rem] h-[28rem] bg-[#AEDD33]/10 blur-[140px]" />
         <div className="absolute -bottom-32 right-4 w-[32rem] h-[32rem] bg-[#FF1744]/10 blur-[160px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 space-y-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Ready to deploy</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Ready to deploy</p>
             <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">
               17 years in the fabrication trenches.
             </h2>
@@ -41,7 +41,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]">
+            <Link href="/contact" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]">
               Launch a Project
             </Link>
             <a href="tel:+27118699169" className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white hover:border-white/60 hover:bg-white/5 transition-all">
@@ -58,7 +58,7 @@ export default function Footer() {
               Alberton, Gauteng
             </p>
             <p className="text-sm text-slate-400">
-              <a href="mailto:info@xsphere.co.za" className="hover:text-[#00F5FF] transition-colors">info@xsphere.co.za</a><br />
+              <a href="mailto:info@xsphere.co.za" className="hover:text-[#AEDD33] transition-colors">info@xsphere.co.za</a><br />
               B-BBEE Level Pending • PTY LTD
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="hover:text-white transition-colors">
+                  <Link href={link.href} className="hover:text-[#AEDD33] transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -81,7 +81,7 @@ export default function Footer() {
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               {services.map((service) => (
                 <li key={service.href}>
-                  <Link href={service.href} className="hover:text-white transition-colors">
+                  <Link href={service.href} className="hover:text-[#AEDD33] transition-colors">
                     {service.label}
                   </Link>
                 </li>

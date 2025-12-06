@@ -137,7 +137,7 @@ export default function VinylTypesTutorial() {
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF1744]/10 rounded-full blur-[120px]" />
       </div>
 
@@ -154,7 +154,7 @@ export default function VinylTypesTutorial() {
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#00F5FF]/20 text-[#00F5FF] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#00F5FF] mb-4">
               Materials
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
@@ -198,7 +198,7 @@ export default function VinylTypesTutorial() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#2D9CFF]/10 p-6 sm:p-8"
+                className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#2D9CFF]/10 p-6 sm:p-8"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-4xl">{comparison.cast.icon}</span>
@@ -216,7 +216,7 @@ export default function VinylTypesTutorial() {
                   <ul className="space-y-2">
                     {comparison.cast.characteristics.map((char, i) => (
                       <li key={i} className="flex items-start gap-2 text-slate-200 text-sm">
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{char}</span>
                       </li>
                     ))}
@@ -239,7 +239,7 @@ export default function VinylTypesTutorial() {
                   <ul className="space-y-1">
                     {comparison.cast.bestFor.map((use, i) => (
                       <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                        <span className="mt-1 h-1 w-1 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                        <span className="mt-1 h-1 w-1 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{use}</span>
                       </li>
                     ))}
@@ -326,7 +326,7 @@ export default function VinylTypesTutorial() {
                 >
                   <h3 className="text-xl font-bold text-white mb-4">{scenario.scenario}</h3>
                   <div className="grid sm:grid-cols-2 gap-6 mb-4">
-                    <div className={`rounded-xl p-4 ${scenario.winner === 'cast' ? 'border border-[#00F5FF]/30 bg-[#00F5FF]/10' : 'border border-white/10 bg-white/5'}`}>
+                    <div className={`rounded-xl p-4 ${scenario.winner === 'cast' ? 'border border-[#AEDD33]/30 bg-[#AEDD33]/10' : 'border border-white/10 bg-white/5'}`}>
                       <h4 className="text-sm font-semibold text-[#00F5FF] mb-2">Cast Vinyl</h4>
                       <p className="text-white font-bold mb-1">{scenario.castCost}</p>
                       <p className="text-slate-300 text-sm">Lifespan: {scenario.castLifespan}</p>
@@ -401,7 +401,7 @@ export default function VinylTypesTutorial() {
           </div>
 
           {/* CTA Section */}
-          <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-8 md:p-12 text-center mb-12">
+          <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 md:p-12 text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Need Help Choosing?
             </h3>
@@ -412,7 +412,7 @@ export default function VinylTypesTutorial() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
               >
                 Get Expert Advice
               </Link>
@@ -429,13 +429,13 @@ export default function VinylTypesTutorial() {
           <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-white/10">
             <Link
               href="/tutorials"
-              className="text-[#00F5FF] hover:text-[#67E8F9] transition-colors flex items-center gap-2"
+              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
             >
               ← Back to All Tutorials
             </Link>
             <Link
               href="/tutorials/vinyl-vehicle-application"
-              className="text-[#00F5FF] hover:text-[#67E8F9] transition-colors flex items-center gap-2"
+              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
             >
               Next: Vehicle Wrapping Guide →
             </Link>

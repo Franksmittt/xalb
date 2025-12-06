@@ -107,13 +107,13 @@ export default function Header() {
     >
       <div className="relative bg-gradient-to-r from-[#03050d]/95 via-[#080d1c]/95 to-[#12061f]/95 backdrop-blur-2xl border-b border-white/10 shadow-[0_0_40px_rgba(0,245,255,0.15)]">
         <motion.div
-          className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#00f5ff] via-[#ff3cac] to-[#ff1744] blur-sm opacity-80"
+          className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] blur-sm opacity-80"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         />
         <motion.div
-          className="absolute -bottom-px inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#00f5ff66] to-transparent"
+          className="absolute -bottom-px inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#AEDD3366] to-transparent"
           animate={{ opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 3, repeat: Infinity }}
         />
@@ -130,12 +130,12 @@ export default function Header() {
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-2xl font-bold bg-gradient-to-r from-[#00F5FF] via-[#38bdf8] to-[#FF1744] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,245,255,0.35)]"
+                className="text-2xl font-bold bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(174,221,51,0.35)]"
               >
                 Xsphere
               </motion.span>
               <motion.div
-                className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-[#00F5FF] to-[#FF1744] shadow-[0_0_8px_rgba(255,23,68,0.8)]"
+                className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] shadow-[0_0_8px_rgba(174,221,51,0.8)]"
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}
               />
@@ -160,11 +160,11 @@ export default function Header() {
                 <Link href={item.href}>
                   <motion.span
                     whileHover={{ y: -2 }}
-                    className="relative text-sm font-semibold tracking-wide text-slate-100 group-hover:text-[#00F5FF] transition-colors cursor-pointer"
+                    className="relative text-sm font-semibold tracking-wide text-slate-100 group-hover:text-[#AEDD33] transition-colors cursor-pointer"
                   >
                     {item.name}
                     <motion.div
-                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00F5FF] via-[#FF3CAC] to-[#FF1744]"
+                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40]"
                       whileHover={{ width: '100%' }}
                       transition={{ duration: 0.3 }}
                     />
@@ -189,14 +189,14 @@ export default function Header() {
                           >
                             <Link
                               href={subItem.href}
-                              className="block px-4 py-2.5 text-sm text-slate-100 hover:text-[#00F5FF] hover:bg-gradient-to-r hover:from-[#00f5ff0d] hover:via-[#ff3cac0f] hover:to-[#ff17440d] transition-all duration-200"
+                              className="block px-4 py-2.5 text-sm text-slate-100 hover:text-[#AEDD33] hover:bg-gradient-to-r hover:from-[#aedd330d] hover:via-[#4caf500f] hover:to-[#1e8f400d] transition-all duration-200"
                               role="menuitem"
                             >
                               <motion.span
                                 whileHover={{ x: 5 }}
                                 className="flex items-center"
                               >
-                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#FF1744] mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] mr-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                                 {subItem.name}
                               </motion.span>
                             </Link>
@@ -224,10 +224,10 @@ export default function Header() {
                   boxShadow: '0 20px 45px rgba(0, 245, 255, 0.35)',
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative inline-flex items-center px-6 py-2.5 border border-transparent text-sm font-semibold tracking-wide rounded-full text-white bg-gradient-to-r from-[#00F5FF] via-[#2D9CFF] to-[#FF1744] overflow-hidden group"
+                className="relative inline-flex items-center px-6 py-2.5 border border-transparent text-sm font-semibold tracking-wide rounded-full text-white bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] overflow-hidden group"
               >
                 <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-[#00c3ff] via-transparent to-[#ff3cac]"
+                  className="absolute inset-0 bg-gradient-to-r from-[#B2D942] via-transparent to-[#2E9346]"
                   initial={{ x: '-100%' }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
@@ -260,7 +260,7 @@ export default function Header() {
             <motion.button
               whileTap={{ scale: 0.9 }}
               type="button"
-              className="inline-flex items-center justify-center p-2 text-slate-100 hover:text-[#00F5FF] hover:bg-white/5 rounded-md transition-colors border border-white/10"
+              className="inline-flex items-center justify-center p-2 text-slate-100 hover:text-[#AEDD33] hover:bg-white/5 rounded-md transition-colors border border-white/10"
               aria-controls="mobile-menu"
               aria-expanded={mobileMenuOpen}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -335,7 +335,7 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      className="block px-3 py-2.5 text-base font-semibold text-slate-100 hover:text-[#00F5FF] hover:bg-gradient-to-r hover:from-[#00f5ff0d] hover:via-[#ff3cac12] hover:to-[#ff17440d] rounded-lg transition-all border border-transparent hover:border-white/10"
+                      className="block px-3 py-2.5 text-base font-semibold text-slate-100 hover:text-[#AEDD33] hover:bg-gradient-to-r hover:from-[#aedd330d] hover:via-[#4caf5012] hover:to-[#1e8f400d] rounded-lg transition-all border border-transparent hover:border-white/10"
                       onClick={() => {
                         if (!item.submenu) setMobileMenuOpen(false);
                       }}
@@ -353,7 +353,7 @@ export default function Header() {
                           <Link
                             key={subItem.name}
                             href={subItem.href}
-                            className="block px-3 py-2 text-sm text-slate-300 hover:text-[#00F5FF] hover:bg-gradient-to-r hover:from-[#00f5ff0d] hover:to-[#ff17440d] rounded-md transition-all"
+                            className="block px-3 py-2 text-sm text-slate-300 hover:text-[#AEDD33] hover:bg-gradient-to-r hover:from-[#aedd330d] hover:to-[#1e8f400d] rounded-md transition-all"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             <motion.span
@@ -380,7 +380,7 @@ export default function Header() {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="block w-full text-center px-4 py-3 border border-transparent text-base font-semibold rounded-full text-white bg-gradient-to-r from-[#00F5FF] via-[#2D9CFF] to-[#FF1744] shadow-[0_10px_30px_rgba(0,245,255,0.25)]"
+                      className="block w-full text-center px-4 py-3 border border-transparent text-base font-semibold rounded-full text-white bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] shadow-[0_10px_30px_rgba(174,221,51,0.25)]"
                     >
                       Get a Quote
                     </motion.button>

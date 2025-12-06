@@ -24,9 +24,9 @@ export default function AnimatedButton({
   const baseStyles = 'relative inline-flex items-center justify-center font-medium rounded-lg overflow-hidden transition-all duration-300';
   
   const variantStyles = {
-    primary: 'text-white bg-gradient-to-r from-[#FF6B00] to-[#E55A00]',
+    primary: 'text-white bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40]',
     secondary: 'text-white bg-gradient-to-r from-[#06B6D4] to-[#0891B2]',
-    outline: 'text-[#FF6B00] border-2 border-[#FF6B00] hover:bg-[#FF6B00] hover:text-white',
+    outline: 'text-[#AEDD33] border-2 border-[#AEDD33] hover:bg-[#AEDD33] hover:text-[#010308]',
   };
 
   const sizeStyles = {
@@ -39,7 +39,7 @@ export default function AnimatedButton({
     <motion.button
       whileHover={{ 
         scale: 1.05,
-        boxShadow: '0 10px 30px rgba(255, 107, 0, 0.4)',
+        boxShadow: '0 10px 30px rgba(174, 221, 51, 0.4)',
       }}
       whileTap={{ scale: 0.95 }}
       onClick={onClick}

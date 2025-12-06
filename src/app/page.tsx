@@ -91,13 +91,13 @@ export default function Home() {
       label: 'Avg. Turnaround',
       value: '3–5 Days',
       detail: 'Pixel-to-pavement speed',
-      gradient: 'from-[#00F5FF] to-[#2D9CFF]',
+      gradient: 'from-[#AEDD33] to-[#4CAF50]',
     },
     {
       label: 'NPS',
       value: '+72',
       detail: 'Customer delight index',
-      gradient: 'from-[#FF3CAC] to-[#FF1744]',
+      gradient: 'from-[#4CAF50] to-[#1E8F40]',
     },
     {
       label: 'Projects Delivered',
@@ -121,7 +121,7 @@ export default function Home() {
           className="absolute inset-0 opacity-40"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 20% 20%, rgba(0,245,255,0.25), transparent 45%), radial-gradient(circle at 80% 0%, rgba(255,23,68,0.25), transparent 35%)',
+              'radial-gradient(circle at 20% 20%, rgba(174,221,51,0.2), transparent 45%), radial-gradient(circle at 80% 0%, rgba(30,143,64,0.2), transparent 35%), radial-gradient(circle at 50% 50%, rgba(0,245,255,0.15), transparent 40%)',
           }}
           animate={{ opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
@@ -141,14 +141,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80" />
           <motion.div
             animate={floatingAnimation}
-            className="absolute top-16 left-8 w-[22rem] h-[22rem] bg-[#00F5FF]/25 rounded-full blur-[120px]"
+            className="absolute top-16 left-8 w-[22rem] h-[22rem] bg-[#AEDD33]/25 rounded-full blur-[120px]"
           />
           <motion.div
             animate={{
               ...floatingAnimation,
               transition: { ...floatingAnimation.transition, duration: 6, delay: 1.2 },
             }}
-            className="absolute bottom-10 right-8 w-[26rem] h-[26rem] bg-[#FF1744]/20 rounded-full blur-[140px]"
+            className="absolute bottom-10 right-8 w-[26rem] h-[26rem] bg-[#1E8F40]/20 rounded-full blur-[140px]"
           />
         </div>
 
@@ -168,7 +168,7 @@ export default function Home() {
                 <span className="block text-white/90">
                   Visual Authority for
                 </span>
-                <span className="block bg-gradient-to-r from-[#00F5FF] via-[#2D9CFF] to-[#FF1744] bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
                   B2B Fabrication Powerhouses
                 </span>
               </motion.h1>
@@ -320,7 +320,7 @@ export default function Home() {
                     </div>
                     <div className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  <p className="text-xs sm:text-sm font-semibold text-white/90 text-center group-hover:text-[#00F5FF] transition-colors">
+                  <p className="text-xs sm:text-sm font-semibold text-white/90 text-center group-hover:text-[#AEDD33] transition-colors">
                     {service.name}
                   </p>
                 </motion.div>
@@ -345,16 +345,16 @@ export default function Home() {
                 title: 'Design Intelligence',
                 description: 'Scalable brand systems engineered to print flawlessly at every size.',
                 details: ['Brand guardianship & CAD-ready art', 'Color-managed proofing in 24h'],
-                color: 'from-[#00F5FF] to-[#2D9CFF]',
-                accent: '#00F5FF',
+                color: 'from-[#AEDD33] to-[#4CAF50]',
+                accent: '#AEDD33',
                 icon: '🧠',
               },
               {
                 title: 'Production Muscle',
                 description: 'Large-format print, fabrication, and finishing under one roof.',
                 details: ['3.2m UV print • CNC • laser', 'Live dashboards on every run'],
-                color: 'from-[#FF3CAC] to-[#FF1744]',
-                accent: '#FF3CAC',
+                color: 'from-[#4CAF50] to-[#1E8F40]',
+                accent: '#4CAF50',
                 icon: '⚡',
               },
               {
@@ -411,7 +411,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-[0.3em] text-[#00F5FF]"
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-[0.3em] text-[#AEDD33]"
           >
             Customer Experience Engine
           </motion.div>

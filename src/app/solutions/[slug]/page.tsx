@@ -101,7 +101,7 @@ export default function ServicePage({ params }: Props) {
         </div>
         <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 items-center">
           <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Solutions</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Solutions</p>
             <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">{service.title}</h1>
             <p className="text-lg text-slate-200">{service.tagline}</p>
             <p className="text-slate-300">{service.summary}</p>
@@ -113,7 +113,7 @@ export default function ServicePage({ params }: Props) {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
               >
                 Book Production Slot
               </Link>
@@ -146,7 +146,7 @@ export default function ServicePage({ params }: Props) {
             <ul className="space-y-3 text-slate-200">
               {service.bullets.map((bullet) => (
                 <li key={bullet} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00F5FF]" />
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33]" />
                   <span>{bullet}</span>
                 </li>
               ))}
@@ -169,7 +169,7 @@ export default function ServicePage({ params }: Props) {
       <section className="px-4 sm:px-6 lg:px-10 pb-16">
         <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-2">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#67E8F9]">Specialties</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#AEDD33]">Specialties</p>
             <ul className="mt-4 space-y-3 text-slate-200">
               {service.specialties.map((line) => (
                 <li key={line} className="flex items-start gap-2">
@@ -197,7 +197,7 @@ export default function ServicePage({ params }: Props) {
         <div className="max-w-6xl mx-auto space-y-6">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Gallery</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Gallery</p>
               <h3 className="text-2xl font-bold text-white">Recent Deployments</h3>
             </div>
             <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
@@ -227,14 +227,14 @@ export default function ServicePage({ params }: Props) {
         <div className="max-w-5xl mx-auto rounded-3xl border border-white/10 bg-[#030614] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Lead Time Blueprint</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Lead Time Blueprint</p>
               <h3 className="mt-2 text-2xl font-bold">
                 {service.leadTime} · Integrated with production and install calendars
               </h3>
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308]"
+              className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-6 py-3 text-sm font-semibold text-[#010308]"
             >
               Reserve a Slot
             </Link>

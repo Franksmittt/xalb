@@ -189,7 +189,7 @@ export default function PrintReadyFilePreparation() {
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF1744]/10 rounded-full blur-[120px]" />
       </div>
 
@@ -206,7 +206,7 @@ export default function PrintReadyFilePreparation() {
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#00F5FF]/20 text-[#00F5FF] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#00F5FF] mb-4">
               Design & Production
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
@@ -227,7 +227,7 @@ export default function PrintReadyFilePreparation() {
           </div>
 
           {/* Introduction */}
-          <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-6 mb-12">
+          <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-6 mb-12">
             <div className="flex gap-4">
               <div className="flex-shrink-0 text-3xl">💡</div>
               <div>
@@ -276,7 +276,7 @@ export default function PrintReadyFilePreparation() {
                       <h4 className="text-lg font-bold text-white mb-2">Why It Fails</h4>
                       <p className="text-slate-200">{issue.whyItFails}</p>
                     </div>
-                    <div className="rounded-xl border border-[#00F5FF]/30 bg-[#00F5FF]/10 p-4">
+                    <div className="rounded-xl border border-[#AEDD33]/30 bg-[#AEDD33]/10 p-4">
                       <h4 className="text-lg font-bold text-white mb-2">The Solution</h4>
                       <p className="text-slate-200">{issue.solution}</p>
                     </div>
@@ -357,7 +357,7 @@ export default function PrintReadyFilePreparation() {
                       <ul className="space-y-1 text-sm text-slate-300">
                         {format.pros.map((pro, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                             <span>{pro}</span>
                           </li>
                         ))}
@@ -404,7 +404,7 @@ export default function PrintReadyFilePreparation() {
                   className="rounded-3xl border border-white/10 bg-[#01030B]/95 p-6 sm:p-8"
                 >
                   <div className="flex gap-6 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#FF1744] flex items-center justify-center text-xl font-bold">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] flex items-center justify-center text-xl font-bold">
                       {String(index + 1).padStart(2, '0')}
                     </div>
                     <div className="flex-1">
@@ -421,7 +421,7 @@ export default function PrintReadyFilePreparation() {
                   <ul className="space-y-2 ml-18">
                     {stage.whatHappens.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-slate-200">
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -430,7 +430,7 @@ export default function PrintReadyFilePreparation() {
               ))}
             </div>
 
-            <div className="mt-8 rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-6">
+            <div className="mt-8 rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-6">
               <h4 className="text-xl font-bold text-white mb-3">📊 Typical Timeline Example</h4>
               <div className="space-y-2 text-slate-200">
                 <p><strong>Rush Job (if possible):</strong> 3-5 days total</p>
@@ -444,7 +444,7 @@ export default function PrintReadyFilePreparation() {
           </div>
 
           {/* Quick Checklist */}
-          <div className="mb-16 rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-8">
+          <div className="mb-16 rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8">
             <h2 className="text-3xl font-bold text-white mb-6">✅ Print-Ready Checklist</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
@@ -458,7 +458,7 @@ export default function PrintReadyFilePreparation() {
                 'No low-res images stretched',
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 text-slate-200">
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#00F5FF]/20 border border-[#00F5FF] flex items-center justify-center text-sm">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] flex items-center justify-center text-sm">
                     ✓
                   </span>
                   <span>{item}</span>
@@ -468,7 +468,7 @@ export default function PrintReadyFilePreparation() {
           </div>
 
           {/* CTA Section */}
-          <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-8 md:p-12 text-center mb-12">
+          <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 md:p-12 text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Still Not Sure? We&apos;re Here to Help
             </h3>
@@ -479,7 +479,7 @@ export default function PrintReadyFilePreparation() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
               >
                 Get Free File Review
               </Link>
@@ -496,13 +496,13 @@ export default function PrintReadyFilePreparation() {
           <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-white/10">
             <Link
               href="/tutorials"
-              className="text-[#00F5FF] hover:text-[#67E8F9] transition-colors flex items-center gap-2"
+              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
             >
               ← Back to All Tutorials
             </Link>
             <Link
               href="/tutorials/vinyl-vehicle-application"
-              className="text-[#00F5FF] hover:text-[#67E8F9] transition-colors flex items-center gap-2"
+              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
             >
               Next: Vehicle Wrapping Guide →
             </Link>

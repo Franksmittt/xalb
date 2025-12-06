@@ -4,12 +4,12 @@ const showcase = [
   {
     label: 'Retail / POS',
     description: 'Immersive bento grid to drop photos of flagship installs.',
-    gradient: 'from-[#00F5FF]/30 to-transparent',
+    gradient: 'from-[#AEDD33]/30 to-transparent',
   },
   {
     label: 'Fleet Branding',
     description: 'Looped reel placeholder for wraps, magnets, and logistics shots.',
-    gradient: 'from-[#FF3CAC]/30 to-transparent',
+    gradient: 'from-[#4CAF50]/30 to-transparent',
   },
   {
     label: 'Industrial Signage',
@@ -24,7 +24,7 @@ export default function ShowcaseReel() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Showcase</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Showcase</p>
             <h2 className="mt-3 text-3xl font-bold text-white">Drag-n-drop your hero work</h2>
             <p className="mt-2 text-slate-300 max-w-2xl">
               These slots are wired for looping video or stills. Replace the gradient shells with actual footage to

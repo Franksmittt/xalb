@@ -12,6 +12,12 @@
   --neon-blue: #00F5FF;
   --neon-red: #FF1744;
   --neon-magenta: #FF3CAC;
+  --green-lime: #AEDD33;
+  --green-light: #B2D942;
+  --green-medium: #4CAF50;
+  --green-leaf: #56B847;
+  --green-dark: #2E9346;
+  --green-forest: #1E8F40;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,8 +29,9 @@
 
 body {
   color: var(--foreground);
-  background: radial-gradient(circle at 20% 20%, rgba(0, 245, 255, 0.2), transparent 45%),
-    radial-gradient(circle at 80% 0%, rgba(255, 23, 68, 0.2), transparent 35%),
+  background: radial-gradient(circle at 20% 20%, rgba(174, 221, 51, 0.15), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(30, 143, 64, 0.15), transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(0, 245, 255, 0.1), transparent 40%),
     linear-gradient(135deg, #03050d, #050b1d 45%, #12061f);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -65,7 +72,7 @@ html {
 
 /* Neon selection */
 ::selection {
-  background: rgba(0, 245, 255, 0.35);
+  background: rgba(174, 221, 51, 0.35);
   color: #ffffff;
 }
 
@@ -73,9 +80,10 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 10% 20%, rgba(0, 245, 255, 0.12), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(255, 23, 68, 0.08), transparent 40%),
-    radial-gradient(circle at 30% 80%, rgba(255, 107, 0, 0.06), transparent 45%);
+  background: radial-gradient(circle at 10% 20%, rgba(174, 221, 51, 0.1), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(30, 143, 64, 0.08), transparent 40%),
+    radial-gradient(circle at 30% 80%, rgba(76, 175, 80, 0.06), transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(0, 245, 255, 0.05), transparent 40%);
   pointer-events: none;
   z-index: -1;
   filter: blur(40px);

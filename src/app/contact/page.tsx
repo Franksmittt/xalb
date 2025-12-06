@@ -35,7 +35,7 @@ export default function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#03050d]/60 to-[#03050d]" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9]">Contact</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Contact</p>
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
             Let’s build your next launch—design, production, and installation in one message.
           </h1>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                     name="name"
                     type="text"
                     required
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#AEDD33] focus:border-[#AEDD33] transition-all"
                     placeholder="Your name"
                   />
                 </label>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                     id="company"
                     name="company"
                     type="text"
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#AEDD33] focus:border-[#AEDD33] transition-all"
                     placeholder="Organization"
                   />
                 </label>
@@ -81,7 +81,7 @@ export default function ContactPage() {
                     name="email"
                     type="email"
                     required
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#AEDD33] focus:border-[#AEDD33] transition-all"
                     placeholder="you@example.com"
                   />
                 </label>
@@ -91,7 +91,7 @@ export default function ContactPage() {
                     id="phone"
                     name="phone"
                     type="tel"
-                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
+                    className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#AEDD33] focus:border-[#AEDD33] transition-all"
                     placeholder="+27 ..."
                   />
                 </label>
@@ -102,7 +102,7 @@ export default function ContactPage() {
                   id="description"
                   name="description"
                   required
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all resize-y"
+                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#AEDD33] focus:border-[#AEDD33] transition-all resize-y"
                   rows={4}
                   placeholder="Tell us about timelines, outputs, or challenges."
                 />
@@ -113,13 +113,13 @@ export default function ContactPage() {
                   id="assets"
                   name="assets"
                   type="url"
-                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00F5FF] focus:border-[#00F5FF] transition-all"
+                  className="mt-2 w-full rounded-2xl border border-white/10 bg-[#02050d] px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#AEDD33] focus:border-[#AEDD33] transition-all"
                   placeholder="Share Drive / Dropbox / Wetransfer"
                 />
               </label>
               <button
                 type="submit"
-                className="w-full rounded-full bg-[#00F5FF] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)] hover:shadow-[0_20px_45px_rgba(0,245,255,0.5)] hover:bg-[#00c3ff] transition-all"
+                className="w-full rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)] hover:shadow-[0_20px_45px_rgba(174,221,51,0.5)] hover:from-[#B2D942] hover:to-[#2E9346] transition-all"
               >
                 Send Inquiry
               </button>
@@ -148,7 +148,7 @@ export default function ContactPage() {
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-white/5 p-6 space-y-4">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#67E8F9]">Book a slot</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-[#AEDD33]">Book a slot</p>
               <ul className="space-y-3 text-slate-200">
                 {officeSlots.map((slot) => (
                   <li key={slot.label}>

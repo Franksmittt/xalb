@@ -22,7 +22,7 @@ const slides: Slide[] = [
       { label: 'Brief-to-proof', value: '24h' },
       { label: 'Concept kits', value: '40+ / mo' },
     ],
-    gradient: 'from-[#00F5FF]/25 via-[#2D9CFF]/20 to-transparent',
+    gradient: 'from-[#AEDD33]/25 via-[#4CAF50]/20 to-transparent',
     accent: '#00F5FF',
   },
   {
@@ -134,7 +134,7 @@ export default function ServiceSlider() {
                 onClick={() =>
                   setIndex((prev) => (prev + direction + slides.length) % slides.length)
                 }
-                className="w-10 h-10 rounded-full border border-white/15 text-white hover:border-white/40 hover:text-[#00F5FF] transition-colors flex items-center justify-center"
+                className="w-10 h-10 rounded-full border border-white/15 text-white hover:border-white/40 hover:text-[#AEDD33] transition-colors flex items-center justify-center"
                 aria-label={direction === -1 ? 'Previous slide' : 'Next slide'}
               >
                 <motion.svg

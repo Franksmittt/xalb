@@ -169,7 +169,7 @@ export default function VinylApplicationTutorial() {
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF1744]/10 rounded-full blur-[120px]" />
       </div>
 
@@ -186,7 +186,7 @@ export default function VinylApplicationTutorial() {
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#00F5FF]/20 text-[#00F5FF] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#00F5FF] mb-4">
               Vehicle Wrapping
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
@@ -243,12 +243,12 @@ export default function VinylApplicationTutorial() {
                     </div>
                   )}
                   {item.type === 'comparison' && 'title' in item && 'points' in item && item.points && (
-                    <div className={`rounded-2xl border p-6 mb-4 ${item.highlight ? 'border-[#00F5FF]/30 bg-[#00F5FF]/10' : 'border-white/10 bg-white/5'}`}>
+                    <div className={`rounded-2xl border p-6 mb-4 ${item.highlight ? 'border-[#AEDD33]/30 bg-[#AEDD33]/10' : 'border-white/10 bg-white/5'}`}>
                       <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
                       <ul className="space-y-2">
                         {item.points.map((point, pointIndex) => (
                           <li key={pointIndex} className="flex items-start gap-3 text-slate-200">
-                            <span className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${item.highlight ? 'bg-[#00F5FF]' : 'bg-slate-400'}`} />
+                            <span className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${item.highlight ? 'bg-[#AEDD33]' : 'bg-slate-400'}`} />
                             <span>{point}</span>
                           </li>
                         ))}
@@ -284,7 +284,7 @@ export default function VinylApplicationTutorial() {
                   className="rounded-3xl border border-white/10 bg-[#01030B]/95 p-6 sm:p-8"
                 >
                   <div className="flex gap-6 mb-6">
-                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#FF1744] flex items-center justify-center text-2xl font-bold">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] flex items-center justify-center text-2xl font-bold">
                       {step.number}
                     </div>
                     <div className="flex-1">
@@ -305,7 +305,7 @@ export default function VinylApplicationTutorial() {
                   <ul className="space-y-3 mb-4">
                     {step.details.map((detail, detailIndex) => (
                       <li key={detailIndex} className="flex items-start gap-3 text-slate-200">
-                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                        <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -318,7 +318,7 @@ export default function VinylApplicationTutorial() {
                   )}
 
                   {step.tip && (
-                    <div className="rounded-xl border border-[#00F5FF]/30 bg-[#00F5FF]/10 p-4 mt-4">
+                    <div className="rounded-xl border border-[#AEDD33]/30 bg-[#AEDD33]/10 p-4 mt-4">
                       <p className="text-slate-200"><strong>💡 Pro Tip:</strong> {step.tip}</p>
                     </div>
                   )}
@@ -354,7 +354,7 @@ export default function VinylApplicationTutorial() {
           </div>
 
           {/* Professional Services CTA */}
-          <div className="rounded-3xl border border-[#00F5FF]/30 bg-gradient-to-br from-[#00F5FF]/10 to-[#FF1744]/10 p-8 md:p-12 text-center mb-12">
+          <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 md:p-12 text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Why Professional Installation Matters
             </h3>
@@ -363,26 +363,26 @@ export default function VinylApplicationTutorial() {
             </p>
             <ul className="grid sm:grid-cols-2 gap-4 mb-8 text-left max-w-3xl mx-auto">
               <li className="flex items-start gap-3 text-slate-200">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Premium cast vinyl with 5-7 year warranty</span>
               </li>
               <li className="flex items-start gap-3 text-slate-200">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Certified installers with years of experience</span>
               </li>
               <li className="flex items-start gap-3 text-slate-200">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Climate-controlled installation facility</span>
               </li>
               <li className="flex items-start gap-3 text-slate-200">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00F5FF] flex-shrink-0" />
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Post-installation warranty and support</span>
               </li>
             </ul>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
               >
                 Get a Professional Quote
               </Link>
@@ -399,13 +399,13 @@ export default function VinylApplicationTutorial() {
           <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-white/10">
             <Link
               href="/tutorials"
-              className="text-[#00F5FF] hover:text-[#67E8F9] transition-colors flex items-center gap-2"
+              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
             >
               ← Back to All Tutorials
             </Link>
             <Link
               href="/tutorials/vinyl-types"
-              className="text-[#00F5FF] hover:text-[#67E8F9] transition-colors flex items-center gap-2"
+              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
             >
               Next: Choosing the Right Vinyl →
             </Link>

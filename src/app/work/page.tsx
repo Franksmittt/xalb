@@ -63,17 +63,17 @@ export default function WorkPage() {
     <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
-        <div className="absolute top-20 left-10 w-96 h-96 bg-[#00F5FF]/10 rounded-full blur-[120px]" />
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FF1744]/10 rounded-full blur-[120px]" />
       </div>
 
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#67E8F9] mb-4">Portfolio</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33] mb-4">Portfolio</p>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
               <span className="block text-white">The Work</span>
-              <span className="block bg-gradient-to-r from-[#00F5FF] via-[#2D9CFF] to-[#FF1744] bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
                 Real Projects, Real Results
               </span>
             </h1>
@@ -96,7 +96,7 @@ export default function WorkPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#00F5FF]/20 text-[#00F5FF] mb-2">
+                    <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#AEDD33] mb-2">
                       {project.category}
                     </span>
                     <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
@@ -124,7 +124,7 @@ export default function WorkPage() {
             <div className="inline-flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#00F5FF] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)] hover:shadow-[0_20px_45px_rgba(0,245,255,0.5)] transition-all"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)] hover:shadow-[0_20px_45px_rgba(174,221,51,0.5)] transition-all"
               >
                 Start Your Project
               </Link>
