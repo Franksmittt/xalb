@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import ClientLayout from "@/components/ClientLayout";
 
 // Get base URL from environment variable or default to production domain
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://xsphere.co.za';
@@ -74,9 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en-ZA">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

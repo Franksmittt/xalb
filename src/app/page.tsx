@@ -54,7 +54,7 @@ const organizationStructuredData = {
   },
 };
 
-export default function Home() {
+function HomeContent() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -450,3 +450,7 @@ export default function Home() {
   );
 }
 
+export default function Home() {
+  // ConditionalLayout handles authentication check, so we just render the content
+  return <HomeContent />;
+}

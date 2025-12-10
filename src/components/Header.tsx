@@ -1,13 +1,28 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { isAuthenticated, logout } from '@/lib/auth';
 
 export default function Header() {
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    setAuthenticated(isAuthenticated());
+  }, []);
+
+  const handleLogout = () => {
+    logout();
+    setAuthenticated(false);
+    router.push('/');
+    router.refresh();
+  };
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -213,13 +228,23 @@ export default function Header() {
             ))}
           </motion.div>
 
-          {/* CTA Button */}
+          {/* CTA Button & Logout */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="hidden lg:flex lg:items-center"
+            className="hidden lg:flex lg:items-center gap-3"
           >
+            {authenticated && (
+              <motion.button
+                onClick={handleLogout}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 text-sm font-semibold text-slate-300 hover:text-white border border-white/20 rounded-full hover:bg-white/5 transition-all"
+              >
+                Logout
+              </motion.button>
+            )}
             <Link href="/contact">
               <motion.button
                 whileHover={{ 
@@ -374,8 +399,21 @@ export default function Header() {
                 ))}
                 <motion.div
                   variants={itemVariants}
-                  className="pt-4"
+                  className="pt-4 space-y-2"
                 >
+                  {authenticated && (
+                    <motion.button
+                      onClick={() => {
+                        handleLogout();
+                        setMobileMenuOpen(false);
+                      }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="block w-full text-center px-4 py-3 border border-white/20 text-base font-semibold rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all"
+                    >
+                      Logout
+                    </motion.button>
+                  )}
                   <Link
                     href="/contact"
                     onClick={() => setMobileMenuOpen(false)}
