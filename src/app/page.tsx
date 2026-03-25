@@ -451,6 +451,5 @@ function HomeContent() {
 }
 
 export default function Home() {
-  // ConditionalLayout handles authentication check, so we just render the content
   return <HomeContent />;
 }
