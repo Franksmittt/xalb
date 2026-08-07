@@ -93,7 +93,7 @@ const applicationCards = [
   },
   {
     title: 'Retail & venue builds',
-    copy: 'Acrylic and timber displays built for foot traffic, not temporary stickers.',
+    copy: 'MDF and plexi displays built for foot traffic, not temporary stickers.',
     image: '/images/services/large_format/Gemini_Generated_Image_m4v1gsm4v1gsm4v1.png',
     href: '/imagine',
   },
@@ -113,7 +113,7 @@ const applicationCards = [
 
 const processSteps = [
   { step: '01', title: 'Brief the idea', copy: 'Sketches, brand files, or a rough concept — we turn it into cut-ready paths.' },
-  { step: '02', title: 'Material & CAD', copy: 'Acrylic, timber, laminate, or sheet goods nested for clean production.' },
+  { step: '02', title: 'Material & CAD', copy: 'MDF, plexi, Rowmark, or ABS nested for clean laser and CNC production.' },
   { step: '03', title: 'CNC & laser', copy: 'Routing and engraving on the floor — precise edges, crisp fills, repeatable batches.' },
   { step: '04', title: 'Finish & install', copy: 'Polish, paint, assemble, and optionally install across Gauteng.' },
 ];
@@ -287,8 +287,8 @@ export default function Home() {
               What large clients ask us to cut and engrave
             </h2>
             <p className="mt-4 text-lg text-[#c4cbb8]">
-              Novelty, signage, and branded environments — acrylic, timber, and sheet work. Not heavy industrial
-              steel.
+              Novelty, signage, and branded environments — MDF, plexiglass, Rowmark, and ABS. Wood and plastic
+              ideas into objects that look intentional at scale.
             </p>
           </div>
 
