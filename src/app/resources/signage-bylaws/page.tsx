@@ -64,7 +64,7 @@ export default function SignageBylawsPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+    <main className="page-shell">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
@@ -74,23 +74,23 @@ export default function SignageBylawsPage() {
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <Link href="/resources" className="inline-flex items-center text-sm text-[#AEDD33] hover:text-[#00F5FF] mb-6 transition-colors">
+            <Link href="/resources" className="inline-flex items-center text-sm text-accent hover:text-accent mb-6 transition-colors">
               ← Back to Resources
             </Link>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33] mb-4">Installation Guide</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-4">Installation Guide</p>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               <span className="block text-white">Signage Bylaws: Gauteng</span>
-              <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
+              <span className="block text-accent">
                 Local Regulations & Compliance
               </span>
             </h1>
-            <p className="text-lg text-slate-300 max-w-3xl">
+            <p className="text-lg text-ink-muted max-w-3xl">
               Essential guide to local regulations, permit requirements, and compliance guidelines for signage installation across Gauteng municipalities.
             </p>
           </div>
 
           <div className="mb-8 rounded-2xl border border-[#FF6B00]/30 bg-[#FF6B00]/5 p-6">
-            <p className="text-slate-200">
+            <p className="text-ink-muted">
               <strong className="text-white">Important:</strong> Regulations vary by municipality. Always verify current requirements with your local council before installation. This guide provides general guidelines and should not replace official legal advice.
             </p>
           </div>
@@ -99,14 +99,14 @@ export default function SignageBylawsPage() {
             {regulations.map((section) => (
               <div
                 key={section.category}
-                className="rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl p-8"
+                className="rounded-3xl border border-[var(--line)] bg-surface backdrop-blur-xl p-8"
               >
-                <h2 className="text-xl font-bold text-white mb-6">{section.category}</h2>
+                <h2 className="text-xl font-bold text-ink mb-6">{section.category}</h2>
                 <ul className="space-y-3">
                   {section.items.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
-                      <span className="text-slate-300">{item}</span>
+                      <span className="text-ink-muted">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -115,13 +115,13 @@ export default function SignageBylawsPage() {
           </div>
 
           <div className="mt-12 rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/5 to-[#1E8F40]/5 p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Need Compliance Assistance?</h3>
-            <p className="text-slate-300 mb-6">
+            <h3 className="text-2xl font-bold text-ink mb-3">Need Compliance Assistance?</h3>
+            <p className="text-ink-muted mb-6">
               Our installation team handles permit applications and ensures all signage meets local regulations. We work with municipalities across Gauteng.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
+              className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-ink-inverse "
             >
               Get Compliance Support
             </Link>

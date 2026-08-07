@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { serviceCatalog, serviceMap } from "@/data/services";
 import StructuredData from "@/components/StructuredData";
@@ -8,7 +9,7 @@ type Props = {
   params: { slug: string };
 };
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://xsphere.co.za';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://xsphere.co.za";
 
 export function generateStaticParams() {
   return serviceCatalog.map((service) => ({ slug: service.slug }));
@@ -18,9 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = serviceMap[params.slug];
 
   if (!service) {
-    return {
-      title: 'Service Not Found',
-    };
+    return { title: "Service Not Found" };
   }
 
   return {
@@ -32,11 +31,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: service.title,
       description: service.tagline,
-      type: 'website',
+      type: "website",
       url: `${baseUrl}/solutions/${params.slug}`,
       images: [
         {
-          url: service.heroImage.startsWith('http') ? service.heroImage : `${baseUrl}${service.heroImage}`,
+          url: service.heroImage.startsWith("http")
+            ? service.heroImage
+            : `${baseUrl}${service.heroImage}`,
           width: 1200,
           height: 630,
           alt: service.title,
@@ -53,111 +54,112 @@ export default function ServicePage({ params }: Props) {
     notFound();
   }
 
-  // Structured data for service page
+  const isCore = service.slug === "fabrication";
+
   const serviceStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+    "@context": "https://schema.org",
+    "@type": "Service",
     name: service.title,
     description: service.summary,
     provider: {
-      '@type': 'Organization',
-      name: 'Xsphere Marketing and Design',
+      "@type": "Organization",
+      name: "Xsphere Marketing and Design",
       url: baseUrl,
-      telephone: '+27-11-869-9169',
-      email: 'info@xsphere.co.za',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '99 Second Avenue, Florentia',
-        addressLocality: 'Alberton',
-        addressRegion: 'Gauteng',
-        addressCountry: 'ZA',
-      },
+      telephone: "+27-11-869-9169",
+      email: "info@xsphere.co.za",
     },
     areaServed: {
-      '@type': 'State',
-      name: 'Gauteng',
-      containedIn: {
-        '@type': 'Country',
-        name: 'South Africa',
-      },
+      "@type": "State",
+      name: "Gauteng",
     },
-    serviceType: 'Printing and Signage Services',
-    offers: {
-      '@type': 'Offer',
-      description: `Lead Time: ${service.leadTime}, Capacity: ${service.capacity}`,
-    },
+    serviceType: isCore
+      ? "CNC Routing and Laser Engraving"
+      : "Printing and Signage Services",
   };
 
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+    <main className="page-shell">
       <StructuredData data={serviceStructuredData} />
-      <section className="relative overflow-hidden px-4 sm:px-6 lg:px-10 py-20">
+
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-40"
-            style={{ backgroundImage: `url('${service.heroImage}')` }}
+          <Image
+            src={service.heroImage}
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#03050d] via-[#040611]/95 to-[#0b0f22]" />
+          <div className="absolute inset-0 bg-[rgba(16,20,12,0.72)]" />
         </div>
-        <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 items-center">
-          <div className="space-y-6">
-            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Solutions</p>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">{service.title}</h1>
-            <p className="text-lg text-slate-200">{service.tagline}</p>
-            <p className="text-slate-300">{service.summary}</p>
-            <div className="flex flex-wrap gap-4 text-sm uppercase tracking-[0.3em] text-slate-400">
-              <span>Lead Time: {service.leadTime}</span>
-              <span>Capacity: {service.capacity}</span>
-              <span>QA: {service.qa}</span>
+        <div className="relative z-10 mx-auto max-w-content px-4 py-24 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-bright">
+              {isCore ? "Core focus" : "Workshop service"}
+            </p>
+            <h1 className="font-display mt-4 text-4xl font-bold text-white md:text-5xl">
+              {service.title}
+            </h1>
+            <p className="mt-4 text-lg text-white/85">{service.tagline}</p>
+            <p className="mt-4 max-w-2xl text-white/75">{service.summary}</p>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm text-white/65">
+              <span>{service.leadTime}</span>
+              <span aria-hidden>·</span>
+              <span>{service.capacity}</span>
+              <span aria-hidden>·</span>
+              <span>{service.qa}</span>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-6 py-3 text-sm font-semibold text-[#010308] shadow-[0_15px_35px_rgba(0,245,255,0.4)]"
+                className="inline-flex items-center justify-center rounded-md bg-accent-bright px-6 py-3 text-sm font-semibold text-[#1c2118]"
               >
-                Book Production Slot
+                {isCore ? "Brief a CNC & laser project" : "Brief a project"}
               </Link>
               <Link
-                href="/work"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:border-white/60"
+                href="/solutions"
+                className="inline-flex items-center justify-center rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white"
               >
-                See Related Work
+                All solutions
               </Link>
             </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {service.highlights.map((highlight) => (
-              <div
-                key={highlight.label}
-                className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 text-center"
-              >
-                <p className="text-xs uppercase tracking-[0.3em] text-slate-300">{highlight.label}</p>
-                <p className="text-xl sm:text-2xl font-bold text-white mt-2">{highlight.value}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 lg:px-10 py-16">
-        <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10">
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-400">What we deliver</p>
-            <ul className="space-y-3 text-slate-200">
+      <section className="border-b border-[var(--line)] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-content gap-6 sm:grid-cols-3">
+          {service.highlights.map((highlight) => (
+            <div key={highlight.label} className="border-l-2 border-accent pl-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">
+                {highlight.label}
+              </p>
+              <p className="font-display mt-2 text-2xl font-bold text-ink">{highlight.value}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-content gap-12 lg:grid-cols-2">
+          <div>
+            <p className="section-eyebrow">What we deliver</p>
+            <ul className="mt-5 space-y-3 text-ink-muted">
               {service.bullets.map((bullet) => (
-                <li key={bullet} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33]" />
+                <li key={bullet} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   <span>{bullet}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Deliverables</p>
-            <ul className="space-y-3 text-slate-200">
+          <div>
+            <p className="section-eyebrow">Deliverables</p>
+            <ul className="mt-5 space-y-3 text-ink-muted">
               {service.deliverables.map((deliverable) => (
-                <li key={deliverable} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF6B00]" />
+                <li key={deliverable} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   <span>{deliverable}</span>
                 </li>
               ))}
@@ -166,25 +168,25 @@ export default function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 lg:px-10 pb-16">
-        <div className="max-w-5xl mx-auto grid gap-10 md:grid-cols-2">
+      <section className="bg-surface-muted/50 px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-content gap-12 md:grid-cols-2">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#AEDD33]">Specialties</p>
-            <ul className="mt-4 space-y-3 text-slate-200">
+            <p className="section-eyebrow">Specialties</p>
+            <ul className="mt-5 space-y-3 text-ink-muted">
               {service.specialties.map((line) => (
-                <li key={line} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#67E8F9]" />
+                <li key={line} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   <span>{line}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#FF6B00]">Value Added</p>
-            <ul className="mt-4 space-y-3 text-slate-200">
+            <p className="section-eyebrow">How we help</p>
+            <ul className="mt-5 space-y-3 text-ink-muted">
               {service.valueAdds.map((line) => (
-                <li key={line} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF6B00]" />
+                <li key={line} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   <span>{line}</span>
                 </li>
               ))}
@@ -193,29 +195,22 @@ export default function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 lg:px-10 pb-16">
-        <div className="max-w-6xl mx-auto space-y-6">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Gallery</p>
-              <h3 className="text-2xl font-bold text-white">Recent Deployments</h3>
-            </div>
-            <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
-              Swap with your best six shots
-            </span>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-content">
+          <p className="section-eyebrow">Gallery</p>
+          <h2 className="font-display mt-3 text-2xl font-bold text-ink">From the workshop</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {service.gallery.map((image, index) => (
               <div
                 key={`${service.slug}-gallery-${index}`}
-                className="aspect-[4/3] rounded-2xl sm:rounded-3xl border border-white/10 bg-cover bg-center shadow-[0_30px_60px_rgba(0,0,0,0.5)] overflow-hidden"
-                style={{ backgroundImage: `linear-gradient(200deg, rgba(3,5,13,0) 20%, rgba(3,5,13,0.8) 100%), url('${image}')` }}
+                className="relative aspect-[4/3] overflow-hidden bg-surface-muted"
               >
-                <img 
-                  src={image} 
-                  alt={`${service.title} gallery image ${index + 1}`}
-                  className="w-full h-full object-cover opacity-0"
-                  loading="lazy"
+                <Image
+                  src={image}
+                  alt={`${service.title} example ${index + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
             ))}
@@ -223,39 +218,22 @@ export default function ServicePage({ params }: Props) {
         </div>
       </section>
 
-      <section className="px-4 sm:px-6 lg:px-10 pb-20">
-        <div className="max-w-5xl mx-auto rounded-3xl border border-white/10 bg-[#030614] p-8 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Lead Time Blueprint</p>
-              <h3 className="mt-2 text-2xl font-bold">
-                {service.leadTime} · Integrated with production and install calendars
-              </h3>
-            </div>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-6 py-3 text-sm font-semibold text-[#010308]"
-            >
-              Reserve a Slot
-            </Link>
+      <section className="border-t border-[var(--line)] px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-content flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="section-eyebrow">Next step</p>
+            <h2 className="font-display mt-2 text-2xl font-bold text-ink md:text-3xl">
+              {service.leadTime} typical · talk through your brief
+            </h2>
           </div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:grid-cols-4 text-sm text-slate-300">
-            {[
-              { label: "Brief & Design Sync", value: "Day 0–1" },
-              { label: "Production / Fabrication", value: "Day 1–3" },
-              { label: "QA + Prep", value: "Day 3–4" },
-              { label: "Install / Dispatch", value: "Day 4+" },
-            ].map((stage) => (
-              <div key={stage.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p className="text-xs uppercase tracking-[0.3em] text-slate-400">{stage.label}</p>
-                <p className="mt-2 text-lg font-semibold text-white">{stage.value}</p>
-              </div>
-            ))}
-          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-ink-inverse"
+          >
+            Contact the workshop
+          </Link>
         </div>
       </section>
     </main>
   );
 }
-
-

@@ -186,7 +186,7 @@ const leadTimeBreakdown = [
 
 export default function PrintReadyFilePreparation() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+    <main className="page-shell">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
@@ -196,31 +196,31 @@ export default function PrintReadyFilePreparation() {
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-slate-400">
-            <Link href="/tutorials" className="hover:text-[#00F5FF] transition-colors">
+          <nav className="mb-8 text-sm text-ink-muted">
+            <Link href="/tutorials" className="hover:text-accent transition-colors">
               Tutorials
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-slate-300">Print-Ready File Preparation</span>
+            <span className="text-ink-muted">Print-Ready File Preparation</span>
           </nav>
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#00F5FF] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-accent mb-4">
               Design & Production
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Print-Ready File Preparation Guide
             </h1>
-            <p className="text-xl text-slate-300 mb-6">
+            <p className="text-xl text-ink-muted mb-6">
               Avoid costly mistakes and delays. Learn how to prepare files correctly, understand resolution requirements, 
               and set realistic expectations for lead times.
             </p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 ⏱️ 12 min read
               </span>
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 🎯 Beginner
               </span>
             </div>
@@ -231,8 +231,8 @@ export default function PrintReadyFilePreparation() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 text-3xl">💡</div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Why This Matters</h3>
-                <p className="text-slate-200">
+                <h3 className="text-xl font-bold text-ink mb-2">Why This Matters</h3>
+                <p className="text-ink-muted">
                   Most printing delays and quality issues come from incorrect file preparation. A tiny logo stretched to 
                   billboard size, wrong file formats, or unrealistic timelines all lead to disappointment and extra costs. 
                   This guide shows you exactly what we need and why.
@@ -243,7 +243,7 @@ export default function PrintReadyFilePreparation() {
 
           {/* Common Problems Section */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">The 4 Most Common Problems (And How to Fix Them)</h2>
+            <h2 className="text-3xl font-bold text-ink mb-8">The 4 Most Common Problems (And How to Fix Them)</h2>
             <div className="space-y-8">
               {commonProblems.map((issue, index) => (
                 <motion.div
@@ -252,18 +252,18 @@ export default function PrintReadyFilePreparation() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="rounded-3xl border border-white/10 bg-[#01030B]/95 p-6 sm:p-8"
+                  className="rounded-3xl border border-[var(--line)] bg-surface p-6 sm:p-8"
                 >
                   <div className="flex gap-4 mb-4">
                     <div className="flex-shrink-0 text-3xl">⚠️</div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-2">{issue.problem}</h3>
-                      <p className="text-slate-300 text-lg mb-4">{issue.description}</p>
+                      <h3 className="text-2xl font-bold text-ink mb-2">{issue.problem}</h3>
+                      <p className="text-ink-muted text-lg mb-4">{issue.description}</p>
                     </div>
                   </div>
 
                   {issue.image && (
-                    <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-white/10">
+                    <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-[var(--line)]">
                       <div
                         className="w-full h-full bg-cover bg-center"
                         style={{ backgroundImage: `url('${issue.image}')` }}
@@ -273,12 +273,12 @@ export default function PrintReadyFilePreparation() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="rounded-xl border border-[#FF1744]/30 bg-[#FF1744]/10 p-4">
-                      <h4 className="text-lg font-bold text-white mb-2">Why It Fails</h4>
-                      <p className="text-slate-200">{issue.whyItFails}</p>
+                      <h4 className="text-lg font-bold text-ink mb-2">Why It Fails</h4>
+                      <p className="text-ink-muted">{issue.whyItFails}</p>
                     </div>
                     <div className="rounded-xl border border-[#AEDD33]/30 bg-[#AEDD33]/10 p-4">
-                      <h4 className="text-lg font-bold text-white mb-2">The Solution</h4>
-                      <p className="text-slate-200">{issue.solution}</p>
+                      <h4 className="text-lg font-bold text-ink mb-2">The Solution</h4>
+                      <p className="text-ink-muted">{issue.solution}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -288,29 +288,29 @@ export default function PrintReadyFilePreparation() {
 
           {/* Resolution Guide */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Resolution Requirements by Print Size</h2>
-            <p className="text-slate-300 mb-8 text-lg">
+            <h2 className="text-3xl font-bold text-ink mb-6">Resolution Requirements by Print Size</h2>
+            <p className="text-ink-muted mb-8 text-lg">
               The golden rule: <strong className="text-white">300 DPI (dots per inch) at final print size</strong>. 
               This means a 1-meter wide print needs 11,811 pixels wide. Here&apos;s a quick reference:
             </p>
             
-            <div className="rounded-3xl border border-white/10 bg-[#01030B]/95 p-6 overflow-x-auto">
+            <div className="rounded-3xl border border-[var(--line)] bg-surface p-6 overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="pb-4 pr-6 text-sm font-semibold text-slate-300 uppercase">Print Size</th>
-                    <th className="pb-4 pr-6 text-sm font-semibold text-slate-300 uppercase">Min Resolution</th>
-                    <th className="pb-4 pr-6 text-sm font-semibold text-slate-300 uppercase">DPI</th>
-                    <th className="pb-4 text-sm font-semibold text-slate-300 uppercase">Example</th>
+                  <tr className="border-b border-[var(--line)]">
+                    <th className="pb-4 pr-6 text-sm font-semibold text-ink-muted uppercase">Print Size</th>
+                    <th className="pb-4 pr-6 text-sm font-semibold text-ink-muted uppercase">Min Resolution</th>
+                    <th className="pb-4 pr-6 text-sm font-semibold text-ink-muted uppercase">DPI</th>
+                    <th className="pb-4 text-sm font-semibold text-ink-muted uppercase">Example</th>
                   </tr>
                 </thead>
                 <tbody>
                   {resolutionGuide.map((item, index) => (
-                    <tr key={index} className="border-b border-white/5">
-                      <td className="py-4 pr-6 text-white font-medium">{item.printSize}</td>
-                      <td className="py-4 pr-6 text-[#00F5FF] font-mono text-sm">{item.minResolution}</td>
-                      <td className="py-4 pr-6 text-slate-300">{item.dpi}</td>
-                      <td className="py-4 text-slate-400 text-sm">{item.example}</td>
+                    <tr key={index} className="border-b border-[var(--line)]">
+                      <td className="py-4 pr-6 text-ink font-medium">{item.printSize}</td>
+                      <td className="py-4 pr-6 text-accent font-mono text-sm">{item.minResolution}</td>
+                      <td className="py-4 pr-6 text-ink-muted">{item.dpi}</td>
+                      <td className="py-4 text-ink-muted text-sm">{item.example}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -318,11 +318,11 @@ export default function PrintReadyFilePreparation() {
             </div>
 
             <div className="mt-6 rounded-2xl border border-[#FF6B00]/30 bg-[#FF6B00]/10 p-6">
-              <h4 className="text-lg font-bold text-white mb-2">💡 Quick Calculation</h4>
-              <p className="text-slate-200 mb-2">
+              <h4 className="text-lg font-bold text-ink mb-2">💡 Quick Calculation</h4>
+              <p className="text-ink-muted mb-2">
                 <strong>Formula:</strong> Print width (inches) × 300 = Required pixels
               </p>
-              <p className="text-slate-300 text-sm">
+              <p className="text-ink-muted text-sm">
                 Example: 3 meters = 118 inches × 300 = 35,400 pixels wide minimum
               </p>
             </div>
@@ -330,7 +330,7 @@ export default function PrintReadyFilePreparation() {
 
           {/* File Formats Guide */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">File Formats: What to Use (And What to Avoid)</h2>
+            <h2 className="text-3xl font-bold text-ink mb-6">File Formats: What to Use (And What to Avoid)</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {fileFormats.map((format, index) => (
                 <motion.div
@@ -342,19 +342,19 @@ export default function PrintReadyFilePreparation() {
                   className={`rounded-2xl border p-6 ${
                     format.format.includes('❌')
                       ? 'border-[#FF1744]/30 bg-[#FF1744]/10'
-                      : 'border-white/10 bg-white/5'
+                      : 'border-[var(--line)] bg-surface'
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-3xl">{format.icon}</span>
                     <h3 className="text-xl font-bold text-white">{format.format}</h3>
                   </div>
-                  <p className="text-slate-300 mb-4"><strong>Best for:</strong> {format.bestFor}</p>
+                  <p className="text-ink-muted mb-4"><strong>Best for:</strong> {format.bestFor}</p>
                   
                   {format.pros.length > 0 && (
                     <div className="mb-4">
-                      <p className="text-sm font-semibold text-[#00F5FF] mb-2">✅ Pros:</p>
-                      <ul className="space-y-1 text-sm text-slate-300">
+                      <p className="text-sm font-semibold text-accent mb-2">✅ Pros:</p>
+                      <ul className="space-y-1 text-sm text-ink-muted">
                         {format.pros.map((pro, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
@@ -368,7 +368,7 @@ export default function PrintReadyFilePreparation() {
                   {format.cons.length > 0 && (
                     <div className="mb-4">
                       <p className="text-sm font-semibold text-[#FF1744] mb-2">❌ Cons:</p>
-                      <ul className="space-y-1 text-sm text-slate-300">
+                      <ul className="space-y-1 text-sm text-ink-muted">
                         {format.cons.map((con, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF1744] flex-shrink-0" />
@@ -379,7 +379,7 @@ export default function PrintReadyFilePreparation() {
                     </div>
                   )}
 
-                  <p className="text-sm text-slate-400"><strong>When to use:</strong> {format.whenToUse}</p>
+                  <p className="text-sm text-ink-muted"><strong>When to use:</strong> {format.whenToUse}</p>
                 </motion.div>
               ))}
             </div>
@@ -387,8 +387,8 @@ export default function PrintReadyFilePreparation() {
 
           {/* Lead Times Breakdown */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Understanding Lead Times: Why Printing Takes Time</h2>
-            <p className="text-slate-300 mb-8 text-lg">
+            <h2 className="text-3xl font-bold text-ink mb-6">Understanding Lead Times: Why Printing Takes Time</h2>
+            <p className="text-ink-muted mb-8 text-lg">
               &quot;Can you print this today?&quot; We hear this daily. Here&apos;s why professional printing takes time—and why 
               rushing leads to mistakes and poor quality.
             </p>
@@ -401,10 +401,10 @@ export default function PrintReadyFilePreparation() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="rounded-3xl border border-white/10 bg-[#01030B]/95 p-6 sm:p-8"
+                  className="rounded-3xl border border-[var(--line)] bg-surface p-6 sm:p-8"
                 >
                   <div className="flex gap-6 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] flex items-center justify-center text-xl font-bold">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-md bg-accent flex items-center justify-center text-xl font-bold">
                       {String(index + 1).padStart(2, '0')}
                     </div>
                     <div className="flex-1">
@@ -414,13 +414,13 @@ export default function PrintReadyFilePreparation() {
                           {stage.duration}
                         </span>
                       </div>
-                      <p className="text-slate-400 text-sm mb-4">{stage.whyItTakesTime}</p>
+                      <p className="text-ink-muted text-sm mb-4">{stage.whyItTakesTime}</p>
                     </div>
                   </div>
 
                   <ul className="space-y-2 ml-18">
                     {stage.whatHappens.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-slate-200">
+                      <li key={i} className="flex items-start gap-3 text-ink-muted">
                         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{item}</span>
                       </li>
@@ -431,13 +431,13 @@ export default function PrintReadyFilePreparation() {
             </div>
 
             <div className="mt-8 rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-6">
-              <h4 className="text-xl font-bold text-white mb-3">📊 Typical Timeline Example</h4>
-              <div className="space-y-2 text-slate-200">
+              <h4 className="text-xl font-bold text-ink mb-3">📊 Typical Timeline Example</h4>
+              <div className="space-y-2 text-ink-muted">
                 <p><strong>Rush Job (if possible):</strong> 3-5 days total</p>
                 <p><strong>Standard Job:</strong> 5-10 days total</p>
                 <p><strong>Complex/Large Job:</strong> 10-15 days total</p>
               </div>
-              <p className="mt-4 text-slate-300 text-sm">
+              <p className="mt-4 text-ink-muted text-sm">
                 <strong>Note:</strong> These timelines assume correct files from the start. File corrections add 1-3 days.
               </p>
             </div>
@@ -445,7 +445,7 @@ export default function PrintReadyFilePreparation() {
 
           {/* Quick Checklist */}
           <div className="mb-16 rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8">
-            <h2 className="text-3xl font-bold text-white mb-6">✅ Print-Ready Checklist</h2>
+            <h2 className="text-3xl font-bold text-ink mb-6">✅ Print-Ready Checklist</h2>
             <div className="grid sm:grid-cols-2 gap-4">
               {[
                 '300 DPI at final print size',
@@ -457,7 +457,7 @@ export default function PrintReadyFilePreparation() {
                 'Images embedded, not linked',
                 'No low-res images stretched',
               ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3 text-slate-200">
+                <div key={index} className="flex items-center gap-3 text-ink-muted">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] flex items-center justify-center text-sm">
                     ✓
                   </span>
@@ -469,23 +469,23 @@ export default function PrintReadyFilePreparation() {
 
           {/* CTA Section */}
           <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 md:p-12 text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4">
               Still Not Sure? We&apos;re Here to Help
             </h3>
-            <p className="text-slate-300 mb-6 max-w-2xl mx-auto text-lg">
+            <p className="text-ink-muted mb-6 max-w-2xl mx-auto text-lg">
               If you&apos;re unsure about your files, send them to us for a free review. We&apos;ll check resolution, 
               format, and provide recommendations—no obligation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-ink-inverse "
               >
                 Get Free File Review
               </Link>
               <Link
                 href="/resources/print-ready-checklist"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-base font-semibold text-white hover:border-white/60 transition-all"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--line)] px-8 py-4 text-base font-semibold text-ink hover:border-white/60 transition-all"
               >
                 Download Checklist
               </Link>
@@ -493,16 +493,16 @@ export default function PrintReadyFilePreparation() {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-[var(--line)]">
             <Link
               href="/tutorials"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               ← Back to All Tutorials
             </Link>
             <Link
               href="/tutorials/vinyl-vehicle-application"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               Next: Vehicle Wrapping Guide →
             </Link>

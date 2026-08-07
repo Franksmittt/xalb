@@ -166,7 +166,7 @@ const commonMistakes = [
 
 export default function VinylApplicationTutorial() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+    <main className="page-shell">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
@@ -176,31 +176,31 @@ export default function VinylApplicationTutorial() {
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-slate-400">
-            <Link href="/tutorials" className="hover:text-[#00F5FF] transition-colors">
+          <nav className="mb-8 text-sm text-ink-muted">
+            <Link href="/tutorials" className="hover:text-accent transition-colors">
               Tutorials
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-slate-300">Vinyl Vehicle Application</span>
+            <span className="text-ink-muted">Vinyl Vehicle Application</span>
           </nav>
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#00F5FF] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-accent mb-4">
               Vehicle Wrapping
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               How to Apply Vinyl to Vehicles: Professional Guide
             </h1>
-            <p className="text-xl text-slate-300 mb-6">
+            <p className="text-xl text-ink-muted mb-6">
               Master the art of vehicle wrapping with our comprehensive guide. Learn why quality vinyl matters, 
               proper application techniques, and avoid costly mistakes that lead to premature failure.
             </p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 ⏱️ 15 min read
               </span>
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 🎯 Intermediate
               </span>
             </div>
@@ -211,8 +211,8 @@ export default function VinylApplicationTutorial() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 text-3xl">⚠️</div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Why This Guide Matters</h3>
-                <p className="text-slate-200">
+                <h3 className="text-xl font-bold text-ink mb-2">Why This Guide Matters</h3>
+                <p className="text-ink-muted">
                   We see it every week: customers who tried to save money with cheap vinyl, only to watch it peel, 
                   bubble, and fail within days or weeks. This guide teaches you not just <em>how</em> to apply vinyl, 
                   but <strong>why</strong> using quality materials and proper techniques saves money in the long run.
@@ -231,23 +231,23 @@ export default function VinylApplicationTutorial() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="mb-12"
             >
-              <h2 className="text-3xl font-bold text-white mb-6">{section.title}</h2>
+              <h2 className="text-3xl font-bold text-ink mb-6">{section.title}</h2>
               {section.content.map((item, itemIndex) => (
                 <div key={itemIndex} className="mb-6">
                   {item.type === 'paragraph' && (
-                    <p className="text-slate-200 text-lg leading-relaxed">{item.text}</p>
+                    <p className="text-ink-muted text-lg leading-relaxed">{item.text}</p>
                   )}
                   {item.type === 'warning' && (
                     <div className="rounded-2xl border border-[#FF1744]/30 bg-[#FF1744]/10 p-6 my-6">
-                      <p className="text-slate-200">{item.text}</p>
+                      <p className="text-ink-muted">{item.text}</p>
                     </div>
                   )}
                   {item.type === 'comparison' && 'title' in item && 'points' in item && item.points && (
-                    <div className={`rounded-2xl border p-6 mb-4 ${item.highlight ? 'border-[#AEDD33]/30 bg-[#AEDD33]/10' : 'border-white/10 bg-white/5'}`}>
-                      <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
+                    <div className={`rounded-2xl border p-6 mb-4 ${item.highlight ? 'border-[#AEDD33]/30 bg-[#AEDD33]/10' : 'border-[var(--line)] bg-surface'}`}>
+                      <h3 className="text-xl font-bold text-ink mb-4">{item.title}</h3>
                       <ul className="space-y-2">
                         {item.points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-start gap-3 text-slate-200">
+                          <li key={pointIndex} className="flex items-start gap-3 text-ink-muted">
                             <span className={`mt-1.5 h-1.5 w-1.5 rounded-full flex-shrink-0 ${item.highlight ? 'bg-[#AEDD33]' : 'bg-slate-400'}`} />
                             <span>{point}</span>
                           </li>
@@ -258,7 +258,7 @@ export default function VinylApplicationTutorial() {
                   {item.type === 'list' && 'items' in item && item.items && (
                     <ul className="space-y-2 ml-6">
                       {item.items.map((listItem, listIndex) => (
-                        <li key={listIndex} className="text-slate-200 flex items-start gap-3">
+                        <li key={listIndex} className="text-ink-muted flex items-start gap-3">
                           <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#FF6B00] flex-shrink-0" />
                           <span>{listItem}</span>
                         </li>
@@ -272,7 +272,7 @@ export default function VinylApplicationTutorial() {
 
           {/* Step-by-Step Guide */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-8">Step-by-Step Application Guide</h2>
+            <h2 className="text-3xl font-bold text-ink mb-8">Step-by-Step Application Guide</h2>
             <div className="space-y-8">
               {steps.map((step, index) => (
                 <motion.div
@@ -281,20 +281,20 @@ export default function VinylApplicationTutorial() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="rounded-3xl border border-white/10 bg-[#01030B]/95 p-6 sm:p-8"
+                  className="rounded-3xl border border-[var(--line)] bg-surface p-6 sm:p-8"
                 >
                   <div className="flex gap-6 mb-6">
-                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] flex items-center justify-center text-2xl font-bold">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-md bg-accent flex items-center justify-center text-2xl font-bold">
                       {step.number}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
-                      <p className="text-slate-300 text-lg">{step.description}</p>
+                      <h3 className="text-2xl font-bold text-ink mb-2">{step.title}</h3>
+                      <p className="text-ink-muted text-lg">{step.description}</p>
                     </div>
                   </div>
                   
                   {step.image && (
-                    <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-white/10">
+                    <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-[var(--line)]">
                       <div
                         className="w-full h-full bg-cover bg-center"
                         style={{ backgroundImage: `url('${step.image}')` }}
@@ -304,7 +304,7 @@ export default function VinylApplicationTutorial() {
 
                   <ul className="space-y-3 mb-4">
                     {step.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-3 text-slate-200">
+                      <li key={detailIndex} className="flex items-start gap-3 text-ink-muted">
                         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{detail}</span>
                       </li>
@@ -313,13 +313,13 @@ export default function VinylApplicationTutorial() {
 
                   {step.warning && (
                     <div className="rounded-xl border border-[#FF1744]/30 bg-[#FF1744]/10 p-4 mt-4">
-                      <p className="text-slate-200 font-semibold">⚠️ {step.warning}</p>
+                      <p className="text-ink-muted font-semibold">⚠️ {step.warning}</p>
                     </div>
                   )}
 
                   {step.tip && (
                     <div className="rounded-xl border border-[#AEDD33]/30 bg-[#AEDD33]/10 p-4 mt-4">
-                      <p className="text-slate-200"><strong>💡 Pro Tip:</strong> {step.tip}</p>
+                      <p className="text-ink-muted"><strong>💡 Pro Tip:</strong> {step.tip}</p>
                     </div>
                   )}
                 </motion.div>
@@ -329,7 +329,7 @@ export default function VinylApplicationTutorial() {
 
           {/* Common Mistakes */}
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-8">Common Mistakes That Lead to Failure</h2>
+            <h2 className="text-3xl font-bold text-ink mb-8">Common Mistakes That Lead to Failure</h2>
             <div className="space-y-4">
               {commonMistakes.map((mistake, index) => (
                 <motion.div
@@ -338,14 +338,14 @@ export default function VinylApplicationTutorial() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                  className="rounded-2xl border border-[var(--line)] bg-surface p-6"
                 >
                   <div className="flex gap-4">
                     <div className="flex-shrink-0 text-2xl">❌</div>
                     <div className="flex-1">
-                      <h4 className="text-lg font-bold text-white mb-2">{mistake.mistake}</h4>
-                      <p className="text-slate-300 mb-2"><strong>Consequence:</strong> {mistake.consequence}</p>
-                      <p className="text-[#00F5FF]"><strong>Solution:</strong> {mistake.solution}</p>
+                      <h4 className="text-lg font-bold text-ink mb-2">{mistake.mistake}</h4>
+                      <p className="text-ink-muted mb-2"><strong>Consequence:</strong> {mistake.consequence}</p>
+                      <p className="text-accent"><strong>Solution:</strong> {mistake.solution}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -355,26 +355,26 @@ export default function VinylApplicationTutorial() {
 
           {/* Professional Services CTA */}
           <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 md:p-12 text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4">
               Why Professional Installation Matters
             </h3>
-            <p className="text-slate-300 mb-6 max-w-2xl mx-auto text-lg">
+            <p className="text-ink-muted mb-6 max-w-2xl mx-auto text-lg">
               While this guide teaches you the fundamentals, professional installation ensures:
             </p>
             <ul className="grid sm:grid-cols-2 gap-4 mb-8 text-left max-w-3xl mx-auto">
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Premium cast vinyl with 5-7 year warranty</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Certified installers with years of experience</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Climate-controlled installation facility</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Post-installation warranty and support</span>
               </li>
@@ -382,13 +382,13 @@ export default function VinylApplicationTutorial() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-ink-inverse "
               >
                 Get a Professional Quote
               </Link>
               <Link
                 href="/solutions/fleet-branding"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-base font-semibold text-white hover:border-white/60 transition-all"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--line)] px-8 py-4 text-base font-semibold text-ink hover:border-white/60 transition-all"
               >
                 View Fleet Branding Services
               </Link>
@@ -396,16 +396,16 @@ export default function VinylApplicationTutorial() {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-[var(--line)]">
             <Link
               href="/tutorials"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               ← Back to All Tutorials
             </Link>
             <Link
               href="/tutorials/vinyl-types"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               Next: Choosing the Right Vinyl →
             </Link>

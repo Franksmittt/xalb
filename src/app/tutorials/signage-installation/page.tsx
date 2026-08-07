@@ -156,7 +156,7 @@ const surfaceTypes = [
 
 export default function SignageInstallationTutorial() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+    <main className="page-shell">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
@@ -166,31 +166,31 @@ export default function SignageInstallationTutorial() {
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-slate-400">
-            <Link href="/tutorials" className="hover:text-[#00F5FF] transition-colors">
+          <nav className="mb-8 text-sm text-ink-muted">
+            <Link href="/tutorials" className="hover:text-accent transition-colors">
               Tutorials
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-slate-300">Signage Installation</span>
+            <span className="text-ink-muted">Signage Installation</span>
           </nav>
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#00F5FF] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-accent mb-4">
               Installation
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Signage Installation Best Practices
             </h1>
-            <p className="text-xl text-slate-300 mb-6">
+            <p className="text-xl text-ink-muted mb-6">
               Professional techniques for installing outdoor signage, including surface preparation, 
               adhesive application, and weatherproofing. Learn why proper installation matters.
             </p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 ⏱️ 12 min read
               </span>
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 🎯 Advanced
               </span>
             </div>
@@ -201,8 +201,8 @@ export default function SignageInstallationTutorial() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 text-3xl">⚠️</div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">Why Professional Installation Matters</h3>
-                <p className="text-slate-200">
+                <h3 className="text-xl font-bold text-ink mb-2">Why Professional Installation Matters</h3>
+                <p className="text-ink-muted">
                   We&apos;ve seen it countless times: beautiful signage that fails within weeks because of improper installation. 
                   Wrong adhesive, poor surface prep, or skipped weatherproofing all lead to costly failures. This guide shows 
                   you what professional installation involves—and why it&apos;s worth hiring experts.
@@ -213,7 +213,7 @@ export default function SignageInstallationTutorial() {
 
           {/* Installation Steps */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">6-Step Professional Installation Process</h2>
+            <h2 className="text-3xl font-bold text-ink mb-8">6-Step Professional Installation Process</h2>
             <div className="space-y-8">
               {installationSteps.map((step, index) => (
                 <motion.div
@@ -222,20 +222,20 @@ export default function SignageInstallationTutorial() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="rounded-3xl border border-white/10 bg-[#01030B]/95 p-6 sm:p-8"
+                  className="rounded-3xl border border-[var(--line)] bg-surface p-6 sm:p-8"
                 >
                   <div className="flex gap-6 mb-6">
-                    <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-r from-[#AEDD33] to-[#1E8F40] flex items-center justify-center text-2xl font-bold">
+                    <div className="flex-shrink-0 w-16 h-16 rounded-md bg-accent flex items-center justify-center text-2xl font-bold">
                       {step.number}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
-                      <p className="text-slate-300 text-lg">{step.description}</p>
+                      <h3 className="text-2xl font-bold text-ink mb-2">{step.title}</h3>
+                      <p className="text-ink-muted text-lg">{step.description}</p>
                     </div>
                   </div>
                   
                   {step.image && (
-                    <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-white/10">
+                    <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-[var(--line)]">
                       <div
                         className="w-full h-full bg-cover bg-center"
                         style={{ backgroundImage: `url('${step.image}')` }}
@@ -245,7 +245,7 @@ export default function SignageInstallationTutorial() {
 
                   <ul className="space-y-3 mb-4">
                     {step.details.map((detail, detailIndex) => (
-                      <li key={detailIndex} className="flex items-start gap-3 text-slate-200">
+                      <li key={detailIndex} className="flex items-start gap-3 text-ink-muted">
                         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{detail}</span>
                       </li>
@@ -254,13 +254,13 @@ export default function SignageInstallationTutorial() {
 
                   {step.warning && (
                     <div className="rounded-xl border border-[#FF1744]/30 bg-[#FF1744]/10 p-4 mt-4">
-                      <p className="text-slate-200 font-semibold">⚠️ {step.warning}</p>
+                      <p className="text-ink-muted font-semibold">⚠️ {step.warning}</p>
                     </div>
                   )}
 
                   {step.tip && (
                     <div className="rounded-xl border border-[#AEDD33]/30 bg-[#AEDD33]/10 p-4 mt-4">
-                      <p className="text-slate-200"><strong>💡 Pro Tip:</strong> {step.tip}</p>
+                      <p className="text-ink-muted"><strong>💡 Pro Tip:</strong> {step.tip}</p>
                     </div>
                   )}
                 </motion.div>
@@ -270,8 +270,8 @@ export default function SignageInstallationTutorial() {
 
           {/* Surface Types Guide */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Surface-Specific Installation Guide</h2>
-            <p className="text-slate-300 mb-8 text-lg">
+            <h2 className="text-3xl font-bold text-ink mb-6">Surface-Specific Installation Guide</h2>
+            <p className="text-ink-muted mb-8 text-lg">
               Different surfaces require different approaches. Here&apos;s what you need to know for common installation surfaces:
             </p>
             
@@ -283,22 +283,22 @@ export default function SignageInstallationTutorial() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                  className="rounded-2xl border border-[var(--line)] bg-surface p-6"
                 >
-                  <h3 className="text-xl font-bold text-white mb-4">{surface.surface}</h3>
+                  <h3 className="text-xl font-bold text-ink mb-4">{surface.surface}</h3>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm font-semibold text-[#00F5FF] mb-2">Preparation:</p>
-                      <p className="text-slate-300 text-sm">{surface.preparation}</p>
+                      <p className="text-sm font-semibold text-accent mb-2">Preparation:</p>
+                      <p className="text-ink-muted text-sm">{surface.preparation}</p>
                     </div>
                     <div>
                       <p className="text-sm font-semibold text-[#FF6B00] mb-2">Recommended Adhesive:</p>
-                      <p className="text-slate-300 text-sm">{surface.adhesive}</p>
+                      <p className="text-ink-muted text-sm">{surface.adhesive}</p>
                     </div>
                   </div>
                   {surface.special && (
                     <div className="mt-4 rounded-lg border border-[#67E8F9]/30 bg-[#67E8F9]/10 p-3">
-                      <p className="text-sm text-slate-200"><strong>Special Consideration:</strong> {surface.special}</p>
+                      <p className="text-sm text-ink-muted"><strong>Special Consideration:</strong> {surface.special}</p>
                     </div>
                   )}
                 </motion.div>
@@ -308,7 +308,7 @@ export default function SignageInstallationTutorial() {
 
           {/* Common Mistakes */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">Common Installation Mistakes That Lead to Failure</h2>
+            <h2 className="text-3xl font-bold text-ink mb-8">Common Installation Mistakes That Lead to Failure</h2>
             <div className="space-y-4">
               {commonMistakes.map((mistake, index) => (
                 <motion.div
@@ -317,14 +317,14 @@ export default function SignageInstallationTutorial() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                  className="rounded-2xl border border-[var(--line)] bg-surface p-6"
                 >
                   <div className="flex gap-4">
                     <div className="flex-shrink-0 text-2xl">❌</div>
                     <div className="flex-1">
-                      <h4 className="text-lg font-bold text-white mb-2">{mistake.mistake}</h4>
-                      <p className="text-slate-300 mb-2"><strong>Consequence:</strong> {mistake.consequence}</p>
-                      <p className="text-[#00F5FF]"><strong>Solution:</strong> {mistake.solution}</p>
+                      <h4 className="text-lg font-bold text-ink mb-2">{mistake.mistake}</h4>
+                      <p className="text-ink-muted mb-2"><strong>Consequence:</strong> {mistake.consequence}</p>
+                      <p className="text-accent"><strong>Solution:</strong> {mistake.solution}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -334,8 +334,8 @@ export default function SignageInstallationTutorial() {
 
           {/* Safety Considerations */}
           <div className="mb-16 rounded-3xl border border-[#FF1744]/30 bg-gradient-to-br from-[#FF1744]/10 to-[#FF6B00]/10 p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">⚠️ Safety Considerations</h2>
-            <ul className="space-y-3 text-slate-200">
+            <h2 className="text-2xl font-bold text-ink mb-4">⚠️ Safety Considerations</h2>
+            <ul className="space-y-3 text-ink-muted">
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#FF1744] flex-shrink-0" />
                 <span><strong>Working at Height:</strong> Requires proper safety equipment, certification, and insurance. Never attempt elevated installations without proper training.</span>
@@ -357,27 +357,27 @@ export default function SignageInstallationTutorial() {
 
           {/* Professional Services CTA */}
           <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 md:p-12 text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4">
               Why Professional Installation is Worth It
             </h3>
-            <p className="text-slate-300 mb-6 max-w-2xl mx-auto text-lg">
+            <p className="text-ink-muted mb-6 max-w-2xl mx-auto text-lg">
               Professional installers bring certified expertise, proper equipment, insurance coverage, and warranty protection. 
               A failed installation costs more than professional installation—and risks damage to your building.
             </p>
             <ul className="grid sm:grid-cols-2 gap-4 mb-8 text-left max-w-3xl mx-auto">
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Certified installers with proper training</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Professional equipment and tools</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Insurance and liability coverage</span>
               </li>
-              <li className="flex items-start gap-3 text-slate-200">
+              <li className="flex items-start gap-3 text-ink-muted">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                 <span>Installation warranty and support</span>
               </li>
@@ -385,13 +385,13 @@ export default function SignageInstallationTutorial() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-ink-inverse "
               >
                 Get Professional Installation Quote
               </Link>
               <Link
                 href="/solutions/installation"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-base font-semibold text-white hover:border-white/60 transition-all"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--line)] px-8 py-4 text-base font-semibold text-ink hover:border-white/60 transition-all"
               >
                 View Installation Services
               </Link>
@@ -399,16 +399,16 @@ export default function SignageInstallationTutorial() {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-[var(--line)]">
             <Link
               href="/tutorials"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               ← Back to All Tutorials
             </Link>
             <Link
               href="/tutorials/vinyl-types"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               Next: Choosing the Right Vinyl →
             </Link>

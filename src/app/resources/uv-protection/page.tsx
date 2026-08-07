@@ -71,7 +71,7 @@ export default function UVProtectionPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+    <main className="page-shell">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
@@ -81,17 +81,17 @@ export default function UVProtectionPage() {
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <Link href="/resources" className="inline-flex items-center text-sm text-[#AEDD33] hover:text-[#00F5FF] mb-6 transition-colors">
+            <Link href="/resources" className="inline-flex items-center text-sm text-accent hover:text-accent mb-6 transition-colors">
               ← Back to Resources
             </Link>
-            <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33] mb-4">Production Guide</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-accent mb-4">Production Guide</p>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               <span className="block text-white">UV Protection Ratings</span>
-              <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
+              <span className="block text-accent">
                 Material Durability & Fade Resistance
               </span>
             </h1>
-            <p className="text-lg text-slate-300 max-w-3xl">
+            <p className="text-lg text-ink-muted max-w-3xl">
               Material durability charts and fade-resistance data for long-term outdoor signage performance in South African conditions.
             </p>
           </div>
@@ -100,35 +100,35 @@ export default function UVProtectionPage() {
             {materials.map((material) => (
               <div
                 key={material.name}
-                className="rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl p-8"
+                className="rounded-3xl border border-[var(--line)] bg-surface backdrop-blur-xl p-8"
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                   <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-white mb-2">{material.name}</h2>
-                    <p className="text-slate-300 mb-4">{material.description}</p>
+                    <h2 className="text-2xl font-bold text-ink mb-2">{material.name}</h2>
+                    <p className="text-ink-muted mb-4">{material.description}</p>
                   </div>
                   <div className="flex flex-col gap-2">
                     <span className={`inline-block px-3 py-1 text-sm font-semibold rounded-full ${
-                      material.rating === 'Excellent' ? 'bg-[#AEDD33]/10 text-[#00F5FF]' :
+                      material.rating === 'Excellent' ? 'bg-[#AEDD33]/10 text-accent' :
                       material.rating === 'Good' ? 'bg-[#FF6B00]/10 text-[#FF6B00]' :
                       'bg-[#FF1744]/10 text-[#FF1744]'
                     }`}>
                       {material.rating}
                     </span>
-                    <span className="text-xs text-slate-400 text-center">{material.fadeResistance} fade resistance</span>
+                    <span className="text-xs text-ink-muted text-center">{material.fadeResistance} fade resistance</span>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-sm font-semibold text-slate-400 mb-3 uppercase tracking-wide">Lifespan</h3>
+                    <h3 className="text-sm font-semibold text-ink-muted mb-3 uppercase tracking-wide">Lifespan</h3>
                     <p className="text-2xl font-bold text-white">{material.lifespan}</p>
-                    <p className="text-sm text-slate-400 mt-1">Typical outdoor lifespan in SA conditions</p>
+                    <p className="text-sm text-ink-muted mt-1">Typical outdoor lifespan in SA conditions</p>
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-slate-400 mb-3 uppercase tracking-wide">Best For</h3>
+                    <h3 className="text-sm font-semibold text-ink-muted mb-3 uppercase tracking-wide">Best For</h3>
                     <ul className="space-y-2">
                       {material.bestFor.map((use) => (
-                        <li key={use} className="flex items-start gap-2 text-slate-300">
+                        <li key={use} className="flex items-start gap-2 text-ink-muted">
                           <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33]" />
                           <span>{use}</span>
                         </li>
@@ -140,26 +140,26 @@ export default function UVProtectionPage() {
             ))}
           </div>
 
-          <div className="rounded-3xl border border-white/10 bg-[#01030B]/95 backdrop-blur-xl p-8 mb-12">
-            <h2 className="text-xl font-bold text-white mb-6">Factors Affecting UV Performance</h2>
+          <div className="rounded-3xl border border-[var(--line)] bg-surface backdrop-blur-xl p-8 mb-12">
+            <h2 className="text-xl font-bold text-ink mb-6">Factors Affecting UV Performance</h2>
             <ul className="grid md:grid-cols-2 gap-3">
               {factors.map((factor, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#FF1744] flex-shrink-0" />
-                  <span className="text-slate-300">{factor}</span>
+                  <span className="text-ink-muted">{factor}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/5 to-[#1E8F40]/5 p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Need Material Recommendations?</h3>
-            <p className="text-slate-300 mb-6">
+            <h3 className="text-2xl font-bold text-ink mb-3">Need Material Recommendations?</h3>
+            <p className="text-ink-muted mb-6">
               Our production team can help you select materials with the right UV protection for your specific application and location.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
+              className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-ink-inverse "
             >
               Consult Our Team
             </Link>
