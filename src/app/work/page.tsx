@@ -7,7 +7,7 @@ export default function WorkPage() {
       client: 'Commercial rollout',
       category: 'CNC & Laser',
       description:
-        'Layered acrylic and timber signage systems for multi-site brand environments — cut, finished, and installed as a set.',
+        'Layered MDF and plexiglass signage systems for multi-site brand environments — cut, finished, and installed as a set.',
       image: '/images/fabrication-lab.png',
       href: '/solutions/fabrication',
       metrics: ['Multi-site', 'CNC + laser', 'Install-ready kits'],
@@ -30,7 +30,7 @@ export default function WorkPage() {
         'Custom routed fixtures and dimensional letters for store refreshes that need more presence than flat print.',
       image: '/images/fabrication-lab.png',
       href: '/solutions/fabrication',
-      metrics: ['Acrylic & timber', 'Repeatable parts', 'Fast refresh'],
+      metrics: ['MDF & plexi', 'Repeatable parts', 'Fast refresh'],
     },
     {
       title: 'Fleet branding programme',

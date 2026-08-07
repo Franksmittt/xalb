@@ -20,7 +20,7 @@ const pillars = [
       'Large-format UV print farms, CNC routing, and precision laser bays handle everything from 3.2m signage to intricate POS components.',
     bullets: [
       'Large format printing, signage, retail + POS suites',
-      'Laser cutting across acrylic, metals, textiles, composites',
+      'Laser & CNC across MDF, plexi, Rowmark, and ABS',
       'Real-time dashboards for events, exhibitions, safety systems',
     ],
     accent: '#4CAF50',

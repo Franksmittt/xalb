@@ -17,12 +17,12 @@ const serviceGroups = [
   {
     title: 'Precision Fabrication & Laser Cutting',
     description:
-      'State-of-the-art laser bays and fabrication decks that process acrylics, metals, composites, textiles, and more.',
+      'Laser engraving on a 1200 × 900 mm bed and CNC routing on 3 m × 2 m — MDF, plexiglass, Rowmark, and ABS.',
     services: [
-      'Laser cutting for graphics, signage, and labels',
-      'CNC routing + finishing for custom fixtures',
-      'Material processing: plastic, wood, metal, textiles, card stock',
-      'Bespoke fabrication for industrial + retail prototypes',
+      'Laser cut & engrave for novelty, gifts, signs, and labels',
+      'CNC routing + finishing for dimensional logos and fixtures',
+      'Materials: MDF, plexiglass, Rowmark, ABS — wood and plastic',
+      'From sketch to finished piece for makers and commercial clients',
     ],
     image: '/images/fabrication-lab.png',
     href: '/solutions/fabrication',

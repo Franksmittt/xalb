@@ -19,9 +19,9 @@ export const serviceCatalog: ServiceEntry[] = [
   {
     slug: "fabrication",
     title: "CNC & Laser Engraving",
-    tagline: "Dimensional signage, engraved detail, and fabricated pieces that turn brand ideas into physical objects.",
+    tagline: "Turn ideas into objects — novelty, gifts, signs, and brand pieces in MDF, plexi, Rowmark, and ABS.",
     summary:
-      "Our core craft: CNC routing and laser engraving for signs, novelty builds, awards, retail fixtures, and branded environments. Built for commercial volumes — not steel fabrication, and not a copy centre.",
+      "Our core craft: laser engraving/cutting on a 1200 × 900 mm bed and CNC routing on a 3 m × 2 m bed. Wood and plastic for dimensional signage, gifts, prototypes, and branded environments — not steel fabrication, and not a copy centre.",
     heroImage: "/images/fabrication-lab.png",
     gallery: [
       "/images/fabrication-lab.png",
@@ -30,18 +30,18 @@ export const serviceCatalog: ServiceEntry[] = [
       "/images/hero-print.png",
     ],
     leadTime: "5–7 days average",
-    capacity: "Laser bays + CNC routing",
+    capacity: "Laser 1200×900 · CNC 3×2 m",
     qa: "Batch consistency checks on every run",
     bullets: [
-      "Laser cutting & engraving for signage, plaques, and campaign pieces",
-      "CNC routing for dimensional letters, logos, and fixtures",
-      "Acrylic, timber, MDF, laminates, aluminium sheet, and board",
-      "Finish, assemble, and kit for rollout across multiple sites",
+      "Laser cut & engrave up to 1200 × 900 mm",
+      "CNC route dimensional work up to 3 m × 2 m",
+      "MDF, plexiglass, Rowmark, and ABS — wood and plastic",
+      "Novelty, gifts, corporate pieces, signs, and maker prototypes",
     ],
     highlights: [
-      { label: "Focus", value: "Signs & novelty" },
-      { label: "Formats", value: "Up to 2.5 × 1.3 m" },
-      { label: "Clients", value: "Commercial scale" },
+      { label: "Laser bed", value: "1200 × 900 mm" },
+      { label: "CNC bed", value: "3 m × 2 m" },
+      { label: "Materials", value: "MDF · Plexi · Rowmark · ABS" },
     ],
     deliverables: [
       "Cut-ready files & proofs",
@@ -49,12 +49,12 @@ export const serviceCatalog: ServiceEntry[] = [
       "Install-ready packaging on request",
     ],
     specialties: [
-      "Bringing sketches and brand files into cut-ready CAD",
-      "Repeatable engraving for awards, gifts, and campaign runs",
+      "Bringing sketches and wild ideas into cut-ready paths",
+      "Repeatable engraving for gifts, awards, and campaign runs",
       "In-house finishing so edges, paint, and assembly stay consistent",
     ],
     valueAdds: [
-      "Material advice for indoor/outdoor signage",
+      "Material advice — which plastic or board fits the brief",
       "Prototypes before large commercial orders",
       "Optional Gauteng installation with the same team",
     ],
