@@ -21,12 +21,13 @@ export default function AnimatedButton({
   className = '',
   size = 'md',
 }: AnimatedButtonProps) {
-  const baseStyles = 'relative inline-flex items-center justify-center font-medium rounded-lg overflow-hidden transition-all duration-300';
-  
+  const baseStyles =
+    'relative inline-flex items-center justify-center font-semibold rounded-md transition-colors duration-200';
+
   const variantStyles = {
-    primary: 'text-white bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40]',
-    secondary: 'text-white bg-gradient-to-r from-[#06B6D4] to-[#0891B2]',
-    outline: 'text-[#AEDD33] border-2 border-[#AEDD33] hover:bg-[#AEDD33] hover:text-[#010308]',
+    primary: 'text-ink-inverse bg-accent hover:bg-[#255a30]',
+    secondary: 'text-ink bg-accent-soft hover:bg-[#cfdcbf]',
+    outline: 'text-ink-inverse border border-white/70 hover:bg-white/10',
   };
 
   const sizeStyles = {
@@ -37,33 +38,16 @@ export default function AnimatedButton({
 
   const buttonContent = (
     <motion.button
-      whileHover={{ 
-        scale: 1.05,
-        boxShadow: '0 10px 30px rgba(174, 221, 51, 0.4)',
-      }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ y: -1 }}
+      whileTap={{ scale: 0.98 }}
       onClick={onClick}
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
     >
-      <motion.span
-        className="absolute inset-0 bg-white/20"
-        initial={{ x: '-100%' }}
-        whileHover={{ x: 0 }}
-        transition={{ duration: 0.4 }}
-      />
       <span className="relative z-10 flex items-center gap-2">
         {children}
-        <motion.svg
-          className="w-5 h-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          initial={{ x: 0 }}
-          whileHover={{ x: 5 }}
-          transition={{ duration: 0.2 }}
-        >
+        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </motion.svg>
+        </svg>
       </span>
     </motion.button>
   );
@@ -78,4 +62,3 @@ export default function AnimatedButton({
 
   return buttonContent;
 }
-

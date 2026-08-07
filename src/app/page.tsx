@@ -1,24 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedButton from '@/components/AnimatedButton';
-import AnimatedCard from '@/components/AnimatedCard';
-import ServiceSlider from '@/components/ServiceSlider';
-import IntegratedPillars from '@/components/IntegratedPillars';
-import ServicesMatrix from '@/components/ServicesMatrix';
-import ShowcaseReel from '@/components/ShowcaseReel';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://xsphere.co.za';
 
-// Structured data for Organization
 const organizationStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Xsphere Marketing and Design',
   url: baseUrl,
   logo: `${baseUrl}/images/logo.png`,
-  description: 'Integrated Design, Production, and Installation Services. 17 years of expertise in large format printing, laser cutting, vehicle branding, and signage installation across Gauteng.',
+  description:
+    'CNC routing and laser engraving for dimensional signage, branded environments, and campaign pieces across Gauteng.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '99 Second Avenue, Florentia',
@@ -34,422 +30,292 @@ const organizationStructuredData = {
     email: 'info@xsphere.co.za',
     areaServed: 'ZA',
     availableLanguage: ['en'],
-    hoursAvailable: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '08:00',
-      closes: '17:00',
-      timeZone: 'Africa/Johannesburg',
-    },
-  },
-  sameAs: [
-    // Add social media URLs when available
-  ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    reviewCount: '127',
-    bestRating: '5',
-    worstRating: '1',
   },
 };
 
-function HomeContent() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
+const applications = [
+  {
+    title: 'Dimensional signage',
+    copy: 'Letters, logos, and wall systems cut and finished so a reception, showroom, or campus actually feels owned.',
+  },
+  {
+    title: 'Retail & venue builds',
+    copy: 'Acrylic, timber, and layered displays that hold up to foot traffic — not temporary print stuck to a wall.',
+  },
+  {
+    title: 'Awards & campaign pieces',
+    copy: 'Engraved recognition, launch gifts, and novelty runs produced at commercial volumes with consistent detail.',
+  },
+  {
+    title: 'Wayfinding & brand detail',
+    copy: 'Door plaques, directories, counters, and small-format pieces that keep a large rollout looking intentional.',
+  },
+];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
+const processSteps = [
+  {
+    step: '01',
+    title: 'Brief the idea',
+    copy: 'Share sketches, brand files, or a rough concept. We translate it into cut-ready paths.',
+  },
+  {
+    step: '02',
+    title: 'Material & CAD',
+    copy: 'We specify acrylic, timber, laminate, or sheet goods, then nest parts for clean production.',
+  },
+  {
+    step: '03',
+    title: 'CNC & laser',
+    copy: 'Routing and engraving on the floor — precise edges, crisp fills, repeatable batches.',
+  },
+  {
+    step: '04',
+    title: 'Finish & install',
+    copy: 'Polish, paint, assemble, and optionally install across Gauteng so the piece lands ready.',
+  },
+];
 
-  const floatingAnimation = {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: 'easeInOut' as const,
-    },
-  };
+const materials = [
+  'Acrylic & perspex',
+  'Timber & MDF',
+  'Laminates',
+  'Anodized aluminium sheet',
+  'Card & board',
+  'Composites for signs',
+];
 
-  const experienceMetrics = [
-    {
-      label: 'Avg. Turnaround',
-      value: '3–5 Days',
-      detail: 'Pixel-to-pavement speed',
-      gradient: 'from-[#AEDD33] to-[#4CAF50]',
-    },
-    {
-      label: 'NPS',
-      value: '+72',
-      detail: 'Customer delight index',
-      gradient: 'from-[#4CAF50] to-[#1E8F40]',
-    },
-    {
-      label: 'Projects Delivered',
-      value: '12k+',
-      detail: 'Retail, industrial & fleet',
-      gradient: 'from-[#FF6B00] to-[#FFD166]',
-    },
-  ];
+const otherServices = [
+  { name: 'Large format print', href: '/solutions/large-format-printing' },
+  { name: 'Fleet branding', href: '/solutions/fleet-branding' },
+  { name: 'Design & identity', href: '/solutions/design' },
+  { name: 'Installation', href: '/solutions/installation' },
+  { name: 'Litho printing', href: '/litho-printing' },
+];
 
+export default function Home() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-slate-100">
-      {/* Structured Data for SEO */}
+    <main className="page-shell">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationStructuredData).replace(/</g, '\\u003c'),
         }}
       />
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute inset-0 opacity-40"
+
+      {/* Hero — one composition, brand-first, full-bleed image */}
+      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
+        <Image
+          src="/images/fabrication-lab.png"
+          alt="Xsphere CNC and laser workshop"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div
+          className="absolute inset-0"
           style={{
-            backgroundImage:
-              'radial-gradient(circle at 20% 20%, rgba(174,221,51,0.2), transparent 45%), radial-gradient(circle at 80% 0%, rgba(30,143,64,0.2), transparent 35%), radial-gradient(circle at 50% 50%, rgba(0,245,255,0.15), transparent 40%)',
+            background:
+              'linear-gradient(105deg, rgba(16,20,12,0.82) 0%, rgba(16,20,12,0.55) 48%, rgba(16,20,12,0.28) 100%)',
           }}
-          animate={{ opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
         />
-        <motion.div
-          className="absolute inset-0 bg-[radial-gradient(circle,_rgba(255,107,0,0.08)_1px,_transparent_1px)] [background-size:60px_60px]"
-          animate={{ backgroundPosition: ['0px 0px', '60px 60px'] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        />
-      </div>
 
-      {/* Hero Section */}
-      <section className="relative lg:h-[calc(100vh-56px-160px)] min-h-[420px] max-h-[540px] flex items-center overflow-hidden px-4 sm:px-6 lg:px-10 py-8 sm:py-12 lg:py-6">
-        {/* Video-ready overlay */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/80" />
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-content flex-col justify-end px-4 pb-16 pt-24 sm:px-6 lg:justify-center lg:px-8 lg:pb-24">
           <motion.div
-            animate={floatingAnimation}
-            className="absolute top-16 left-8 w-[22rem] h-[22rem] bg-[#AEDD33]/25 rounded-full blur-[120px]"
-          />
-          <motion.div
-            animate={{
-              ...floatingAnimation,
-              transition: { ...floatingAnimation.transition, duration: 6, delay: 1.2 },
-            }}
-            className="absolute bottom-10 right-8 w-[26rem] h-[26rem] bg-[#1E8F40]/20 rounded-full blur-[140px]"
-          />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto w-full grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-center">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="space-y-5"
-          >
-            <motion.div variants={itemVariants}>
-              <motion.h1
-                className="text-[1.8rem] md:text-[2.5rem] font-extrabold leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                <span className="block text-white/90">
-                  Visual Authority for
-                </span>
-                <span className="block bg-gradient-to-r from-[#AEDD33] via-[#4CAF50] to-[#1E8F40] bg-clip-text text-transparent">
-                  B2B Fabrication Powerhouses
-                </span>
-              </motion.h1>
-            </motion.div>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-[0.85rem] md:text-[0.95rem] text-slate-200/85 max-w-2xl leading-relaxed"
-            >
-              We choreograph Design → Production → Installation in one kinetic pipeline. Drop in a looping facility reel for instant proof of control, speed, and precision.
-            </motion.p>
-
-            <motion.div
-              variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-3"
-            >
-              <AnimatedButton href="/contact" variant="primary" size="md" className="w-full sm:w-auto text-sm px-5 py-2.5">
-                Launch a Project
-              </AnimatedButton>
-              <AnimatedButton href="/work" variant="outline" size="md" className="w-full sm:w-auto border-white/30 text-white hover:text-white text-sm px-5 py-2.5">
-                Tour the Facility
-              </AnimatedButton>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              className="grid grid-cols-2 gap-2 sm:gap-3 max-w-sm"
-            >
-              {[
-                { label: 'Turnaround', value: '3-5 Days' },
-                { label: 'Capacity', value: '12k+ jobs' },
-                { label: 'Experience', value: '17 Years' },
-                { label: 'NPS', value: '+72' },
-              ].map((stat) => (
-                <div key={stat.label} className="rounded-lg border border-white/10 bg-white/5 px-3 py-2 sm:px-4 sm:py-2.5">
-                  <p className="text-[9px] sm:text-[10px] uppercase tracking-wide text-slate-300">{stat.label}</p>
-                  <p className="text-sm sm:text-base font-semibold text-white">{stat.value}</p>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          <ServiceSlider />
-        </div>
-      </section>
-
-      {/* Service Icons Section */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-8 sm:py-10 pt-12 sm:pt-16">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6"
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="max-w-3xl"
           >
-            {[
-              {
-                name: 'Laser Cutting',
-                href: '/solutions/fabrication',
-                icon: (
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="6" y="4" width="12" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <path d="M9 8H15M9 11H15M9 14H13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <circle cx="12" cy="18" r="1.5" fill="currentColor" opacity="0.6"/>
-                    <path d="M12 2V4M12 20V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
-                gradient: 'from-white/10 to-white/5',
-              },
-              {
-                name: 'Large Format',
-                href: '/solutions/large-format-printing',
-                icon: (
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <rect x="5" y="6" width="14" height="12" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <path d="M7 9H17M7 11.5H17M7 14H15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                ),
-                gradient: 'from-white/10 to-white/5',
-              },
-              {
-                name: 'Fleet Branding',
-                href: '/solutions/fleet-branding',
-                icon: (
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 9H20C20.5523 9 21 9.44772 21 10V15C21 15.5523 20.5523 16 20 16H4C3.44772 16 3 15.5523 3 15V10C3 9.44772 3.44772 9 4 9Z" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <rect x="5" y="11" width="14" height="4" rx="0.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <circle cx="8" cy="19" r="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <circle cx="16" cy="19" r="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <path d="M6 7L12 4L18 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-                gradient: 'from-white/10 to-white/5',
-              },
-              {
-                name: 'Design',
-                href: '/solutions/design',
-                icon: (
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3L4 8V16L12 21L20 16V8L12 3Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                    <path d="M12 3V21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M4 8L12 13L20 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M4 16L12 21L20 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    <circle cx="12" cy="12" r="1.5" fill="currentColor" opacity="0.6"/>
-                  </svg>
-                ),
-                gradient: 'from-white/10 to-white/5',
-              },
-              {
-                name: 'Installation',
-                href: '/solutions/installation',
-                icon: (
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="5" y="5" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <rect x="7" y="7" width="10" height="10" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <path d="M10 10H14M10 12.5H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <circle cx="12" cy="21" r="1.5" fill="currentColor" opacity="0.6"/>
-                    <path d="M8 4L12 2L16 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                ),
-                gradient: 'from-white/10 to-white/5',
-              },
-              {
-                name: 'Litho Printing',
-                href: '/litho-printing',
-                icon: (
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <rect x="6" y="7" width="12" height="10" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-                    <path d="M8 10H16M8 12.5H16M8 15H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <circle cx="18" cy="7" r="1" fill="currentColor" opacity="0.6"/>
-                  </svg>
-                ),
-                gradient: 'from-white/10 to-white/5',
-              },
-            ].map((service, index) => (
-              <Link key={service.name} href={service.href}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -4 }}
-                  className="flex flex-col items-center justify-center group cursor-pointer"
-                >
-                  <div className={`relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br ${service.gradient} p-3 sm:p-4 flex items-center justify-center mb-3 shadow-md shadow-black/20 group-hover:shadow-lg group-hover:shadow-white/10 transition-all duration-300 border border-white/20 group-hover:border-white/40`}>
-                    <div className="text-white/90 relative z-10">
-                      {service.icon}
-                    </div>
-                    <div className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <p className="text-xs sm:text-sm font-semibold text-white/90 text-center group-hover:text-[#AEDD33] transition-colors">
-                    {service.name}
-                  </p>
-                </motion.div>
-              </Link>
-            ))}
+            <p className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+              Xsphere
+            </p>
+            <h1 className="font-display mt-5 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
+              CNC &amp; laser that turn ideas into objects brands can touch.
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+              Dimensional signage, engraved detail, and fabricated pieces for commercial clients — not a copy
+              centre, a workshop that brings concepts to life.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <AnimatedButton href="/contact" variant="primary" size="md">
+                Brief a commercial project
+              </AnimatedButton>
+              <AnimatedButton href="/solutions/fabrication" variant="outline" size="md">
+                Explore CNC &amp; laser
+              </AnimatedButton>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Service Pillars */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-16 sm:pb-24">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {[
-              {
-                title: 'Design Intelligence',
-                description: 'Scalable brand systems engineered to print flawlessly at every size.',
-                details: ['Brand guardianship & CAD-ready art', 'Color-managed proofing in 24h'],
-                color: 'from-[#AEDD33] to-[#4CAF50]',
-                accent: '#AEDD33',
-                icon: '🧠',
-              },
-              {
-                title: 'Production Muscle',
-                description: 'Large-format print, fabrication, and finishing under one roof.',
-                details: ['3.2m UV print • CNC • laser', 'Live dashboards on every run'],
-                color: 'from-[#4CAF50] to-[#1E8F40]',
-                accent: '#4CAF50',
-                icon: '⚡',
-              },
-              {
-                title: 'Installation Mastery',
-                description: 'Certified crews deploying across Gauteng with military timing.',
-                details: ['Branded fleet + certified riggers', 'QC reports before you even ask'],
-                color: 'from-[#FF6B00] to-[#FFD166]',
-                accent: '#FF6B00',
-                icon: '🚚',
-              },
-            ].map((step, index) => (
-              <motion.div key={step.title} variants={itemVariants}>
-                {/* Service Pillars Cards - Background must stay DARK (bg-black) */}
-                <AnimatedCard
-                  delay={index * 0.1}
-                  className="text-left group cursor-pointer bg-black text-white border border-white/25 px-6 py-7 shadow-[0_40px_80px_rgba(0,0,0,0.75)]"
-                >
-                  <motion.div
-                    className={`w-12 h-12 mb-4 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center text-xl shadow-[0_10px_30px_rgba(0,0,0,0.35)]`}
-                    whileHover={{ rotate: 360, scale: 1.05 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    {step.icon}
-                  </motion.div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
-                  <p className="text-white/90 text-sm md:text-base leading-relaxed">{step.description}</p>
-                  <ul className="mt-4 space-y-1.5 text-sm text-slate-200/95">
-                    {step.details.map((line) => (
-                      <li key={line} className="flex items-center gap-2">
-                        <span
-                          className="inline-block w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: step.accent }}
-                        />
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </AnimatedCard>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      <IntegratedPillars />
-      <ServicesMatrix />
-      <ShowcaseReel />
-
-      {/* Customer Experience Metrics */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
-        <div className="max-w-5xl mx-auto space-y-6 text-center">
+      {/* What we make for large clients */}
+      <section className="border-b border-[var(--line)] px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-content">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs uppercase tracking-[0.3em] text-[#AEDD33]"
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl"
           >
-            Customer Experience Engine
+            <p className="section-eyebrow">Built for serious briefs</p>
+            <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
+              What large clients ask us to cut and engrave
+            </h2>
+            <p className="mt-4 text-lg text-ink-muted">
+              We focus on novelty, signage, and branded environments — acrylic, timber, and sheet work that makes
+              a space feel finished. Heavy industrial steelwork is not our lane.
+            </p>
           </motion.div>
-          <p className="text-2xl text-slate-200 max-w-3xl mx-auto">
-            Every touchpoint is choreographed—design, fabrication, logistics, and installation snap together in a neon pipeline optimized for speed, clarity, and wow-factor.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {experienceMetrics.map((metric, index) => (
+
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
+            {applications.map((item, index) => (
               <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, y: 30 }}
+                key={item.title}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative overflow-hidden rounded-2xl bg-[#050912]/80 border border-white/10 p-6 backdrop-blur-xl"
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} opacity-10`} />
-                <div className="relative">
-                  <p className="text-sm uppercase tracking-wide text-slate-400">{metric.label}</p>
-                  <p className="text-4xl font-bold mt-2 text-white">{metric.value}</p>
-                  <p className="text-sm text-slate-300 mt-1">{metric.detail}</p>
-                  <motion.div
-                    className={`mt-4 h-[2px] bg-gradient-to-r ${metric.gradient}`}
-                    initial={{ width: 0 }}
-                    whileInView={{ width: '100%' }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                  />
-                </div>
+                <h3 className="font-display text-xl font-semibold text-ink">{item.title}</h3>
+                <p className="mt-2 max-w-md text-ink-muted leading-relaxed">{item.copy}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Process */}
+      <section className="bg-surface-muted/60 px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-content">
+          <div className="max-w-2xl">
+            <p className="section-eyebrow">How it moves</p>
+            <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
+              From sketch to finished piece
+            </h2>
+            <p className="mt-4 text-lg text-ink-muted">
+              One workshop owns the path — so procurement gets a clear timeline and the piece looks like the
+              render.
+            </p>
+          </div>
+
+          <ol className="mt-14 grid gap-8 md:grid-cols-4">
+            {processSteps.map((item, index) => (
+              <motion.li
+                key={item.step}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="relative"
+              >
+                <span className="font-display text-sm font-bold text-accent">{item.step}</span>
+                <h3 className="font-display mt-3 text-lg font-semibold text-ink">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.copy}</p>
+              </motion.li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Materials / capacity — commercial buyers */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-content items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p className="section-eyebrow">Workshop capacity</p>
+            <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
+              Materials and machines for brand-scale work
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-ink-muted">
+              Laser bays and CNC routing for signage and novelty fabrication — with finishing in-house so batches
+              stay consistent when you need fifty plaques or five hundred campaign pieces.
+            </p>
+            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+              {materials.map((material) => (
+                <li key={material} className="text-sm font-semibold text-ink">
+                  <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+                  {material}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-10">
+              <AnimatedButton href="/solutions/fabrication" variant="primary">
+                See CNC &amp; laser capabilities
+              </AnimatedButton>
+            </div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="relative aspect-[4/3] overflow-hidden rounded-sm"
+          >
+            <Image
+              src="/images/fabrication-lab.png"
+              alt="Precision CNC and laser fabrication"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Secondary services — don't scare people away */}
+      <section className="border-y border-[var(--line)] bg-surface px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-content">
+          <div className="max-w-2xl">
+            <p className="section-eyebrow">Full workshop</p>
+            <h2 className="font-display mt-3 text-2xl font-bold text-ink md:text-3xl">
+              Need print, fleet, or install as well?
+            </h2>
+            <p className="mt-3 text-ink-muted">
+              CNC and laser are the core. The rest of the workshop is still here when a rollout needs more than
+              cut parts.
+            </p>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            {otherServices.map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="text-sm font-semibold text-ink underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+              >
+                {service.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-content">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">
+              Have a commercial idea that needs to become physical?
+            </h2>
+            <p className="mt-4 text-lg text-ink-muted">
+              Tell us the volume, the material, and the deadline. We&apos;ll come back with a clear path from file
+              to finished piece.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <AnimatedButton href="/contact" variant="primary" size="lg">
+                Start the brief
+              </AnimatedButton>
+              <a
+                href="tel:+27118699169"
+                className="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-semibold text-ink transition-colors hover:text-accent"
+              >
+                +27 11 869 9169
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
-}
-
-export default function Home() {
-  return <HomeContent />;
 }

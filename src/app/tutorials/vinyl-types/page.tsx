@@ -134,7 +134,7 @@ const failureExamples = [
 
 export default function VinylTypesTutorial() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#03050d] via-[#080d1c] to-[#140621] text-white">
+    <main className="page-shell">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle,_rgba(255,255,255,0.08)_1px,_transparent_1px)] [background-size:80px_80px]" />
         <div className="absolute top-20 left-10 w-96 h-96 bg-[#AEDD33]/10 rounded-full blur-[120px]" />
@@ -144,31 +144,31 @@ export default function VinylTypesTutorial() {
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-slate-400">
-            <Link href="/tutorials" className="hover:text-[#00F5FF] transition-colors">
+          <nav className="mb-8 text-sm text-ink-muted">
+            <Link href="/tutorials" className="hover:text-accent transition-colors">
               Tutorials
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-slate-300">Choosing the Right Vinyl</span>
+            <span className="text-ink-muted">Choosing the Right Vinyl</span>
           </nav>
 
           {/* Header */}
           <div className="mb-12">
-            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-[#00F5FF] mb-4">
+            <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-[#AEDD33]/20 text-accent mb-4">
               Materials
             </span>
             <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
               Choosing the Right Vinyl: Cast vs Calendered
             </h1>
-            <p className="text-xl text-slate-300 mb-6">
+            <p className="text-xl text-ink-muted mb-6">
               Understand the critical difference between cast and calendered vinyl, when to use each type, 
               and why choosing the wrong one leads to costly failures.
             </p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 ⏱️ 10 min read
               </span>
-              <span className="px-4 py-2 rounded-full bg-white/5 text-slate-300 border border-white/10">
+              <span className="px-4 py-2 rounded-full bg-surface text-ink-muted border border-[var(--line)]">
                 🎯 Beginner
               </span>
             </div>
@@ -179,8 +179,8 @@ export default function VinylTypesTutorial() {
             <div className="flex gap-4">
               <div className="flex-shrink-0 text-3xl">💡</div>
               <div>
-                <h3 className="text-xl font-bold text-white mb-2">The Most Important Decision</h3>
-                <p className="text-slate-200">
+                <h3 className="text-xl font-bold text-ink mb-2">The Most Important Decision</h3>
+                <p className="text-ink-muted">
                   Choosing between cast and calendered vinyl is the single most important decision for your project. 
                   Get it wrong, and you&apos;ll watch your investment fail within months. Get it right, and your signage 
                   or wrap will last for years. This guide shows you exactly which to choose and why.
@@ -191,7 +191,7 @@ export default function VinylTypesTutorial() {
 
           {/* Side-by-Side Comparison */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-8">Cast vs Calendered: The Complete Comparison</h2>
+            <h2 className="text-3xl font-bold text-ink mb-8">Cast vs Calendered: The Complete Comparison</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {/* Cast Vinyl */}
               <motion.div
@@ -204,18 +204,18 @@ export default function VinylTypesTutorial() {
                   <span className="text-4xl">{comparison.cast.icon}</span>
                   <h3 className="text-2xl font-bold text-white">{comparison.cast.title}</h3>
                 </div>
-                <p className="text-slate-200 mb-6">{comparison.cast.description}</p>
+                <p className="text-ink-muted mb-6">{comparison.cast.description}</p>
                 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-[#00F5FF] mb-2">How It&apos;s Made:</h4>
-                  <p className="text-slate-300 text-sm">{comparison.cast.manufacturing}</p>
+                  <h4 className="text-sm font-semibold text-accent mb-2">How It&apos;s Made:</h4>
+                  <p className="text-ink-muted text-sm">{comparison.cast.manufacturing}</p>
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-white mb-3">Key Characteristics:</h4>
+                  <h4 className="text-sm font-semibold text-ink mb-3">Key Characteristics:</h4>
                   <ul className="space-y-2">
                     {comparison.cast.characteristics.map((char, i) => (
-                      <li key={i} className="flex items-start gap-2 text-slate-200 text-sm">
+                      <li key={i} className="flex items-start gap-2 text-ink-muted text-sm">
                         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{char}</span>
                       </li>
@@ -225,20 +225,20 @@ export default function VinylTypesTutorial() {
 
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                   <div>
-                    <p className="text-slate-400 mb-1">Cost:</p>
-                    <p className="text-white font-semibold">{comparison.cast.cost}</p>
+                    <p className="text-ink-muted mb-1">Cost:</p>
+                    <p className="text-ink font-semibold">{comparison.cast.cost}</p>
                   </div>
                   <div>
-                    <p className="text-slate-400 mb-1">Lifespan:</p>
-                    <p className="text-white font-semibold">{comparison.cast.lifespan}</p>
+                    <p className="text-ink-muted mb-1">Lifespan:</p>
+                    <p className="text-ink font-semibold">{comparison.cast.lifespan}</p>
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-white mb-2">Best For:</h4>
+                  <h4 className="text-sm font-semibold text-ink mb-2">Best For:</h4>
                   <ul className="space-y-1">
                     {comparison.cast.bestFor.map((use, i) => (
-                      <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                      <li key={i} className="text-ink-muted text-sm flex items-start gap-2">
                         <span className="mt-1 h-1 w-1 rounded-full bg-[#AEDD33] flex-shrink-0" />
                         <span>{use}</span>
                       </li>
@@ -246,7 +246,7 @@ export default function VinylTypesTutorial() {
                   </ul>
                 </div>
 
-                <p className="text-xs text-slate-400"><strong>Premium Brands:</strong> {comparison.cast.brands}</p>
+                <p className="text-xs text-ink-muted"><strong>Premium Brands:</strong> {comparison.cast.brands}</p>
               </motion.div>
 
               {/* Calendered Vinyl */}
@@ -254,24 +254,24 @@ export default function VinylTypesTutorial() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8"
+                className="rounded-3xl border border-[var(--line)] bg-surface p-6 sm:p-8"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-4xl">{comparison.calendered.icon}</span>
                   <h3 className="text-2xl font-bold text-white">{comparison.calendered.title}</h3>
                 </div>
-                <p className="text-slate-200 mb-6">{comparison.calendered.description}</p>
+                <p className="text-ink-muted mb-6">{comparison.calendered.description}</p>
                 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-slate-300 mb-2">How It&apos;s Made:</h4>
-                  <p className="text-slate-300 text-sm">{comparison.calendered.manufacturing}</p>
+                  <h4 className="text-sm font-semibold text-ink-muted mb-2">How It&apos;s Made:</h4>
+                  <p className="text-ink-muted text-sm">{comparison.calendered.manufacturing}</p>
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-white mb-3">Key Characteristics:</h4>
+                  <h4 className="text-sm font-semibold text-ink mb-3">Key Characteristics:</h4>
                   <ul className="space-y-2">
                     {comparison.calendered.characteristics.map((char, i) => (
-                      <li key={i} className="flex items-start gap-2 text-slate-200 text-sm">
+                      <li key={i} className="flex items-start gap-2 text-ink-muted text-sm">
                         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-400 flex-shrink-0" />
                         <span>{char}</span>
                       </li>
@@ -281,20 +281,20 @@ export default function VinylTypesTutorial() {
 
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                   <div>
-                    <p className="text-slate-400 mb-1">Cost:</p>
-                    <p className="text-white font-semibold">{comparison.calendered.cost}</p>
+                    <p className="text-ink-muted mb-1">Cost:</p>
+                    <p className="text-ink font-semibold">{comparison.calendered.cost}</p>
                   </div>
                   <div>
-                    <p className="text-slate-400 mb-1">Lifespan:</p>
-                    <p className="text-white font-semibold">{comparison.calendered.lifespan}</p>
+                    <p className="text-ink-muted mb-1">Lifespan:</p>
+                    <p className="text-ink font-semibold">{comparison.calendered.lifespan}</p>
                   </div>
                 </div>
 
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-white mb-2">Best For:</h4>
+                  <h4 className="text-sm font-semibold text-ink mb-2">Best For:</h4>
                   <ul className="space-y-1">
                     {comparison.calendered.bestFor.map((use, i) => (
-                      <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                      <li key={i} className="text-ink-muted text-sm flex items-start gap-2">
                         <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 flex-shrink-0" />
                         <span>{use}</span>
                       </li>
@@ -302,15 +302,15 @@ export default function VinylTypesTutorial() {
                   </ul>
                 </div>
 
-                <p className="text-xs text-slate-400"><strong>Common Brands:</strong> {comparison.calendered.brands}</p>
+                <p className="text-xs text-ink-muted"><strong>Common Brands:</strong> {comparison.calendered.brands}</p>
               </motion.div>
             </div>
           </div>
 
           {/* Cost Analysis */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Real Cost Analysis: Initial vs Long-Term</h2>
-            <p className="text-slate-300 mb-8 text-lg">
+            <h2 className="text-3xl font-bold text-ink mb-6">Real Cost Analysis: Initial vs Long-Term</h2>
+            <p className="text-ink-muted mb-8 text-lg">
               The initial price difference is misleading. Here&apos;s what you actually pay over time:
             </p>
             
@@ -322,22 +322,22 @@ export default function VinylTypesTutorial() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="rounded-2xl border border-white/10 bg-[#01030B]/95 p-6"
+                  className="rounded-2xl border border-[var(--line)] bg-surface p-6"
                 >
-                  <h3 className="text-xl font-bold text-white mb-4">{scenario.scenario}</h3>
+                  <h3 className="text-xl font-bold text-ink mb-4">{scenario.scenario}</h3>
                   <div className="grid sm:grid-cols-2 gap-6 mb-4">
-                    <div className={`rounded-xl p-4 ${scenario.winner === 'cast' ? 'border border-[#AEDD33]/30 bg-[#AEDD33]/10' : 'border border-white/10 bg-white/5'}`}>
-                      <h4 className="text-sm font-semibold text-[#00F5FF] mb-2">Cast Vinyl</h4>
-                      <p className="text-white font-bold mb-1">{scenario.castCost}</p>
-                      <p className="text-slate-300 text-sm">Lifespan: {scenario.castLifespan}</p>
+                    <div className={`rounded-xl p-4 ${scenario.winner === 'cast' ? 'border border-[#AEDD33]/30 bg-[#AEDD33]/10' : 'border border-[var(--line)] bg-surface'}`}>
+                      <h4 className="text-sm font-semibold text-accent mb-2">Cast Vinyl</h4>
+                      <p className="text-ink font-bold mb-1">{scenario.castCost}</p>
+                      <p className="text-ink-muted text-sm">Lifespan: {scenario.castLifespan}</p>
                     </div>
-                    <div className={`rounded-xl p-4 ${scenario.winner === 'calendered' ? 'border border-[#FF6B00]/30 bg-[#FF6B00]/10' : 'border border-white/10 bg-white/5'}`}>
-                      <h4 className="text-sm font-semibold text-slate-300 mb-2">Calendered Vinyl</h4>
-                      <p className="text-white font-bold mb-1">{scenario.calenderedCost}</p>
-                      <p className="text-slate-300 text-sm">Lifespan: {scenario.calenderedLifespan}</p>
+                    <div className={`rounded-xl p-4 ${scenario.winner === 'calendered' ? 'border border-[#FF6B00]/30 bg-[#FF6B00]/10' : 'border border-[var(--line)] bg-surface'}`}>
+                      <h4 className="text-sm font-semibold text-ink-muted mb-2">Calendered Vinyl</h4>
+                      <p className="text-ink font-bold mb-1">{scenario.calenderedCost}</p>
+                      <p className="text-ink-muted text-sm">Lifespan: {scenario.calenderedLifespan}</p>
                     </div>
                   </div>
-                  <p className="text-sm text-slate-300"><strong>💡 Insight:</strong> {scenario.note}</p>
+                  <p className="text-sm text-ink-muted"><strong>💡 Insight:</strong> {scenario.note}</p>
                 </motion.div>
               ))}
             </div>
@@ -345,7 +345,7 @@ export default function VinylTypesTutorial() {
 
           {/* When to Use Guide */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">When to Use Each Type</h2>
+            <h2 className="text-3xl font-bold text-ink mb-6">When to Use Each Type</h2>
             <div className="space-y-6">
               {whenToUse.map((item, index) => (
                 <motion.div
@@ -354,11 +354,11 @@ export default function VinylTypesTutorial() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-6"
+                  className="rounded-2xl border border-[var(--line)] bg-surface p-6"
                 >
                   <div className="flex gap-6">
                     {item.image && (
-                      <div className="hidden sm:block flex-shrink-0 w-32 h-32 rounded-xl overflow-hidden border border-white/10">
+                      <div className="hidden sm:block flex-shrink-0 w-32 h-32 rounded-xl overflow-hidden border border-[var(--line)]">
                         <div
                           className="w-full h-full bg-cover bg-center"
                           style={{ backgroundImage: `url('${item.image}')` }}
@@ -366,9 +366,9 @@ export default function VinylTypesTutorial() {
                       </div>
                     )}
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2">{item.situation}</h3>
-                      <p className="text-[#00F5FF] font-semibold mb-2">{item.recommendation}</p>
-                      <p className="text-slate-300 text-sm">{item.reason}</p>
+                      <h3 className="text-xl font-bold text-ink mb-2">{item.situation}</h3>
+                      <p className="text-accent font-semibold mb-2">{item.recommendation}</p>
+                      <p className="text-ink-muted text-sm">{item.reason}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -378,7 +378,7 @@ export default function VinylTypesTutorial() {
 
           {/* Failure Examples */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white mb-6">Real-World Failure Examples</h2>
+            <h2 className="text-3xl font-bold text-ink mb-6">Real-World Failure Examples</h2>
             <div className="space-y-4">
               {failureExamples.map((example, index) => (
                 <motion.div
@@ -389,10 +389,10 @@ export default function VinylTypesTutorial() {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="rounded-2xl border border-[#FF1744]/30 bg-[#FF1744]/10 p-6"
                 >
-                  <h4 className="text-lg font-bold text-white mb-2">{example.problem}</h4>
-                  <p className="text-slate-200 mb-2"><strong>What Happens:</strong> {example.whatHappens}</p>
+                  <h4 className="text-lg font-bold text-ink mb-2">{example.problem}</h4>
+                  <p className="text-ink-muted mb-2"><strong>What Happens:</strong> {example.whatHappens}</p>
                   <div className="flex flex-wrap gap-4 text-sm">
-                    <span className="text-slate-300"><strong>Timeline:</strong> {example.timeline}</span>
+                    <span className="text-ink-muted"><strong>Timeline:</strong> {example.timeline}</span>
                     <span className="text-[#FF1744]"><strong>Cost:</strong> {example.cost}</span>
                   </div>
                 </motion.div>
@@ -402,23 +402,23 @@ export default function VinylTypesTutorial() {
 
           {/* CTA Section */}
           <div className="rounded-3xl border border-[#AEDD33]/30 bg-gradient-to-br from-[#AEDD33]/10 to-[#1E8F40]/10 p-8 md:p-12 text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-ink mb-4">
               Need Help Choosing?
             </h3>
-            <p className="text-slate-300 mb-6 max-w-2xl mx-auto text-lg">
+            <p className="text-ink-muted mb-6 max-w-2xl mx-auto text-lg">
               Our team can help you choose the right vinyl for your specific application, budget, and timeline. 
               We&apos;ll recommend the best option to ensure your project succeeds.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-[#010308] shadow-[0_15px_35px_rgba(174,221,51,0.4)]"
+                className="inline-flex items-center justify-center rounded-full bg-[#AEDD33] px-8 py-4 text-base font-semibold text-ink-inverse "
               >
                 Get Expert Advice
               </Link>
               <Link
                 href="/solutions/fleet-branding"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-base font-semibold text-white hover:border-white/60 transition-all"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--line)] px-8 py-4 text-base font-semibold text-ink hover:border-white/60 transition-all"
               >
                 View Our Services
               </Link>
@@ -426,16 +426,16 @@ export default function VinylTypesTutorial() {
           </div>
 
           {/* Navigation */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-white/10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center pt-8 border-t border-[var(--line)]">
             <Link
               href="/tutorials"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               ← Back to All Tutorials
             </Link>
             <Link
               href="/tutorials/vinyl-vehicle-application"
-              className="text-[#00F5FF] hover:text-[#AEDD33] transition-colors flex items-center gap-2"
+              className="text-accent hover:text-accent transition-colors flex items-center gap-2"
             >
               Next: Vehicle Wrapping Guide →
             </Link>

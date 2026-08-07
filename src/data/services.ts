@@ -17,6 +17,49 @@ export type ServiceEntry = {
 
 export const serviceCatalog: ServiceEntry[] = [
   {
+    slug: "fabrication",
+    title: "CNC & Laser Engraving",
+    tagline: "Dimensional signage, engraved detail, and fabricated pieces that turn brand ideas into physical objects.",
+    summary:
+      "Our core craft: CNC routing and laser engraving for signs, novelty builds, awards, retail fixtures, and branded environments. Built for commercial volumes — not steel fabrication, and not a copy centre.",
+    heroImage: "/images/fabrication-lab.png",
+    gallery: [
+      "/images/fabrication-lab.png",
+      "/images/design-studio.png",
+      "/images/install-team.png",
+      "/images/hero-print.png",
+    ],
+    leadTime: "5–7 days average",
+    capacity: "Laser bays + CNC routing",
+    qa: "Batch consistency checks on every run",
+    bullets: [
+      "Laser cutting & engraving for signage, plaques, and campaign pieces",
+      "CNC routing for dimensional letters, logos, and fixtures",
+      "Acrylic, timber, MDF, laminates, aluminium sheet, and board",
+      "Finish, assemble, and kit for rollout across multiple sites",
+    ],
+    highlights: [
+      { label: "Focus", value: "Signs & novelty" },
+      { label: "Formats", value: "Up to 2.5 × 1.3 m" },
+      { label: "Clients", value: "Commercial scale" },
+    ],
+    deliverables: [
+      "Cut-ready files & proofs",
+      "Finished parts or flat-pack kits",
+      "Install-ready packaging on request",
+    ],
+    specialties: [
+      "Bringing sketches and brand files into cut-ready CAD",
+      "Repeatable engraving for awards, gifts, and campaign runs",
+      "In-house finishing so edges, paint, and assembly stay consistent",
+    ],
+    valueAdds: [
+      "Material advice for indoor/outdoor signage",
+      "Prototypes before large commercial orders",
+      "Optional Gauteng installation with the same team",
+    ],
+  },
+  {
     slug: "large-format-printing",
     title: "Large Format Printing & Signage",
     tagline: "Mega-format UV print, safety systems, POS suites, and exhibition environments.",
@@ -59,51 +102,6 @@ export const serviceCatalog: ServiceEntry[] = [
       "On-site survey + measurement prior to print",
       "Design support to adapt assets for mega-scale",
       "Archival of print files for future refreshes",
-    ],
-  },
-  {
-    slug: "fabrication",
-    title: "Precision Fabrication & Laser Cutting",
-    tagline: "State-of-the-art laser bays and fabrication decks built for custom one-offs and scaled rollouts.",
-    summary:
-      "From acrylic sculptures to aluminum enclosures, our fabrication floor processes plastics, metals, textiles, and composites with micrometer accuracy.",
-    heroImage: "/images/fabrication-lab.png",
-    gallery: [
-      "/images/gallery/fabrication-1.png",
-      "/images/gallery/fabrication-2.png",
-      "/images/gallery/fabrication-3.png",
-      "/images/gallery/fabrication-4.png",
-      "/images/gallery/fabrication-5.png",
-      "/images/gallery/fabrication-6.png",
-    ],
-    leadTime: "5–7 days average",
-    capacity: "4 laser bays + CNC routing",
-    qa: "Tolerance reports on every batch",
-    bullets: [
-      "Laser cutting for graphics, signage, and labels",
-      "CNC routing + finishing for custom fixtures",
-      "Material processing: plastic, wood, metal, textiles, card stock",
-      "Bespoke fabrication for industrial + retail prototypes",
-    ],
-    highlights: [
-      { label: "Precision", value: "±0.2 mm" },
-      { label: "Formats", value: "2.5 × 1.3 m beds" },
-      { label: "Tool Heads", value: "8 active" },
-    ],
-    deliverables: [
-      "Cut files & QC documentation",
-      "Assembled/flat-pack kits",
-      "Material certificates on request",
-    ],
-    specialties: [
-      "Mixed-material fabrication marrying acrylic, steel, timber, textiles",
-      "In-house finishing booth for paint, powder coat, and protective layers",
-      "Rapid prototyping pipeline for experiential builds",
-    ],
-    valueAdds: [
-      "Material consulting + sourcing",
-      "Joint engineering with client teams",
-      "Kitting + labeling for on-site assembly",
     ],
   },
   {

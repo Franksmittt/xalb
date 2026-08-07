@@ -3,89 +3,58 @@
 @tailwind utilities;
 
 :root {
-  --background: #03050d;
-  --foreground: #f8fafc;
-  --primary: #0F172A;
-  --secondary: #FF6B00;
-  --tertiary: #94A3B8;
-  --accent: #06B6D4;
-  --neon-blue: #00F5FF;
-  --neon-red: #FF1744;
-  --neon-magenta: #FF3CAC;
-  --green-lime: #AEDD33;
-  --green-light: #B2D942;
-  --green-medium: #4CAF50;
-  --green-leaf: #56B847;
-  --green-dark: #2E9346;
-  --green-forest: #1E8F40;
+  --background: #f5f6f2;
+  --foreground: #1c2118;
+  --muted: #5c6554;
+  --surface: #ffffff;
+  --surface-muted: #e9ebe4;
+  --line: rgba(28, 33, 24, 0.12);
+  --accent: #2f6b3a;
+  --accent-bright: #6fae3a;
+  --accent-soft: #dce8d4;
+  --ink-inverse: #f7f8f4;
+  --hero-shade: rgba(16, 20, 12, 0.58);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #010205;
-    --foreground: #f8fafc;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 body {
   color: var(--foreground);
-  background: radial-gradient(circle at 20% 20%, rgba(174, 221, 51, 0.15), transparent 45%),
-    radial-gradient(circle at 80% 0%, rgba(30, 143, 64, 0.15), transparent 35%),
-    radial-gradient(circle at 50% 50%, rgba(0, 245, 255, 0.1), transparent 40%),
-    linear-gradient(135deg, #03050d, #050b1d 45%, #12061f);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background:
+    radial-gradient(ellipse 80% 50% at 100% -10%, rgba(111, 174, 58, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(47, 107, 58, 0.08), transparent 50%),
+    linear-gradient(180deg, #f7f8f4 0%, #f5f6f2 40%, #eef0ea 100%);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: rgba(47, 107, 58, 0.22);
+  color: #1c2118;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-  background-color: #03050d;
-}
+  .page-shell {
+    @apply relative min-h-screen text-[var(--foreground)];
+  }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)];
+  }
 }
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #FF6B00;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #E55A00;
-}
-
-/* Neon selection */
-::selection {
-  background: rgba(174, 221, 51, 0.35);
-  color: #ffffff;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at 10% 20%, rgba(174, 221, 51, 0.1), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(30, 143, 64, 0.08), transparent 40%),
-    radial-gradient(circle at 30% 80%, rgba(76, 175, 80, 0.06), transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(0, 245, 255, 0.05), transparent 40%);
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(40px);
-}
-
