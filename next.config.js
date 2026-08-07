@@ -18,6 +18,22 @@ const nextConfig = {
   
   // PoweredBy header removal for security
   poweredByHeader: false,
+
+  // Old staff-login URLs should never surface again
+  async redirects() {
+    return [
+      {
+        source: '/login',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/login/:path*',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig

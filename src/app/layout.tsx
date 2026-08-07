@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientLayout from "@/components/ClientLayout";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // Get base URL from environment variable or default to production domain
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://xsphere.co.za';
@@ -31,22 +32,11 @@ export const metadata: Metadata = {
     siteName: 'Xsphere Marketing and Design',
     title: 'Xsphere Marketing and Design | Integrated Design, Production, and Installation Services',
     description: '17 years of expertise in large format printing, laser cutting, vehicle branding, and signage installation across Gauteng.',
-    // Add Open Graph image path when available
-    // images: [
-    //   {
-    //     url: '/images/og-image.jpg',
-    //     width: 1200,
-    //     height: 630,
-    //     alt: 'Xsphere Marketing and Design',
-    //   },
-    // ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Xsphere Marketing and Design',
     description: 'Integrated Design, Production, and Installation Services',
-    // Add Twitter image path when available
-    // images: ['/images/twitter-image.jpg'],
   },
   robots: {
     index: true,
@@ -59,10 +49,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // Google Search Console verification - Add your verification token here
-  // verification: {
-  //   google: 'your-google-verification-token',
-  // },
 };
 
 export default function RootLayout({
@@ -73,9 +59,10 @@ export default function RootLayout({
   return (
     <html lang="en-ZA">
       <body>
-        <ClientLayout>{children}</ClientLayout>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
 }
-
