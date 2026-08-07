@@ -33,64 +33,96 @@ const organizationStructuredData = {
   },
 };
 
-const applications = [
+const capabilityCards = [
+  {
+    title: 'CNC & Laser',
+    subtitle: 'Core focus',
+    copy: 'Cut, engrave, and finish dimensional pieces for brands that need more than flat print.',
+    href: '/solutions/fabrication',
+    image: '/images/fabrication-lab.png',
+    tone: 'green' as const,
+  },
+  {
+    title: 'Imagine',
+    subtitle: 'Possibilities',
+    copy: 'See what laser cutters, engravers, and CNC can actually make — before you brief us.',
+    href: '/imagine',
+    image: '/images/design-studio.png',
+    tone: 'warm' as const,
+  },
+  {
+    title: 'Dimensional signs',
+    subtitle: 'For spaces',
+    copy: 'Letters, logos, and wall systems that make receptions and campuses feel owned.',
+    href: '/solutions/fabrication',
+    image: '/images/install-team.png',
+    tone: 'green' as const,
+  },
+  {
+    title: 'Large format',
+    subtitle: 'Also available',
+    copy: 'UV print, POS, and exhibition graphics when the rollout needs walls and floors too.',
+    href: '/solutions/large-format-printing',
+    image: '/images/hero-print.png',
+    tone: 'neutral' as const,
+  },
+  {
+    title: 'Fleet branding',
+    subtitle: 'Also available',
+    copy: 'Wraps and magnets so the vehicles match the spaces we fabricate.',
+    href: '/solutions/fleet-branding',
+    image: '/images/fleet-lineup.png',
+    tone: 'neutral' as const,
+  },
+  {
+    title: 'Installation',
+    subtitle: 'Also available',
+    copy: 'Certified crews across Gauteng — from plaques to facade identity.',
+    href: '/solutions/installation',
+    image: '/images/services/installation/Gemini_Generated_Image_nvcg3fnvcg3fnvcg.png',
+    tone: 'neutral' as const,
+  },
+];
+
+const applicationCards = [
   {
     title: 'Dimensional signage',
-    copy: 'Letters, logos, and wall systems cut and finished so a reception, showroom, or campus actually feels owned.',
+    copy: 'Letters, logos, and layered wall systems for showrooms and campuses.',
+    image: '/images/fabrication-lab.png',
+    href: '/imagine',
   },
   {
     title: 'Retail & venue builds',
-    copy: 'Acrylic, timber, and layered displays that hold up to foot traffic — not temporary print stuck to a wall.',
+    copy: 'Acrylic and timber displays built for foot traffic, not temporary stickers.',
+    image: '/images/services/large_format/Gemini_Generated_Image_m4v1gsm4v1gsm4v1.png',
+    href: '/imagine',
   },
   {
     title: 'Awards & campaign pieces',
-    copy: 'Engraved recognition, launch gifts, and novelty runs produced at commercial volumes with consistent detail.',
+    copy: 'Engraved recognition and novelty runs at commercial volume.',
+    image: '/images/design-studio.png',
+    href: '/imagine',
   },
   {
-    title: 'Wayfinding & brand detail',
-    copy: 'Door plaques, directories, counters, and small-format pieces that keep a large rollout looking intentional.',
+    title: 'Wayfinding detail',
+    copy: 'Door plaques, directories, and small-format pieces for multi-site rollouts.',
+    image: '/images/services/installation/Gemini_Generated_Image_3vealc3vealc3vea.png',
+    href: '/imagine',
   },
 ];
 
 const processSteps = [
-  {
-    step: '01',
-    title: 'Brief the idea',
-    copy: 'Share sketches, brand files, or a rough concept. We translate it into cut-ready paths.',
-  },
-  {
-    step: '02',
-    title: 'Material & CAD',
-    copy: 'We specify acrylic, timber, laminate, or sheet goods, then nest parts for clean production.',
-  },
-  {
-    step: '03',
-    title: 'CNC & laser',
-    copy: 'Routing and engraving on the floor — precise edges, crisp fills, repeatable batches.',
-  },
-  {
-    step: '04',
-    title: 'Finish & install',
-    copy: 'Polish, paint, assemble, and optionally install across Gauteng so the piece lands ready.',
-  },
+  { step: '01', title: 'Brief the idea', copy: 'Sketches, brand files, or a rough concept — we turn it into cut-ready paths.' },
+  { step: '02', title: 'Material & CAD', copy: 'Acrylic, timber, laminate, or sheet goods nested for clean production.' },
+  { step: '03', title: 'CNC & laser', copy: 'Routing and engraving on the floor — precise edges, crisp fills, repeatable batches.' },
+  { step: '04', title: 'Finish & install', copy: 'Polish, paint, assemble, and optionally install across Gauteng.' },
 ];
 
-const materials = [
-  'Acrylic & perspex',
-  'Timber & MDF',
-  'Laminates',
-  'Anodized aluminium sheet',
-  'Card & board',
-  'Composites for signs',
-];
-
-const otherServices = [
-  { name: 'Large format print', href: '/solutions/large-format-printing' },
-  { name: 'Fleet branding', href: '/solutions/fleet-branding' },
-  { name: 'Design & identity', href: '/solutions/design' },
-  { name: 'Installation', href: '/solutions/installation' },
-  { name: 'Litho printing', href: '/litho-printing' },
-];
+const toneBar: Record<'green' | 'warm' | 'neutral', string> = {
+  green: 'bg-accent',
+  warm: 'bg-warm',
+  neutral: 'bg-ink/70',
+};
 
 export default function Home() {
   return (
@@ -102,84 +134,192 @@ export default function Home() {
         }}
       />
 
-      {/* Hero — one composition, brand-first, full-bleed image */}
+      {/* Hero */}
       <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
-        <Image
-          src="/images/fabrication-lab.png"
-          alt="Xsphere CNC and laser workshop"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        <motion.div
+          className="absolute inset-0"
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.4, ease: 'easeOut' }}
+        >
+          <Image
+            src="/images/fabrication-lab.png"
+            alt="Xsphere CNC and laser workshop"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </motion.div>
+
         <div
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(105deg, rgba(16,20,12,0.82) 0%, rgba(16,20,12,0.55) 48%, rgba(16,20,12,0.28) 100%)',
+              'linear-gradient(115deg, rgba(16,20,12,0.88) 0%, rgba(16,20,12,0.62) 42%, rgba(47,107,58,0.28) 72%, rgba(217,101,43,0.22) 100%)',
           }}
         />
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-content flex-col justify-end px-4 pb-16 pt-24 sm:px-6 lg:justify-center lg:px-8 lg:pb-24">
+        <motion.div
+          aria-hidden
+          className="absolute left-0 top-0 h-full w-1.5 bg-accent-bright sm:w-2"
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+          style={{ transformOrigin: 'top' }}
+        />
+
+        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-content flex-col justify-end px-4 pb-14 pt-28 sm:px-6 lg:justify-center lg:px-8 lg:pb-20">
           <motion.div
-            initial={{ opacity: 0, y: 28 }}
+            initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="max-w-3xl"
+            transition={{ duration: 0.75, ease: 'easeOut', delay: 0.15 }}
+            className="max-w-4xl"
           >
-            <p className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+            <p className="font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
               Xsphere
             </p>
-            <h1 className="font-display mt-5 max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl md:text-5xl">
-              CNC &amp; laser that turn ideas into objects brands can touch.
+            <h1 className="font-display mt-6 max-w-3xl text-3xl font-semibold leading-[1.1] text-white sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+              CNC &amp; laser that turn ideas into{' '}
+              <span className="text-accent-bright">objects brands can touch</span>.
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
-              Dimensional signage, engraved detail, and fabricated pieces for commercial clients — not a copy
-              centre, a workshop that brings concepts to life.
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/88 sm:text-lg">
+              Dimensional signage, engraved detail, and fabricated pieces for commercial clients — a workshop
+              that brings concepts to life, not a copy centre.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <AnimatedButton href="/contact" variant="primary" size="md">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <AnimatedButton href="/contact" variant="primary" size="lg">
                 Brief a commercial project
               </AnimatedButton>
-              <AnimatedButton href="/solutions/fabrication" variant="outline" size="md">
-                Explore CNC &amp; laser
+              <AnimatedButton href="/imagine" variant="outline" size="lg">
+                Imagine what&apos;s possible
               </AnimatedButton>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="mt-12 flex flex-wrap gap-x-8 gap-y-2 border-t border-white/20 pt-6 text-xs font-semibold uppercase tracking-[0.18em] text-white/70 sm:mt-16"
+          >
+            <span>Laser cut</span>
+            <span className="text-accent-bright">·</span>
+            <span>Laser engrave</span>
+            <span className="text-warm">·</span>
+            <span>CNC route</span>
+            <span className="text-accent-bright">·</span>
+            <span>Finish &amp; install</span>
           </motion.div>
         </div>
       </section>
 
-      {/* What we make for large clients */}
-      <section className="border-b border-[var(--line)] px-4 py-20 sm:px-6 lg:px-8">
+      {/* Image / service cards */}
+      <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-content">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl"
-          >
-            <p className="section-eyebrow">Built for serious briefs</p>
-            <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
-              What large clients ask us to cut and engrave
-            </h2>
-            <p className="mt-4 text-lg text-ink-muted">
-              We focus on novelty, signage, and branded environments — acrylic, timber, and sheet work that makes
-              a space feel finished. Heavy industrial steelwork is not our lane.
-            </p>
-          </motion.div>
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <p className="section-eyebrow">Workshop at a glance</p>
+              <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
+                Pick a path into the work
+              </h2>
+              <p className="mt-4 text-lg text-ink-muted">
+                CNC and laser lead. Everything else is still here when a rollout needs the full stack.
+              </p>
+            </div>
+            <Link
+              href="/imagine"
+              className="text-sm font-semibold text-warm underline decoration-warm/30 underline-offset-4 transition-colors hover:decoration-warm"
+            >
+              Browse Imagine gallery →
+            </Link>
+          </div>
 
-          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
-            {applications.map((item, index) => (
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilityCards.map((card, index) => (
               <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 16 }}
+                key={card.title}
+                initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
+                transition={{ duration: 0.45, delay: index * 0.05 }}
               >
-                <h3 className="font-display text-xl font-semibold text-ink">{item.title}</h3>
-                <p className="mt-2 max-w-md text-ink-muted leading-relaxed">{item.copy}</p>
+                <Link
+                  href={card.href}
+                  className="group flex h-full flex-col overflow-hidden border border-[var(--line)] bg-surface transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                    />
+                    <div className={`absolute left-0 top-0 h-full w-1 ${toneBar[card.tone]}`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
+                    <span className="absolute bottom-3 left-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/85">
+                      {card.subtitle}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className="font-display text-xl font-bold text-ink group-hover:text-accent">
+                      {card.title}
+                    </h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-muted">{card.copy}</p>
+                    <span className="mt-4 text-sm font-semibold text-accent">Open →</span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Application image cards */}
+      <section className="bg-[#1c2118] px-4 py-20 text-[#e8ebe2] sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-content">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-bright">
+              Built for serious briefs
+            </p>
+            <h2 className="font-display mt-3 text-3xl font-bold text-white md:text-4xl">
+              What large clients ask us to cut and engrave
+            </h2>
+            <p className="mt-4 text-lg text-[#c4cbb8]">
+              Novelty, signage, and branded environments — acrylic, timber, and sheet work. Not heavy industrial
+              steel.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {applicationCards.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+              >
+                <Link
+                  href={item.href}
+                  className="group grid overflow-hidden border border-white/10 bg-[#252b20] transition-colors hover:border-accent-bright/50 sm:grid-cols-[0.9fr_1.1fr]"
+                >
+                  <div className="relative min-h-[180px] sm:min-h-full">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, 40vw"
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center p-6">
+                    <h3 className="font-display text-xl font-bold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[#c4cbb8]">{item.copy}</p>
+                    <span className="mt-4 text-sm font-semibold text-accent-bright">See examples →</span>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -187,7 +327,7 @@ export default function Home() {
       </section>
 
       {/* Process */}
-      <section className="bg-surface-muted/60 px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-warm-soft/40 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-content">
           <div className="max-w-2xl">
             <p className="section-eyebrow">How it moves</p>
@@ -195,12 +335,11 @@ export default function Home() {
               From sketch to finished piece
             </h2>
             <p className="mt-4 text-lg text-ink-muted">
-              One workshop owns the path — so procurement gets a clear timeline and the piece looks like the
-              render.
+              One workshop owns the path — clear timelines, pieces that match the proof.
             </p>
           </div>
 
-          <ol className="mt-14 grid gap-8 md:grid-cols-4">
+          <ol className="mt-14 grid gap-6 md:grid-cols-4">
             {processSteps.map((item, index) => (
               <motion.li
                 key={item.step}
@@ -208,9 +347,9 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="relative"
+                className="border-t-2 border-accent pt-5"
               >
-                <span className="font-display text-sm font-bold text-accent">{item.step}</span>
+                <span className="font-display text-sm font-bold text-warm">{item.step}</span>
                 <h3 className="font-display mt-3 text-lg font-semibold text-ink">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-muted">{item.copy}</p>
               </motion.li>
@@ -219,99 +358,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Materials / capacity — commercial buyers */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-content items-center gap-12 lg:grid-cols-2">
-          <div>
-            <p className="section-eyebrow">Workshop capacity</p>
-            <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
-              Materials and machines for brand-scale work
-            </h2>
-            <p className="mt-4 text-lg leading-relaxed text-ink-muted">
-              Laser bays and CNC routing for signage and novelty fabrication — with finishing in-house so batches
-              stay consistent when you need fifty plaques or five hundred campaign pieces.
-            </p>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-              {materials.map((material) => (
-                <li key={material} className="text-sm font-semibold text-ink">
-                  <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-                  {material}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-10">
-              <AnimatedButton href="/solutions/fabrication" variant="primary">
-                See CNC &amp; laser capabilities
-              </AnimatedButton>
-            </div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55 }}
-            className="relative aspect-[4/3] overflow-hidden rounded-sm"
-          >
-            <Image
-              src="/images/fabrication-lab.png"
-              alt="Precision CNC and laser fabrication"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Secondary services — don't scare people away */}
-      <section className="border-y border-[var(--line)] bg-surface px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-content">
-          <div className="max-w-2xl">
-            <p className="section-eyebrow">Full workshop</p>
-            <h2 className="font-display mt-3 text-2xl font-bold text-ink md:text-3xl">
-              Need print, fleet, or install as well?
-            </h2>
-            <p className="mt-3 text-ink-muted">
-              CNC and laser are the core. The rest of the workshop is still here when a rollout needs more than
-              cut parts.
-            </p>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">
-            {otherServices.map((service) => (
-              <Link
-                key={service.href}
-                href={service.href}
-                className="text-sm font-semibold text-ink underline decoration-[var(--line)] underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
-              >
-                {service.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Closing CTA */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-content">
-          <div className="max-w-2xl">
-            <h2 className="font-display text-3xl font-bold text-ink md:text-4xl">
-              Have a commercial idea that needs to become physical?
-            </h2>
-            <p className="mt-4 text-lg text-ink-muted">
-              Tell us the volume, the material, and the deadline. We&apos;ll come back with a clear path from file
-              to finished piece.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <AnimatedButton href="/contact" variant="primary" size="lg">
-                Start the brief
-              </AnimatedButton>
-              <a
-                href="tel:+27118699169"
-                className="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-semibold text-ink transition-colors hover:text-accent"
-              >
-                +27 11 869 9169
-              </a>
+        <div className="mx-auto max-w-content overflow-hidden border border-[var(--line)] bg-surface">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="p-8 sm:p-12">
+              <p className="section-eyebrow">Next step</p>
+              <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
+                Have an idea that needs to become physical?
+              </h2>
+              <p className="mt-4 max-w-xl text-lg text-ink-muted">
+                Tell us the volume, the material, and the deadline — or start in Imagine if you&apos;re still
+                exploring what&apos;s possible.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <AnimatedButton href="/contact" variant="primary" size="lg">
+                  Start the brief
+                </AnimatedButton>
+                <AnimatedButton href="/imagine" variant="secondary" size="lg">
+                  Open Imagine
+                </AnimatedButton>
+              </div>
+            </div>
+            <div className="relative min-h-[240px]">
+              <Image
+                src="/images/fabrication-lab.png"
+                alt="Laser and CNC workshop"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-accent/30 to-warm/25 mix-blend-multiply" />
             </div>
           </div>
         </div>

@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 const quickLinks = [
   { label: 'CNC & Laser', href: '/solutions/fabrication' },
+  { label: 'Imagine', href: '/imagine' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Process', href: '/process' },
   { label: 'Work', href: '/work' },
-  { label: 'Resources', href: '/resources' },
   { label: 'Contact', href: '/contact' },
 ];
 
