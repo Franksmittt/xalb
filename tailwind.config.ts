@@ -22,6 +22,10 @@ const config: Config = {
           bright: "var(--accent-bright)",
           soft: "var(--accent-soft)",
         },
+        warm: {
+          DEFAULT: "var(--warm)",
+          soft: "var(--warm-soft)",
+        },
         ink: {
           DEFAULT: "var(--foreground)",
           muted: "var(--muted)",

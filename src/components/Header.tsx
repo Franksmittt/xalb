@@ -11,6 +11,7 @@ export default function Header() {
 
   const navigation = [
     { name: 'CNC & Laser', href: '/solutions/fabrication' },
+    { name: 'Imagine', href: '/imagine' },
     {
       name: 'Solutions',
       href: '/solutions',
@@ -25,7 +26,6 @@ export default function Header() {
     },
     { name: 'Process', href: '/process' },
     { name: 'Work', href: '/work' },
-    { name: 'Resources', href: '/resources' },
   ];
 
   return (
