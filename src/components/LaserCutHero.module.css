@@ -1,0 +1,777 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 4rem);
+  overflow: hidden;
+  background: #0b0e0a;
+  color: #e8ebe2;
+}
+
+.photo {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.22;
+  transform: scale(1.06);
+  filter: saturate(0.55) contrast(1.05);
+  pointer-events: none;
+}
+
+.wash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, rgba(47, 107, 58, 0.28) 0%, transparent 58%),
+    radial-gradient(ellipse 45% 40% at 80% 80%, rgba(217, 101, 43, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(8, 10, 7, 0.55) 0%, rgba(8, 10, 7, 0.72) 48%, rgba(8, 10, 7, 0.94) 100%);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    linear-gradient(rgba(111, 174, 58, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 174, 58, 0.055) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.accentBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  height: 100%;
+  width: 6px;
+  background: linear-gradient(180deg, #6fae3a 0%, #2f6b3a 55%, #d9652b 100%);
+  transform-origin: top;
+  animation: growY 0.8s ease-out 0.15s both;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: calc(100vh - 4rem);
+  flex-direction: column;
+  justify-content: flex-end;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 7rem 1rem 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    justify-content: center;
+    padding: 6rem 2rem 5rem;
+  }
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.bed {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(111, 174, 58, 0.22);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.015) 0px,
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    linear-gradient(180deg, #1a2116 0%, #12160f 48%, #0d110c 100%);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 50px rgba(111, 174, 58, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.honeycomb {
+  pointer-events: none;
+}
+
+.wordmark {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.wordmark text {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.backlight {
+  opacity: 0;
+}
+
+.punch {
+  fill: #000;
+}
+
+.slug {
+  fill: #3a4630;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.cad {
+  fill: none;
+  stroke: rgba(111, 174, 58, 0.4);
+  stroke-width: 1.1;
+  stroke-dasharray: 5 7;
+  opacity: 0;
+}
+
+.laserTrail {
+  fill: none;
+  stroke: #c6f06a;
+  stroke-width: 2.6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-dasharray: var(--path-length);
+  stroke-dashoffset: var(--path-length);
+  opacity: 0;
+}
+
+.laserHead {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+  stroke-dasharray: 18 var(--path-length);
+  stroke-dashoffset: 0;
+  opacity: 0;
+}
+
+.edge {
+  fill: none;
+  stroke: #6fae3a;
+  stroke-width: 1.35;
+  opacity: 0;
+}
+
+.gantry {
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 18%;
+  height: 10px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.gantryBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(111, 174, 58, 0.15) 8%,
+    #8a9480 50%,
+    rgba(111, 174, 58, 0.15) 92%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(111, 174, 58, 0.25);
+}
+
+.gantryCarriage {
+  position: absolute;
+  top: -7px;
+  left: 8%;
+  width: 22px;
+  height: 110px;
+}
+
+.gantryHead {
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgba(244, 255, 228, 0.7);
+  background: radial-gradient(circle at 50% 50%, #f4ffe4 0%, #6fae3a 38%, #1c2118 72%);
+  box-shadow:
+    0 0 10px #6fae3a,
+    0 0 28px rgba(111, 174, 58, 0.7);
+  clip-path: polygon(50% 0%, 100% 38%, 78% 100%, 22% 100%, 0 38%);
+}
+
+.beam {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 2px;
+  height: 92px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #f4ffe4 0%, #6fae3a 45%, transparent 100%);
+  box-shadow: 0 0 10px #6fae3a;
+  opacity: 0.85;
+}
+
+.hotspot {
+  position: absolute;
+  top: 28%;
+  left: 8%;
+  width: 160px;
+  height: 160px;
+  margin-left: -80px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(111, 174, 58, 0.38) 0%, rgba(47, 107, 58, 0.12) 42%, transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+
+.spark {
+  position: absolute;
+  top: 48%;
+  width: 3px;
+  height: 3px;
+  border-radius: 999px;
+  background: #f4ffe4;
+  box-shadow: 0 0 6px #6fae3a, 0 0 12px #f4ffe4;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.smoke {
+  position: absolute;
+  bottom: 28%;
+  width: 70px;
+  height: 70px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(180, 190, 170, 0.22) 0%, transparent 70%);
+  filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(196, 203, 184, 0.72);
+}
+
+.hudTop,
+.hudBottom {
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.hudTop {
+  top: 0.7rem;
+}
+
+.hudBottom {
+  bottom: 0.7rem;
+  align-items: flex-end;
+}
+
+.hudBright {
+  color: #6fae3a;
+}
+
+.progress {
+  width: min(11rem, 38vw);
+  height: 3px;
+  margin-top: 0.35rem;
+  background: rgba(111, 174, 58, 0.18);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #2f6b3a, #6fae3a);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.status {
+  position: relative;
+  min-width: 6.5rem;
+  text-align: right;
+  color: #6fae3a;
+}
+
+.status span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.mark {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(111, 174, 58, 0.55);
+  border-style: solid;
+}
+
+.markTl {
+  top: 10px;
+  left: 10px;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+.markTr {
+  top: 10px;
+  right: 10px;
+  border-width: 1.5px 1.5px 0 0;
+}
+
+.markBl {
+  bottom: 10px;
+  left: 10px;
+  border-width: 0 0 1.5px 1.5px;
+}
+
+.markBr {
+  bottom: 10px;
+  right: 10px;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+.copy {
+  max-width: 48rem;
+  margin-top: 1.75rem;
+}
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #6fae3a;
+  opacity: 0;
+}
+
+.headline {
+  margin-top: 0.85rem;
+  font-size: clamp(1.65rem, 4vw, 3.15rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  opacity: 0;
+}
+
+.headline em {
+  font-style: normal;
+  color: #6fae3a;
+}
+
+.lede {
+  margin-top: 1.1rem;
+  max-width: 36rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(232, 235, 226, 0.88);
+  opacity: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  opacity: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  opacity: 0;
+}
+
+.dot {
+  color: #6fae3a;
+}
+
+.dotWarm {
+  color: #d9652b;
+}
+
+/* --- live sequence (only after path length is measured) --- */
+
+.hero[data-ready="true"] .backlight {
+  animation: fadeIn 0.7s ease 3.45s forwards;
+}
+
+.hero[data-ready="true"] .slug {
+  animation: slugDrop 0.75s cubic-bezier(0.45, 0.05, 0.7, 0.2) 3.45s forwards;
+}
+
+.hero[data-ready="true"] .cad {
+  animation: cadIn 0.55s ease 0.25s forwards, cadOut 0.35s ease 1.05s forwards;
+}
+
+.hero[data-ready="true"] .laserTrail {
+  animation: laserDraw 3.35s ease-in-out 0.85s forwards;
+}
+
+.hero[data-ready="true"] .laserHead {
+  animation: laserTip 3.35s ease-in-out 0.85s forwards;
+}
+
+.hero[data-ready="true"] .edge {
+  animation: edgeIn 0.7s ease 3.55s forwards, edgePulse 3.4s ease-in-out 4.4s infinite;
+}
+
+.hero[data-ready="true"] .gantry {
+  animation: gantryIn 0.4s ease 0.55s forwards, gantryOut 0.45s ease 4.15s forwards;
+}
+
+.hero[data-ready="true"] .gantryCarriage {
+  animation: gantryTravel 3.35s ease-in-out 0.85s forwards;
+}
+
+.hero[data-ready="true"] .hotspot {
+  animation: hotspotTravel 3.35s ease-in-out 0.85s forwards;
+}
+
+.hero[data-ready="true"] .progressFill {
+  animation: progress 3.35s ease-in-out 0.85s forwards;
+}
+
+.hero[data-ready="true"] .statusIdle {
+  animation: statusSwap 0.01s linear 0.7s forwards;
+}
+
+.hero[data-ready="true"] .statusCut {
+  animation: statusOn 0.01s linear 0.7s forwards, statusSwap 0.01s linear 4.15s forwards;
+}
+
+.hero[data-ready="true"] .statusDone {
+  animation: statusOn 0.01s linear 4.15s forwards;
+}
+
+.hero[data-ready="true"] .kicker {
+  animation: riseIn 0.7s ease 4.15s forwards;
+}
+
+.hero[data-ready="true"] .headline {
+  animation: riseIn 0.75s ease 4.3s forwards;
+}
+
+.hero[data-ready="true"] .lede {
+  animation: riseIn 0.75s ease 4.45s forwards;
+}
+
+.hero[data-ready="true"] .actions {
+  animation: riseIn 0.75s ease 4.6s forwards;
+}
+
+.hero[data-ready="true"] .chips {
+  animation: riseIn 0.75s ease 4.75s forwards;
+}
+
+.statusIdle {
+  opacity: 1;
+}
+
+/* sparks / smoke are toggled from data-ready as well */
+.hero[data-ready="true"] .spark {
+  animation-name: spark;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.hero[data-ready="true"] .smoke {
+  animation-name: smoke;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+/* --- reduced motion: final cut state, no theatrics --- */
+
+.hero[data-reduced="true"] .backlight,
+.hero[data-reduced="true"] .edge,
+.hero[data-reduced="true"] .kicker,
+.hero[data-reduced="true"] .headline,
+.hero[data-reduced="true"] .lede,
+.hero[data-reduced="true"] .actions,
+.hero[data-reduced="true"] .chips,
+.hero[data-reduced="true"] .statusDone {
+  opacity: 1;
+  animation: none;
+}
+
+.hero[data-reduced="true"] .slug,
+.hero[data-reduced="true"] .cad,
+.hero[data-reduced="true"] .laserTrail,
+.hero[data-reduced="true"] .laserHead,
+.hero[data-reduced="true"] .gantry,
+.hero[data-reduced="true"] .hotspot,
+.hero[data-reduced="true"] .spark,
+.hero[data-reduced="true"] .smoke,
+.hero[data-reduced="true"] .statusIdle,
+.hero[data-reduced="true"] .statusCut {
+  opacity: 0;
+  animation: none;
+}
+
+.hero[data-reduced="true"] .progressFill {
+  transform: scaleX(1);
+  animation: none;
+}
+
+.hero[data-reduced="true"] .accentBar {
+  animation: none;
+  transform: none;
+}
+
+@media (min-width: 640px) {
+  .actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hud {
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .gantry,
+  .hotspot,
+  .hudTop span:last-child,
+  .beam {
+    display: none;
+  }
+
+  .hud {
+    font-size: 0.58rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accentBar {
+    animation: none;
+    transform: none;
+  }
+}
+
+@keyframes growY {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slugDrop {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(78px) rotate(3deg);
+  }
+}
+
+@keyframes cadIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cadOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes laserDraw {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: var(--path-length);
+    stroke: #f4ffe4;
+  }
+  78% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+    stroke: #c6f06a;
+  }
+  100% {
+    opacity: 0.2;
+    stroke-dashoffset: 0;
+    stroke: #1a2412;
+  }
+}
+
+@keyframes laserTip {
+  0% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+  92% {
+    opacity: 1;
+    stroke-dashoffset: calc(var(--path-length) * -1);
+  }
+  100% {
+    opacity: 0;
+    stroke-dashoffset: calc(var(--path-length) * -1);
+  }
+}
+
+@keyframes edgeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes edgePulse {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes gantryIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gantryOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes gantryTravel {
+  from {
+    left: 8%;
+  }
+  to {
+    left: 86%;
+  }
+}
+
+@keyframes hotspotTravel {
+  0% {
+    opacity: 0.9;
+    left: 12%;
+  }
+  90% {
+    opacity: 0.9;
+    left: 88%;
+  }
+  100% {
+    opacity: 0;
+    left: 88%;
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes statusSwap {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes statusOn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spark {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--dx), var(--dy), 0) scale(0.15);
+  }
+}
+
+@keyframes smoke {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.55);
+  }
+  30% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-70px) scale(1.45);
+  }
+}
