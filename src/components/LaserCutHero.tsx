@@ -6,6 +6,7 @@ import AnimatedButton from '@/components/AnimatedButton';
 import {
   CNC_CUT,
   CNC_HOME,
+  CNC_LETTER_IDS,
   CNC_PARK,
   CNC_PATHS,
   CNC_PIERCE,
@@ -255,6 +256,13 @@ export default function LaserCutHero() {
     };
   }, [reduced]);
 
+  const revealed = Object.fromEntries(
+    CNC_LETTER_IDS.map((letter) => [
+      letter,
+      CNC_PATHS.every((p, i) => p.letter !== letter || cooled[i]),
+    ]),
+  ) as Record<(typeof CNC_LETTER_IDS)[number], boolean>;
+
   const statusLabel =
     phase === 'cut' || phase === 'pierce'
       ? 'Laser'
@@ -380,9 +388,19 @@ export default function LaserCutHero() {
               strokeWidth="1"
             />
 
-            <g className={styles.preview} aria-hidden>
-              {CNC_PATHS.map((p) => (
-                <path key={`pre-${p.id}`} d={p.d} />
+            <g>
+              {CNC_LETTER_IDS.map((letter) => (
+                <g
+                  key={letter}
+                  className={`${styles.letter} ${revealed[letter] ? styles.letterOn : ''}`}
+                >
+                  {CNC_PATHS.filter((p) => p.letter === letter && p.kind === 'body').map((p) => (
+                    <path key={`fill-${p.id}`} d={p.d} className={styles.letterBody} />
+                  ))}
+                  {CNC_PATHS.filter((p) => p.letter === letter && p.kind === 'hole').map((p) => (
+                    <path key={`hole-${p.id}`} d={p.d} className={styles.letterHole} />
+                  ))}
+                </g>
               ))}
             </g>
 
