@@ -7,20 +7,8 @@
   max-height: calc(100vh - 4rem);
   max-height: calc(100dvh - 4rem);
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(47, 107, 58, 0.22), transparent 55%),
-    #0c100a;
+  background: #12110f;
   color: #e8ebe2;
-}
-
-.accentBar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 3;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(180deg, #6fae3a 0%, #2f6b3a 60%, #d9652b 100%);
 }
 
 .inner {
@@ -31,7 +19,7 @@
   height: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 0.7rem 1rem 0.85rem 1.15rem;
+  padding: 0.7rem 1rem 0.85rem;
   min-height: 0;
 }
 
@@ -50,84 +38,77 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border: 1px solid rgba(111, 174, 58, 0.28);
-  background: #12160f;
-  box-shadow:
-    inset 0 0 40px rgba(0, 0, 0, 0.55),
-    0 12px 32px rgba(0, 0, 0, 0.4);
+  background: #161310;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.45);
 }
 
-.preview path {
-  fill: none;
-  stroke: rgba(111, 174, 58, 0.28);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.letter {
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.cutLine {
+.letterOn {
+  opacity: 1;
+}
+
+.letterBody {
+  fill: #c5d4a0;
+}
+
+.letterHole {
+  fill: #2c271f;
+}
+
+.kerf {
   fill: none;
-  stroke: #f4ffe4;
-  stroke-width: 5;
-  stroke-linecap: round;
+  stroke: #e4d7b8;
+  stroke-width: 1.8;
   stroke-linejoin: round;
+  stroke-linecap: butt;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  filter: drop-shadow(0 0 4px #c6f06a) drop-shadow(0 0 12px #6fae3a);
-  transition: stroke 0.35s ease, filter 0.35s ease;
 }
 
 .cooled {
-  stroke: #0a0c09;
-  filter: drop-shadow(0 1px 0 rgba(232, 235, 226, 0.18));
+  stroke: #1a1610;
 }
 
-.flare {
+.hotTip {
+  fill: none;
+  stroke: #fff6d8;
+  stroke-width: 2.1;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  opacity: 0;
+  filter: drop-shadow(0 0 1.6px rgba(255, 214, 120, 0.85));
+}
+
+.flare,
+.core,
+.smoke {
   pointer-events: none;
 }
 
-.sparks {
-  stroke: #f4ffe8;
-  stroke-width: 1.4;
-  stroke-linecap: round;
-  opacity: 0;
+.hero[data-cutting="true"] .core {
+  opacity: 1;
 }
 
-.hero[data-cutting="true"] .sparks {
-  opacity: 1;
-  animation: sparkFlicker 0.12s steps(2) infinite;
+.hero:not([data-cutting="true"]) .core {
+  opacity: 0;
 }
 
 .hud {
   position: absolute;
-  left: 0.7rem;
-  right: 0.7rem;
-  bottom: 0.45rem;
+  left: 0.85rem;
+  bottom: 0.5rem;
   display: flex;
-  justify-content: space-between;
-  gap: 0.75rem;
+  gap: 1.25rem;
   pointer-events: none;
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(196, 203, 184, 0.78);
-}
-
-.hud em {
-  font-style: normal;
-  color: #6fae3a;
-}
-
-.hudStatus {
-  color: #6fae3a;
-  min-width: 5.5rem;
-  text-align: right;
-}
-
-.hudStatus[data-phase="cut"],
-.hudStatus[data-phase="pierce"] {
-  color: #c6f06a;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(210, 206, 196, 0.45);
 }
 
 .copy {
@@ -140,7 +121,7 @@
   margin: 0;
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #6fae3a;
 }
@@ -176,11 +157,7 @@
 
 @media (min-width: 640px) {
   .inner {
-    padding: 0.8rem 1.5rem 1rem 1.6rem;
-  }
-
-  .hud {
-    font-size: 0.68rem;
+    padding: 0.8rem 1.5rem 1rem;
   }
 
   .lede {
@@ -220,23 +197,5 @@
   .actions :global(button) {
     padding: 0.55rem 1rem;
     font-size: 0.9rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero[data-cutting="true"] .sparks {
-    animation: none;
-    opacity: 0;
-  }
-}
-
-@keyframes sparkFlicker {
-  0% {
-    transform: scale(1);
-    opacity: 0.95;
-  }
-  100% {
-    transform: scale(1.15) rotate(18deg);
-    opacity: 0.35;
   }
 }
