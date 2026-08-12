@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedButton from '@/components/AnimatedButton';
+import LaserCutHero from '@/components/LaserCutHero';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://xsphere.co.za';
 
@@ -134,85 +135,7 @@ export default function Home() {
         }}
       />
 
-      {/* Hero */}
-      <section className="relative min-h-[calc(100vh-4rem)] overflow-hidden">
-        <motion.div
-          className="absolute inset-0"
-          initial={{ scale: 1.08 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.4, ease: 'easeOut' }}
-        >
-          <Image
-            src="/images/fabrication-lab.png"
-            alt="Xsphere CNC and laser workshop"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </motion.div>
-
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(115deg, rgba(16,20,12,0.88) 0%, rgba(16,20,12,0.62) 42%, rgba(47,107,58,0.28) 72%, rgba(217,101,43,0.22) 100%)',
-          }}
-        />
-
-        <motion.div
-          aria-hidden
-          className="absolute left-0 top-0 h-full w-1.5 bg-accent-bright sm:w-2"
-          initial={{ scaleY: 0 }}
-          animate={{ scaleY: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-          style={{ transformOrigin: 'top' }}
-        />
-
-        <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-content flex-col justify-end px-4 pb-14 pt-28 sm:px-6 lg:justify-center lg:px-8 lg:pb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 36 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: 'easeOut', delay: 0.15 }}
-            className="max-w-4xl"
-          >
-            <p className="font-display text-5xl font-extrabold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
-              Xsphere
-            </p>
-            <h1 className="font-display mt-6 max-w-3xl text-3xl font-semibold leading-[1.1] text-white sm:text-4xl md:text-5xl lg:text-[3.25rem]">
-              CNC &amp; laser that turn ideas into{' '}
-              <span className="text-accent-bright">objects brands can touch</span>.
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/88 sm:text-lg">
-              Dimensional signage, engraved detail, and fabricated pieces for commercial clients — a workshop
-              that brings concepts to life, not a copy centre.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <AnimatedButton href="/contact" variant="primary" size="lg">
-                Brief a commercial project
-              </AnimatedButton>
-              <AnimatedButton href="/imagine" variant="outline" size="lg">
-                Imagine what&apos;s possible
-              </AnimatedButton>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55 }}
-            className="mt-12 flex flex-wrap gap-x-8 gap-y-2 border-t border-white/20 pt-6 text-xs font-semibold uppercase tracking-[0.18em] text-white/70 sm:mt-16"
-          >
-            <span>Laser cut</span>
-            <span className="text-accent-bright">·</span>
-            <span>Laser engrave</span>
-            <span className="text-warm">·</span>
-            <span>CNC route</span>
-            <span className="text-accent-bright">·</span>
-            <span>Finish &amp; install</span>
-          </motion.div>
-        </div>
-      </section>
+      <LaserCutHero />
 
       {/* Image / service cards */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
