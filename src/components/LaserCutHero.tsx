@@ -1,289 +1,336 @@
 'use client';
 
-import { useEffect, useId, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
 import AnimatedButton from '@/components/AnimatedButton';
+import {
+  CNC_CUT,
+  CNC_HOME,
+  CNC_PARK,
+  CNC_PATHS,
+  CNC_PIERCE,
+  CNC_TRAVEL,
+  CNC_VIEWBOX,
+} from '@/components/cncPaths';
 import styles from './LaserCutHero.module.css';
 
-const WORDMARK = 'Xsphere';
+type Phase = 'idle' | 'rapid' | 'pierce' | 'cut' | 'home' | 'done';
 
-const SPARKS = Array.from({ length: 22 }, (_, i) => ({
-  id: i,
-  x: 8 + ((i * 41) % 84),
-  delay: 0.95 + (i % 11) * 0.24,
-  duration: 0.42 + (i % 5) * 0.08,
-  dx: `${(i % 2 === 0 ? 1 : -1) * (16 + (i % 8) * 9)}px`,
-  dy: `${-(22 + (i % 7) * 14)}px`,
-}));
-
-const SMOKE = [
-  { id: 1, left: '18%', delay: '1.1s' },
-  { id: 2, left: '38%', delay: '1.7s' },
-  { id: 3, left: '52%', delay: '2.2s' },
-  { id: 4, left: '68%', delay: '2.8s' },
-  { id: 5, left: '80%', delay: '3.3s' },
-];
-
-function WordmarkText({
-  className,
-  style,
-}: {
-  className: string;
-  style?: CSSProperties;
-}) {
-  return (
-    <text
-      className={className}
-      x="50%"
-      y="56%"
-      textAnchor="middle"
-      dominantBaseline="middle"
-      fontSize="158"
-      fontWeight="800"
-      letterSpacing="-0.03em"
-      style={style}
-    >
-      {WORDMARK}
-    </text>
-  );
+function moveToward(
+  from: { x: number; y: number },
+  to: { x: number; y: number },
+  step: number,
+) {
+  const dx = to.x - from.x;
+  const dy = to.y - from.y;
+  const dist = Math.hypot(dx, dy);
+  if (dist <= step || dist < 1.2) return { pos: { x: to.x, y: to.y }, arrived: true };
+  const r = step / dist;
+  return { pos: { x: from.x + dx * r, y: from.y + dy * r }, arrived: false };
 }
 
 export default function LaserCutHero() {
-  const rawId = useId();
-  const uid = rawId.replace(/:/g, '');
-  const textRef = useRef<SVGTextElement>(null);
+  const uid = useId().replace(/:/g, '');
   const reducedMotion = useReducedMotion();
-  const [pathLength, setPathLength] = useState(4200);
-  const [ready, setReady] = useState(false);
+  const reduced = Boolean(reducedMotion);
+
+  const pathRefs = useRef<(SVGPathElement | null)[]>([]);
+  const gantryRef = useRef<SVGGElement>(null);
+  const carriageRef = useRef<SVGGElement>(null);
+  const flareRef = useRef<SVGCircleElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  const [phase, setPhase] = useState<Phase>(reduced ? 'done' : 'idle');
+  const [cooled, setCooled] = useState<boolean[]>(() => CNC_PATHS.map(() => reduced));
+  const [coords, setCoords] = useState(CNC_HOME);
+  const [cutting, setCutting] = useState(false);
 
   useEffect(() => {
-    let cancelled = false;
+    const gantry = gantryRef.current;
+    const carriage = carriageRef.current;
+    const flare = flareRef.current;
+    const paths = pathRefs.current.filter((p): p is SVGPathElement => p !== null);
 
-    let measured = false;
+    if (!gantry || !carriage || !flare) return;
 
-    const measure = () => {
-      if (cancelled || measured) return;
-      measured = true;
-
-      const node = textRef.current;
-      if (node) {
-        const width = node.getComputedTextLength();
-        setPathLength(Math.max(2800, Math.round(width * 3.55)));
-      }
-
-      setReady(true);
+    const place = (x: number, y: number) => {
+      gantry.setAttribute('transform', `translate(0 ${y})`);
+      carriage.setAttribute('transform', `translate(${x} 0)`);
     };
 
-    const timeout = window.setTimeout(measure, 700);
-
-    if (typeof document !== 'undefined' && document.fonts?.ready) {
-      document.fonts.ready.then(() => {
-        window.clearTimeout(timeout);
-        measure();
-      }).catch(() => {
-        window.clearTimeout(timeout);
-        measure();
+    if (reduced) {
+      paths.forEach((p) => {
+        p.style.strokeDasharray = '1';
+        p.style.strokeDashoffset = '0';
       });
-    } else {
-      measure();
+      place(CNC_PARK.x, CNC_PARK.y);
+      flare.style.opacity = '0';
+      setPhase('done');
+      setCooled(CNC_PATHS.map(() => true));
+      return;
     }
 
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timeout);
-    };
-  }, []);
+    const lengths = paths.map((p) => p.getTotalLength() || 1);
+    paths.forEach((p) => {
+      p.style.strokeDasharray = '1';
+      p.style.strokeDashoffset = '1';
+    });
 
-  const reduced = Boolean(reducedMotion);
-  const live = ready && !reduced;
+    let raf = 0;
+    let stopped = false;
+    let last = 0;
+    let hudAt = 0;
+    let index = 0;
+    let state: Phase = 'idle';
+    let pos = { ...CNC_HOME };
+    let cutProgress = 0;
+    let pierceT = 0;
+    let startDelay = 0.45;
+    let publishedPhase: Phase = 'idle';
+    let publishedCutting = false;
+    let lastHud = { x: -1, y: -1 };
+
+    const publish = (nextPhase: Phase, nextCutting: boolean) => {
+      if (stopped) return;
+      if (nextPhase !== publishedPhase) {
+        publishedPhase = nextPhase;
+        setPhase(nextPhase);
+      }
+      if (nextCutting !== publishedCutting) {
+        publishedCutting = nextCutting;
+        setCutting(nextCutting);
+      }
+    };
+
+    place(pos.x, pos.y);
+    flare.style.opacity = '0';
+
+    const loop = (ts: number) => {
+      if (stopped) return;
+      if (!last) last = ts;
+      const dt = Math.min((ts - last) / 1000, 0.05);
+      last = ts;
+
+      if (state === 'idle') {
+        startDelay -= dt;
+        if (startDelay <= 0) {
+          state = 'rapid';
+          publish('rapid', false);
+        }
+      } else if (index < paths.length) {
+        const path = paths[index];
+        const start = path.getPointAtLength(0);
+
+        if (state === 'rapid') {
+          flare.style.opacity = '0';
+          publish('rapid', false);
+          const next = moveToward(pos, start, CNC_TRAVEL * dt);
+          pos = next.pos;
+          if (next.arrived) {
+            state = 'pierce';
+            pierceT = 0;
+            cutProgress = 0;
+            flare.style.opacity = '1';
+            publish('pierce', true);
+          }
+        } else if (state === 'pierce') {
+          pierceT += dt;
+          if (pierceT >= CNC_PIERCE) {
+            state = 'cut';
+            publish('cut', true);
+          }
+        } else if (state === 'cut') {
+          cutProgress += CNC_CUT * dt;
+          const len = lengths[index];
+          if (cutProgress >= len) {
+            cutProgress = len;
+            const doneIndex = index;
+            path.style.strokeDashoffset = '0';
+            if (!stopped) {
+              setCooled((prev) => {
+                const next = [...prev];
+                next[doneIndex] = true;
+                return next;
+              });
+            }
+            pos = path.getPointAtLength(len);
+            index += 1;
+            state = 'rapid';
+            flare.style.opacity = '0';
+            publish('rapid', false);
+          } else {
+            path.style.strokeDashoffset = String(1 - cutProgress / len);
+            pos = path.getPointAtLength(cutProgress);
+          }
+        }
+      } else {
+        flare.style.opacity = '0';
+        if (state !== 'home' && state !== 'done') {
+          state = 'home';
+          publish('home', false);
+        }
+        const next = moveToward(pos, CNC_PARK, CNC_TRAVEL * dt);
+        pos = next.pos;
+        if (next.arrived) {
+          state = 'done';
+          publish('done', false);
+          place(pos.x, pos.y);
+          return;
+        }
+      }
+
+      place(pos.x, pos.y);
+      if (ts - hudAt > 90) {
+        hudAt = ts;
+        const hx = Math.round(pos.x * 10) / 10;
+        const hy = Math.round(pos.y * 10) / 10;
+        if (hx !== lastHud.x || hy !== lastHud.y) {
+          lastHud = { x: hx, y: hy };
+          if (!stopped) setCoords(lastHud);
+        }
+      }
+
+      raf = requestAnimationFrame(loop);
+    };
+
+    raf = requestAnimationFrame(loop);
+
+    return () => {
+      stopped = true;
+      cancelAnimationFrame(raf);
+    };
+  }, [reduced]);
+
+  const statusLabel =
+    phase === 'cut' || phase === 'pierce'
+      ? 'Cutting'
+      : phase === 'rapid' || phase === 'home'
+        ? 'Rapid'
+        : phase === 'done'
+          ? 'Complete'
+          : 'Standby';
 
   return (
-    <section
-      className={styles.hero}
-      aria-label="Xsphere CNC and laser hero"
-      data-ready={live ? 'true' : 'false'}
-      data-reduced={reduced ? 'true' : 'false'}
-      style={{ ['--path-length' as string]: pathLength }}
-    >
-      <Image
-        src="/images/fabrication-lab.png"
-        alt=""
-        fill
-        priority
-        className={styles.photo}
-        sizes="100vw"
-      />
-      <div className={styles.wash} />
-      <div className={styles.grid} aria-hidden />
+    <section className={styles.hero} aria-label="Xsphere CNC and laser hero" data-cutting={cutting ? 'true' : 'false'}>
       <div className={styles.accentBar} aria-hidden />
 
       <div className={styles.inner}>
-        <div className={styles.stage}>
-          <div className={styles.bed}>
-            <span className={`${styles.mark} ${styles.markTl}`} aria-hidden />
-            <span className={`${styles.mark} ${styles.markTr}`} aria-hidden />
-            <span className={`${styles.mark} ${styles.markBl}`} aria-hidden />
-            <span className={`${styles.mark} ${styles.markBr}`} aria-hidden />
+        <div className={styles.bedWrap}>
+          <svg
+            ref={svgRef}
+            className={styles.bed}
+            viewBox={`0 0 ${CNC_VIEWBOX.w} ${CNC_VIEWBOX.h}`}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            aria-label="CNC laser cutting the Xsphere wordmark"
+          >
+            <defs>
+              <pattern id={`grid-${uid}`} width="28" height="28" patternUnits="userSpaceOnUse">
+                <path
+                  d="M 28 0 L 0 0 0 28"
+                  fill="none"
+                  stroke="rgba(111,174,58,0.14)"
+                  strokeWidth="1.2"
+                />
+              </pattern>
+              <pattern id={`honey-${uid}`} width="22" height="38" patternUnits="userSpaceOnUse">
+                <polygon
+                  points="11,2 20,8 20,16 11,22 2,16 2,8"
+                  fill="none"
+                  stroke="rgba(111,174,58,0.1)"
+                  strokeWidth="0.7"
+                />
+              </pattern>
+              <linearGradient id={`beam-${uid}`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#3a4334" />
+                <stop offset="45%" stopColor="#1c2218" />
+                <stop offset="100%" stopColor="#12160f" />
+              </linearGradient>
+              <filter id={`flare-${uid}`} x="-120%" y="-120%" width="340%" height="340%">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3.4" result="b" />
+                <feFlood floodColor="#6fae3a" floodOpacity="1" result="c" />
+                <feComposite in="c" in2="b" operator="in" result="g" />
+                <feMerge>
+                  <feMergeNode in="g" />
+                  <feMergeNode in="g" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
 
-            <svg
-              className={styles.wordmark}
-              viewBox="0 0 1200 268"
-              role="img"
-              aria-label="Xsphere"
-            >
-              <defs>
-                <linearGradient id={`plate-${uid}`} x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#2c3524" />
-                  <stop offset="45%" stopColor="#1c2418" />
-                  <stop offset="100%" stopColor="#12180f" />
-                </linearGradient>
-                <radialGradient id={`void-${uid}`} cx="50%" cy="50%" r="58%">
-                  <stop offset="0%" stopColor="#6fae3a" stopOpacity="0.72" />
-                  <stop offset="42%" stopColor="#2f6b3a" stopOpacity="0.38" />
-                  <stop offset="100%" stopColor="#050805" stopOpacity="1" />
-                </radialGradient>
-                <pattern
-                  id={`honey-${uid}`}
-                  width="28"
-                  height="48"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <polygon
-                    points="14,3 25,9 25,21 14,27 3,21 3,9"
-                    fill="none"
-                    stroke="rgba(111,174,58,0.13)"
-                    strokeWidth="0.7"
-                  />
-                </pattern>
-                <filter id={`glow-${uid}`} x="-20%" y="-40%" width="140%" height="180%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="blur" />
-                  <feFlood floodColor="#6fae3a" floodOpacity="0.95" result="color" />
-                  <feComposite in="color" in2="blur" operator="in" result="glow" />
-                  <feMerge>
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <filter id={`head-${uid}`} x="-40%" y="-80%" width="180%" height="260%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="4.5" result="blur" />
-                  <feFlood floodColor="#c6f06a" floodOpacity="1" result="color" />
-                  <feComposite in="color" in2="blur" operator="in" result="glow" />
-                  <feMerge>
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <filter id={`edge-${uid}`} x="-15%" y="-30%" width="130%" height="160%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur" />
-                  <feFlood floodColor="#6fae3a" floodOpacity="0.9" result="color" />
-                  <feComposite in="color" in2="blur" operator="in" result="glow" />
-                  <feMerge>
-                    <feMergeNode in="glow" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <mask id={`cut-${uid}`} maskUnits="userSpaceOnUse">
-                  <rect x="0" y="0" width="1200" height="268" fill="#fff" />
-                  <WordmarkText className={styles.punch} />
-                </mask>
-              </defs>
+            <rect width="100%" height="100%" fill="#12160f" />
+            <rect width="100%" height="100%" fill={`url(#honey-${uid})`} />
+            <rect width="100%" height="100%" fill={`url(#grid-${uid})`} />
 
-              <rect width="1200" height="268" fill={`url(#honey-${uid})`} className={styles.honeycomb} />
-              <rect
-                className={styles.backlight}
-                width="1200"
-                height="268"
-                fill={`url(#void-${uid})`}
-              />
-              <rect
-                className={styles.plate}
-                width="1200"
-                height="268"
-                fill={`url(#plate-${uid})`}
-                mask={`url(#cut-${uid})`}
-              />
+            <rect x="6" y="8" width="9" height="284" rx="1" fill="#161b14" stroke="#2c3328" strokeWidth="0.8" />
+            <rect x="975" y="8" width="9" height="284" rx="1" fill="#161b14" stroke="#2c3328" strokeWidth="0.8" />
 
-              <WordmarkText className={styles.slug} />
-              <WordmarkText className={styles.cad} />
-              <text
-                ref={textRef}
-                className={styles.laserTrail}
-                x="50%"
-                y="56%"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fontSize="158"
-                fontWeight="800"
-                letterSpacing="-0.03em"
-                style={{ filter: `url(#glow-${uid})` }}
-              >
-                {WORDMARK}
-              </text>
-              <WordmarkText
-                className={styles.laserHead}
-                style={{ filter: `url(#head-${uid})` }}
-              />
-              <WordmarkText
-                className={styles.edge}
-                style={{ filter: `url(#edge-${uid})` }}
-              />
-            </svg>
+            <g className={styles.preview} aria-hidden>
+              {CNC_PATHS.map((p) => (
+                <path key={`pre-${p.id}`} d={p.d} />
+              ))}
+            </g>
 
-            <div className={styles.gantry} aria-hidden>
-              <div className={styles.gantryBar} />
-              <div className={styles.gantryCarriage}>
-                <div className={styles.gantryHead} />
-                <span className={styles.beam} />
-              </div>
-            </div>
-            <div className={styles.hotspot} aria-hidden />
+            <g>
+              {CNC_PATHS.map((p, i) => (
+                <path
+                  key={p.id}
+                  ref={(el) => {
+                    pathRefs.current[i] = el;
+                  }}
+                  className={`${styles.cutLine} ${cooled[i] ? styles.cooled : ''}`}
+                  d={p.d}
+                  pathLength={1}
+                />
+              ))}
+            </g>
 
-            {SPARKS.map((spark) => (
-              <span
-                key={spark.id}
-                className={styles.spark}
-                style={{
-                  left: `${spark.x}%`,
-                  animationDelay: `${spark.delay}s`,
-                  animationDuration: `${spark.duration}s`,
-                  ['--dx' as string]: spark.dx,
-                  ['--dy' as string]: spark.dy,
-                }}
-                aria-hidden
-              />
-            ))}
-            {SMOKE.map((puff) => (
-              <span
-                key={puff.id}
-                className={styles.smoke}
-                style={{ left: puff.left, animationDelay: puff.delay, animationDuration: '1.6s' }}
-                aria-hidden
-              />
-            ))}
+            <g ref={gantryRef} className={styles.gantry}>
+              <rect x="-70" y="-26" width="1140" height="7" fill="rgba(0,0,0,0.4)" />
+              <rect x="-70" y="-44" width="1140" height="20" fill={`url(#beam-${uid})`} />
+              <rect x="-70" y="-44" width="1140" height="1.4" fill="rgba(255,255,255,0.14)" />
+              <line x1="-70" y1="-34" x2="1070" y2="-34" stroke="#4a5344" strokeWidth="1.6" />
 
-            <div className={styles.hud} aria-hidden>
-              <div className={styles.hudTop}>
-                <span>
-                  Job <span className={styles.hudBright}>0047-XSPHERE</span>
-                </span>
-                <span>Bed 1200 × 900 mm</span>
-              </div>
-              <div className={styles.hudBottom}>
-                <div>
-                  <div>Src CAD / vector</div>
-                  <div className={styles.progress}>
-                    <div className={styles.progressFill} />
-                  </div>
-                </div>
-                <div className={styles.status}>
-                  <span className={styles.statusIdle}>Standby</span>
-                  <span className={styles.statusCut}>Cutting</span>
-                  <span className={styles.statusDone}>Complete</span>
-                </div>
-              </div>
-            </div>
+              <g ref={carriageRef}>
+                <rect x="-30" y="-62" width="60" height="40" rx="3.5" fill="#1a2016" stroke="#5a6452" strokeWidth="1.1" />
+                <rect x="-22" y="-56" width="44" height="7" rx="1" fill="#2f3828" />
+                <rect x="-18" y="-46" width="36" height="4" fill="#6fae3a" opacity="0.85" />
+                <rect x="-9" y="-22" width="18" height="11" fill="#6d7664" />
+                <polygon points="-8,-11 8,-11 3.2,0 -3.2,0" fill="#a8b09c" />
+                <polygon points="-4.5,-11 4.5,-11 2,0 -2,0" fill="#dfe6d4" />
+                <rect x="-6" y="-15" width="12" height="3" fill="#6fae3a" />
+                <circle
+                  ref={flareRef}
+                  className={styles.flare}
+                  r="5"
+                  fill="#f8ffe8"
+                  filter={`url(#flare-${uid})`}
+                  opacity="0"
+                />
+                <g className={styles.sparks} aria-hidden>
+                  <line x1="0" y1="0" x2="10" y2="-12" />
+                  <line x1="0" y1="0" x2="-9" y2="-11" />
+                  <line x1="0" y1="0" x2="7" y2="9" />
+                  <line x1="0" y1="0" x2="-8" y2="8" />
+                  <line x1="0" y1="0" x2="12" y2="2" />
+                  <line x1="0" y1="0" x2="-12" y2="-2" />
+                </g>
+              </g>
+            </g>
+          </svg>
+
+          <div className={styles.hud} aria-hidden>
+            <span>
+              Job <em>0047-XSPHERE</em>
+            </span>
+            <span className={styles.hudCoords}>
+              X {coords.x.toFixed(1)}
+              <span> </span>
+              Y {coords.y.toFixed(1)}
+            </span>
+            <span className={styles.hudStatus} data-phase={phase}>
+              {statusLabel}
+            </span>
           </div>
         </div>
 
@@ -293,27 +340,16 @@ export default function LaserCutHero() {
             CNC &amp; laser that turn ideas into <em>objects brands can touch</em>.
           </h1>
           <p className={styles.lede}>
-            Dimensional signage, engraved detail, and fabricated pieces for commercial clients — a
-            workshop that brings concepts to life, not a copy centre.
+            Dimensional signage, engraved detail, and fabricated pieces — a workshop, not a copy centre.
           </p>
           <div className={styles.actions}>
-            <AnimatedButton href="/contact" variant="primary" size="lg">
+            <AnimatedButton href="/contact" variant="primary" size="md">
               Brief a commercial project
             </AnimatedButton>
-            <AnimatedButton href="/imagine" variant="outline" size="lg">
+            <AnimatedButton href="/imagine" variant="outline" size="md">
               Imagine what&apos;s possible
             </AnimatedButton>
           </div>
-        </div>
-
-        <div className={styles.chips}>
-          <span>Laser cut</span>
-          <span className={styles.dot}>·</span>
-          <span>Laser engrave</span>
-          <span className={styles.dotWarm}>·</span>
-          <span>CNC route</span>
-          <span className={styles.dot}>·</span>
-          <span>Finish &amp; install</span>
         </div>
       </div>
     </section>
