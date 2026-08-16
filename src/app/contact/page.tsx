@@ -148,7 +148,7 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-              <Link href="/solutions/fabrication" className="mt-5 inline-flex text-sm font-semibold text-accent">
+              <Link href="/services/commercial/cnc-laser-cutting" className="mt-5 inline-flex text-sm font-semibold text-accent">
                 See CNC &amp; laser capabilities →
               </Link>
             </div>

@@ -21,11 +21,11 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://xsphere.co.za";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    template: "%s | Xsphere",
-    default: "Xsphere | CNC & Laser Engraving for Brands and Spaces",
+    template: "%s | Xsphere Commercial Manufacturing",
+    default: "Xsphere Marketing & Design | High-Volume Litho & CNC Manufacturing",
   },
   description:
-    "CNC routing and laser engraving for dimensional signage, branded environments, and campaign pieces. 17 years in Alberton, Gauteng — plus print, fleet, design, and installation when you need the full workshop.",
+    "End-to-end commercial printing and precision CNC manufacturing in Alberton. In-house routing and laser for MDF, ABS, and plastics, 3.2 m UV, litho volume, and walk-in print for the East Rand.",
   keywords: [
     "CNC routing",
     "laser engraving",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     url: baseUrl,
     siteName: "Xsphere",
-    title: "Xsphere | CNC & Laser Engraving for Brands and Spaces",
+    title: "Xsphere Manufacturing & Design Facility",
     description:
-      "We cut, engrave, and finish the pieces that make brands physical — signs, fixtures, awards, and campaign builds for commercial clients.",
+      "Alberton facility for high-volume litho, 3.2 m large format, and precision CNC routing of MDF, ABS, and industrial plastics.",
   },
   twitter: {
     card: "summary_large_image",

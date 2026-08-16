@@ -22,16 +22,23 @@ const nextConfig = {
   // Old staff-login URLs should never surface again
   async redirects() {
     return [
+      { source: '/login', destination: '/', permanent: true },
+      { source: '/login/:path*', destination: '/', permanent: true },
+      { source: '/solutions', destination: '/services', permanent: true },
+      { source: '/solutions/fabrication', destination: '/services/commercial/cnc-laser-cutting', permanent: true },
       {
-        source: '/login',
-        destination: '/',
+        source: '/solutions/large-format-printing',
+        destination: '/services/commercial/large-format-printing',
         permanent: true,
       },
       {
-        source: '/login/:path*',
-        destination: '/',
+        source: '/solutions/fleet-branding',
+        destination: '/services/commercial/vehicle-fleet-branding',
         permanent: true,
       },
+      { source: '/solutions/design', destination: '/services/commercial/graphic-design', permanent: true },
+      { source: '/solutions/installation', destination: '/services/commercial/installation', permanent: true },
+      { source: '/litho-printing', destination: '/services/commercial/litho-printing', permanent: true },
     ];
   },
 }
