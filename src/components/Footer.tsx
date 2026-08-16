@@ -4,33 +4,38 @@ import { commercialServices, retailServices, servicePath } from '@/data/catalog'
 
 export default function Footer() {
   return (
-    <footer className="relative z-0 bg-black pt-24 text-white">
-      <div className="mx-auto max-w-content px-4 pb-16 sm:px-6 lg:px-8">
-        <p className="text-[10vw] font-black uppercase leading-none tracking-tighter text-transparent bg-gradient-to-b from-white to-neutral-700 bg-clip-text lg:text-8xl">
-          Ready to manufacture?
-        </p>
-        <p className="mt-6 max-w-xl text-neutral-400">
-          Drop CAD, share print specs, or walk in. Alberton production floor — Alrode, Germiston, East Rand, Johannesburg
-          South.
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link href="/contact" className="inline-flex justify-center rounded-full bg-red-500 px-6 py-3 text-sm font-bold">
-            Request an enterprise quote
-          </Link>
-          <a href="tel:+27118699169" className="inline-flex justify-center rounded-full border border-white px-6 py-3 text-sm font-bold">
-            Call +27 11 869 9169
-          </a>
+    <footer className="border-t border-white/10 bg-black text-white">
+      <div className="mx-auto max-w-content px-4 py-14 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-6 border-b border-white/10 pb-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-xl">
+            <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Ready to manufacture?</h2>
+            <p className="mt-3 text-sm leading-relaxed text-neutral-400 sm:text-base">
+              Drop CAD, print specs, or walk in. Alberton production floor — Alrode to Johannesburg South.
+            </p>
+          </div>
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-red-500 px-6 py-3 text-sm font-bold text-white"
+            >
+              Request a quote
+            </Link>
+            <a
+              href="tel:+27118699169"
+              className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white"
+            >
+              +27 11 869 9169
+            </a>
+          </div>
         </div>
 
-        <div className="mt-20 grid gap-10 border-t border-white/10 pt-12 md:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Image src="/images/Logows.png" alt="Xsphere" width={150} height={50} className="h-8 w-auto" />
-            <p className="mt-4 font-mono text-sm text-neutral-500">
-              Xsphere Marketing and Design
-              <br />
+            <p className="mt-4 font-mono text-sm leading-relaxed text-neutral-500">
               99 Second Avenue, Florentia
               <br />
-              Alberton, Gauteng, South Africa
+              Alberton, Gauteng
             </p>
           </div>
           <div>
@@ -78,7 +83,7 @@ export default function Footer() {
             </p>
           </div>
         </div>
-        <p className="mt-12 text-xs uppercase tracking-widest text-neutral-600">
+        <p className="mt-10 text-xs uppercase tracking-widest text-neutral-600">
           © {new Date().getFullYear()} Xsphere Marketing and Design · Alberton
         </p>
       </div>

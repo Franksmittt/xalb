@@ -52,7 +52,7 @@ export default function Header() {
           <Image src="/images/Logows.png" alt="Xsphere" width={150} height={50} className="h-9 w-auto object-contain" priority />
         </Link>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-6 xl:flex">
           {navigation.map((item) => (
             <div
               key={item.name}
@@ -87,7 +87,7 @@ export default function Header() {
           ))}
         </div>
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Link
             href="/contact"
             className="inline-flex items-center rounded-full border border-cyan-400/50 bg-cyan-400/10 px-5 py-2.5 text-sm font-semibold text-cyan-300 hover:bg-cyan-400 hover:text-neutral-950"
@@ -98,7 +98,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md border border-white/15 p-2 text-neutral-200 lg:hidden"
+          className="inline-flex items-center justify-center rounded-md border border-white/15 p-2 text-neutral-200 xl:hidden"
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -121,7 +121,7 @@ export default function Header() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-white/10 bg-neutral-900 lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-neutral-900 xl:hidden"
           >
             <div className="space-y-1 px-4 py-4">
               {navigation.map((item) => (

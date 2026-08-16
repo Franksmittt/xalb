@@ -35,7 +35,9 @@ export default function CapabilitiesBento() {
     <section className="bg-[#050505] px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-400">Sovereign production capacity</p>
-        <h2 className="font-display mt-3 text-3xl font-bold text-white md:text-5xl">Zero compromise. Three disciplines.</h2>
+        <h2 className="font-display mt-3 max-w-4xl text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+          Zero compromise. Three disciplines.
+        </h2>
         <p className="mt-4 max-w-2xl text-neutral-400">
           CNC, commercial print, and large format — executed from the Alberton floor for Alrode, Germiston, and Johannesburg
           South.
