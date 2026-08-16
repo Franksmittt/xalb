@@ -9,7 +9,7 @@ export default function WorkPage() {
       description:
         'Layered MDF and plexiglass signage systems for multi-site brand environments — cut, finished, and installed as a set.',
       image: '/images/fabrication-lab.png',
-      href: '/solutions/fabrication',
+      href: '/services/commercial/cnc-laser-cutting',
       metrics: ['Multi-site', 'CNC + laser', 'Install-ready kits'],
     },
     {
@@ -19,7 +19,7 @@ export default function WorkPage() {
       description:
         'Engraved awards and launch pieces produced in commercial batches with consistent detail across every unit.',
       image: '/images/design-studio.png',
-      href: '/solutions/fabrication',
+      href: '/services/commercial/cnc-laser-cutting',
       metrics: ['Batch consistency', 'Engraved detail', 'Gift-ready finish'],
     },
     {
@@ -29,7 +29,7 @@ export default function WorkPage() {
       description:
         'Custom routed fixtures and dimensional letters for store refreshes that need more presence than flat print.',
       image: '/images/fabrication-lab.png',
-      href: '/solutions/fabrication',
+      href: '/services/commercial/cnc-laser-cutting',
       metrics: ['MDF & plexi', 'Repeatable parts', 'Fast refresh'],
     },
     {
@@ -38,7 +38,7 @@ export default function WorkPage() {
       category: 'Vehicle & Fleet',
       description: 'Fleet wraps with compliance numbering when the same client needs the vehicles matching the spaces.',
       image: '/images/fleet-lineup.png',
-      href: '/solutions/fleet-branding',
+      href: '/services/commercial/vehicle-fleet-branding',
       metrics: ['50+ vehicles', 'Protected films', 'Gauteng installs'],
     },
     {
@@ -47,7 +47,7 @@ export default function WorkPage() {
       category: 'Print',
       description: 'Large-format print and POS when a launch needs walls, banners, and floors alongside cut pieces.',
       image: '/images/hero-print.png',
-      href: '/solutions/large-format-printing',
+      href: '/services/commercial/large-format-printing',
       metrics: ['UV print', 'POS suites', 'Event-ready'],
     },
     {
@@ -56,7 +56,7 @@ export default function WorkPage() {
       category: 'Installation',
       description: 'Elevated access install for dimensional building identity — fabricated in-house, fixed on site.',
       image: '/images/install-team.png',
-      href: '/solutions/installation',
+      href: '/services/commercial/installation',
       metrics: ['Working-at-height', 'QA photos', 'Brand-matched'],
     },
   ];
@@ -114,7 +114,7 @@ export default function WorkPage() {
               Brief your project
             </Link>
             <Link
-              href="/solutions/fabrication"
+              href="/services/commercial/cnc-laser-cutting"
               className="inline-flex items-center justify-center rounded-md border border-[var(--line)] px-8 py-3 text-sm font-semibold text-ink"
             >
               CNC &amp; laser capabilities

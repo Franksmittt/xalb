@@ -465,7 +465,7 @@ export default function ImaginePage() {
                   Bring the idea to life
                 </AnimatedButton>
                 <Link
-                  href="/solutions/fabrication"
+                  href="/services/commercial/cnc-laser-cutting"
                   className="inline-flex items-center justify-center rounded-md px-6 py-3 text-base font-semibold text-ink transition-colors hover:text-accent"
                 >
                   Machine details →

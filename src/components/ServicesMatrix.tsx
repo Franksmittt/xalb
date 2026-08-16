@@ -12,7 +12,7 @@ const serviceGroups = [
       'Events & exhibitions: modular walls, hanging banners, floor graphics',
     ],
     image: '/images/hero-print.png',
-    href: '/solutions/large-format-printing',
+    href: '/services/commercial/large-format-printing',
   },
   {
     title: 'Precision Fabrication & Laser Cutting',
@@ -25,7 +25,7 @@ const serviceGroups = [
       'From sketch to finished piece for makers and commercial clients',
     ],
     image: '/images/fabrication-lab.png',
-    href: '/solutions/fabrication',
+    href: '/services/commercial/cnc-laser-cutting',
   },
   {
     title: 'Vehicle Branding & Fleet Solutions',
@@ -38,7 +38,7 @@ const serviceGroups = [
       'Logistics dashboards to coordinate install windows',
     ],
     image: '/images/fleet-lineup.png',
-    href: '/solutions/fleet-branding',
+    href: '/services/commercial/vehicle-fleet-branding',
   },
   {
     title: 'Graphic Design & Identity',
@@ -51,7 +51,7 @@ const serviceGroups = [
       'Campaign creative bridging print, signage, and experiential',
     ],
     image: '/images/design-studio.png',
-    href: '/solutions/design',
+    href: '/services/commercial/graphic-design',
   },
   {
     title: 'Installation & Logistics',
@@ -64,7 +64,7 @@ const serviceGroups = [
       'Corporate gift kitting + delivery for campaign launches',
     ],
     image: '/images/install-team.png',
-    href: '/solutions/installation',
+    href: '/services/commercial/installation',
   },
 ];
 

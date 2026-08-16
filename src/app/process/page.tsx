@@ -82,7 +82,7 @@ export default function ProcessPage() {
                 Start a project
               </Link>
               <Link
-                href="/solutions/fabrication"
+                href="/services/commercial/cnc-laser-cutting"
                 className="inline-flex items-center justify-center rounded-md border border-[var(--line)] px-6 py-3 text-sm font-semibold text-ink"
               >
                 Explore CNC &amp; laser

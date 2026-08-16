@@ -1,119 +1,86 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-const quickLinks = [
-  { label: 'CNC & Laser', href: '/solutions/fabrication' },
-  { label: 'Imagine', href: '/imagine' },
-  { label: 'Solutions', href: '/solutions' },
-  { label: 'Process', href: '/process' },
-  { label: 'Work', href: '/work' },
-  { label: 'Contact', href: '/contact' },
-];
-
-const services = [
-  { label: 'CNC & Laser Engraving', href: '/solutions/fabrication' },
-  { label: 'Dimensional Signage', href: '/solutions/fabrication' },
-  { label: 'Large Format Printing', href: '/solutions/large-format-printing' },
-  { label: 'Vehicle + Fleet Branding', href: '/solutions/fleet-branding' },
-  { label: 'Design & Identity', href: '/solutions/design' },
-  { label: 'Installation', href: '/solutions/installation' },
-];
+import { commercialServices, retailServices, servicePath } from '@/data/catalog';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--line)] bg-[#1c2118] text-[#e8ebe2]">
-      <div className="mx-auto max-w-content px-4 py-16 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 border-b border-white/10 pb-12 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-bright">
-              Ready when the idea is
-            </p>
-            <h2 className="font-display mt-3 text-3xl font-bold text-white md:text-4xl">
-              Bring the brief. We&apos;ll cut it into the world.
-            </h2>
-            <p className="mt-3 text-[#c4cbb8]">
-              CNC, laser, and finishing for commercial signage and branded pieces — with print, fleet, and
-              install when the job needs the full workshop.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-accent-bright px-6 py-3 text-sm font-semibold text-[#1c2118] transition-colors hover:bg-[#8bc24a]"
-            >
-              Brief a project
-            </Link>
-            <a
-              href="tel:+27118699169"
-              className="inline-flex items-center justify-center rounded-md border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-white/50"
-            >
-              +27 11 869 9169
-            </a>
-          </div>
+    <footer className="relative z-0 bg-black pt-24 text-white">
+      <div className="mx-auto max-w-content px-4 pb-16 sm:px-6 lg:px-8">
+        <p className="text-[10vw] font-black uppercase leading-none tracking-tighter text-transparent bg-gradient-to-b from-white to-neutral-700 bg-clip-text lg:text-8xl">
+          Ready to manufacture?
+        </p>
+        <p className="mt-6 max-w-xl text-neutral-400">
+          Drop CAD, share print specs, or walk in. Alberton production floor — Alrode, Germiston, East Rand, Johannesburg
+          South.
+        </p>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Link href="/contact" className="inline-flex justify-center rounded-full bg-red-500 px-6 py-3 text-sm font-bold">
+            Request an enterprise quote
+          </Link>
+          <a href="tel:+27118699169" className="inline-flex justify-center rounded-full border border-white px-6 py-3 text-sm font-bold">
+            Call +27 11 869 9169
+          </a>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 pt-12 md:grid-cols-4">
-          <div className="space-y-4">
-            <Image
-              src="/images/Logows.png"
-              alt="Xsphere"
-              width={150}
-              height={50}
-              className="h-8 w-auto object-contain"
-            />
-            <p className="text-sm text-[#c4cbb8]">
+        <div className="mt-20 grid gap-10 border-t border-white/10 pt-12 md:grid-cols-4">
+          <div>
+            <Image src="/images/Logows.png" alt="Xsphere" width={150} height={50} className="h-8 w-auto" />
+            <p className="mt-4 font-mono text-sm text-neutral-500">
+              Xsphere Marketing and Design
+              <br />
               99 Second Avenue, Florentia
               <br />
-              Alberton, Gauteng
+              Alberton, Gauteng, South Africa
             </p>
-            <p className="text-sm text-[#9aa38c]">
-              <a href="mailto:info@xsphere.co.za" className="transition-colors hover:text-white">
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-widest text-neutral-500">Commercial</p>
+            <ul className="mt-3 space-y-2 text-sm text-neutral-400">
+              {commercialServices.slice(0, 6).map((s) => (
+                <li key={s.slug}>
+                  <Link href={servicePath(s)} className="hover:text-white">
+                    {s.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-widest text-neutral-500">Retail & places</p>
+            <ul className="mt-3 space-y-2 text-sm text-neutral-400">
+              {retailServices.map((s) => (
+                <li key={s.slug}>
+                  <Link href={servicePath(s)} className="hover:text-white">
+                    {s.navLabel}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/locations" className="hover:text-white">
+                  Locations
+                </Link>
+              </li>
+              <li>
+                <Link href="/imagine" className="hover:text-white">
+                  Imagine
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-xs uppercase tracking-widest text-neutral-500">Contact</p>
+            <p className="mt-3 text-sm text-neutral-400">
+              <a href="mailto:info@xsphere.co.za" className="hover:text-white">
                 info@xsphere.co.za
               </a>
               <br />
-              Est. workshop · 17 years
-            </p>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9aa38c]">Navigate</p>
-            <ul className="mt-3 space-y-2 text-sm text-[#c4cbb8]">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="transition-colors hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9aa38c]">Workshop</p>
-            <ul className="mt-3 space-y-2 text-sm text-[#c4cbb8]">
-              {services.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="transition-colors hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9aa38c]">Focus</p>
-            <p className="mt-3 text-sm leading-relaxed text-[#c4cbb8]">
-              We specialise in CNC routing and laser engraving for signs, novelty builds, and branded
-              environments — helping large clients turn ideas into finished pieces at scale.
+              Mon–Fri 08:00–17:00
             </p>
           </div>
         </div>
-
-        <div className="mt-12 flex flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.16em] text-[#7d8670]">
-          <span>© {new Date().getFullYear()} Xsphere Marketing and Design</span>
-          <span>Alberton · Gauteng</span>
-        </div>
+        <p className="mt-12 text-xs uppercase tracking-widest text-neutral-600">
+          © {new Date().getFullYear()} Xsphere Marketing and Design · Alberton
+        </p>
       </div>
     </footer>
   );

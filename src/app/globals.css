@@ -59,4 +59,13 @@ h3,
   .section-eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)];
   }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -476,19 +476,19 @@ export default function LaserCutHero() {
         </div>
 
         <div className={styles.copy}>
-          <p className={styles.kicker}>Precision CNC &amp; laser</p>
+          <p className={styles.kicker}>Alberton manufacturing · East Rand</p>
           <h1 className={`font-display ${styles.headline}`}>
-            CNC &amp; laser that turn ideas into <em>objects brands can touch</em>.
+            Imagine what is <em>possible</em>.
           </h1>
           <p className={styles.lede}>
-            Dimensional signage, engraved detail, and fabricated pieces — a workshop, not a copy centre.
+            Advanced CNC, commercial litho, and 3.2 m UV — engineered in Alberton. Delivered across Johannesburg South.
           </p>
           <div className={styles.actions}>
             <AnimatedButton href="/contact" variant="primary" size="md">
-              Brief a commercial project
+              Initiate a project
             </AnimatedButton>
-            <AnimatedButton href="/imagine" variant="outline" size="md">
-              Imagine what&apos;s possible
+            <AnimatedButton href="/services" variant="outline" size="md">
+              Explore capabilities
             </AnimatedButton>
           </div>
         </div>
