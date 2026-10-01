@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Industrial paper — cool, not cream */
+  /* Industrial paper, cool not cream */
   --background: #f1f2ee;
   --foreground: #121612;
   --muted: #5a6158;

@@ -3,7 +3,7 @@ const metrics = [
     value: '25+',
     unit: 'years',
     label: 'Established 2001',
-    body: 'Print, brand, and display experience — now with CNC and litho on the same Alberton floor.',
+    body: 'Print, brand, and display experience, now with CNC and litho on the same Alberton floor.',
   },
   {
     value: '1',
@@ -21,7 +21,7 @@ const metrics = [
     value: 'In',
     unit: 'house',
     label: 'Design + production',
-    body: 'Artwork, UV, litho, CNC, display kits, and gifting — not three WhatsApp groups.',
+    body: 'Artwork, UV, litho, CNC, display kits, and gifting, not three WhatsApp groups.',
   },
 ];
 

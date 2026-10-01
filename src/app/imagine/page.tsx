@@ -27,11 +27,11 @@ const sparks = [
   },
   {
     who: 'The young maker',
-    line: '“I’ve got a sketch in my notes app — can we actually cut this?”',
+    line: '“I’ve got a sketch in my notes app. Can we actually cut this?”',
   },
   {
     who: 'Arts & crafts',
-    line: '“I want something personal, detailed, and real — not printed on paper.”',
+    line: '“I want something personal, detailed, and real, not printed on paper.”',
   },
 ];
 
@@ -49,7 +49,7 @@ const materials = [
   {
     name: 'Rowmark',
     vibe: 'Engraving plastic',
-    copy: 'Two-tone engraving that pops — nameplates, directories, control panels, badges, and detail work that stays sharp.',
+    copy: 'Two-tone engraving that pops: nameplates, directories, control panels, badges, and detail work that stays sharp.',
   },
   {
     name: 'ABS',
@@ -77,7 +77,7 @@ const ideas = [
     material: 'Rowmark',
     title: 'Desk & door nameplates',
     wow: 'Small piece. Instantly professional.',
-    copy: 'Two-tone Rowmark engraving for desks, doors, and directories — one name or a whole floor.',
+    copy: 'Two-tone Rowmark engraving for desks, doors, and directories. One name or a whole floor.',
     image: '/images/design-studio.png',
     span: '',
   },
@@ -87,7 +87,7 @@ const ideas = [
     process: 'Laser cut + engrave',
     material: 'MDF · plexi',
     title: 'Wedding & celebration pieces',
-    wow: 'Guest books, cake toppers, table maps — made, not ordered from a template farm.',
+    wow: 'Guest books, cake toppers, table maps: made, not ordered from a template farm.',
     copy: 'Custom cut shapes and engraved details for days people actually remember.',
     image: '/images/services/large_format/Gemini_Generated_Image_y6btqdy6btqdy6bt.png',
     span: '',
@@ -109,7 +109,7 @@ const ideas = [
     process: 'CNC route',
     material: 'MDF',
     title: 'Giant dimensional letters',
-    wow: 'Up to a 3 m × 2 m CNC bed — go big.',
+    wow: 'Up to a 3 m × 2 m CNC bed. Go big.',
     copy: 'Shopfront letters, event words, photo-backdrop type. Painted, wrapped, or raw workshop chic.',
     image: '/images/install-team.png',
     span: 'lg:col-span-2',
@@ -142,7 +142,7 @@ const ideas = [
     process: 'Laser cut',
     material: 'MDF · plexi',
     title: 'Wall art & pattern panels',
-    wow: 'Mandala, map, skyline, custom illustration — cut into material.',
+    wow: 'Mandala, map, skyline, custom illustration, cut into material.',
     copy: 'Arts-and-crafts energy with workshop precision. Personal pieces or retail-ready runs.',
     image: '/images/services/large_format/Gemini_Generated_Image_rhxz54rhxz54rhxz.png',
     span: '',
@@ -154,7 +154,7 @@ const ideas = [
     material: 'Plexiglass',
     title: 'Awards & recognition',
     wow: 'Light catches the engrave. People keep these.',
-    copy: 'Clear or coloured plexi awards with crisp laser detail — one-offs or annual programmes.',
+    copy: 'Clear or coloured plexi awards with crisp laser detail. One-offs or annual programmes.',
     image: '/images/design-studio.png',
     span: '',
   },
@@ -165,7 +165,7 @@ const ideas = [
     material: 'MDF · plexi · ABS',
     title: 'POS risers & display kits',
     wow: 'The product finally has a stage.',
-    copy: 'Counter displays, brochure holders, branded trays — cut to fit the campaign.',
+    copy: 'Counter displays, brochure holders, branded trays, cut to fit the campaign.',
     image: '/images/hero-print.png',
     span: '',
   },
@@ -175,7 +175,7 @@ const ideas = [
     process: 'Laser engrave',
     material: 'Rowmark · plexi · MDF',
     title: 'Personalised gifts & keepsakes',
-    wow: 'Names, dates, maps, inside jokes — burned into something real.',
+    wow: 'Names, dates, maps, inside jokes, burned into something real.',
     copy: 'Coasters, key tags, frames, ornaments, memory pieces. Small, special, addictive.',
     image: '/images/services/installation/Gemini_Generated_Image_ojk0alojk0alojk0.png',
     span: 'lg:col-span-2',
@@ -187,7 +187,7 @@ const ideas = [
     material: 'Rowmark · ABS',
     title: 'Labels, bezels & control panels',
     wow: 'Functional detail that looks designed.',
-    copy: 'Machine labels, switch plates, instrument panels — clean engraving on plastic that lasts.',
+    copy: 'Machine labels, switch plates, instrument panels: clean engraving on plastic that lasts.',
     image: '/images/services/installation/Gemini_Generated_Image_94nxa994nxa994nx.png',
     span: '',
   },
@@ -207,7 +207,7 @@ const bedSpecs = [
   {
     label: 'Materials',
     value: 'MDF · Plexi · Rowmark · ABS',
-    detail: 'Wood and plastic — painted, layered, or left crisp',
+    detail: 'Wood and plastic: painted, layered, or left crisp',
   },
 ];
 
@@ -252,7 +252,7 @@ export default function ImaginePage() {
             </h1>
             <p className="mt-5 max-w-2xl text-lg text-white/88">
               Novelty. Gifts. Brand pieces. Weird little inventions. This is where we show what laser and CNC can
-              actually make — so your brain starts going “wait… we could do that.”
+              actually make, so your brain starts going “wait… we could do that.”
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <AnimatedButton href="/contact" variant="primary" size="md">
@@ -288,7 +288,7 @@ export default function ImaginePage() {
               Corporate. Craft. Big business. First-time makers.
             </h2>
             <p className="mt-4 text-lg text-ink-muted">
-              Different people. Same spark — turning an idea into a physical thing out of wood or plastic.
+              Different people. Same spark: turning an idea into a physical thing out of wood or plastic.
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
@@ -320,7 +320,7 @@ export default function ImaginePage() {
               MDF, plexiglass, Rowmark, ABS
             </h2>
             <p className="mt-4 text-lg text-[#c4cbb8]">
-              Wood and plastic — the everyday materials that become signs, gifts, prototypes, and “how did you make
+              Wood and plastic: the everyday materials that become signs, gifts, prototypes, and “how did you make
               that?” pieces.
             </p>
           </div>
@@ -343,7 +343,7 @@ export default function ImaginePage() {
             <div className="max-w-2xl">
               <p className="section-eyebrow">Possibility gallery</p>
               <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
-                Oh — I didn&apos;t know you could do that
+                Oh, I didn&apos;t know you could do that
               </h2>
               <p className="mt-3 text-ink-muted">
                 Browse until something clicks. Then we turn it into a real brief.
@@ -424,7 +424,7 @@ export default function ImaginePage() {
           <div className="max-w-3xl">
             <p className="section-eyebrow">The list never ends</p>
             <h2 className="font-display mt-3 text-3xl font-bold text-ink md:text-4xl">
-              If you can draw it, describe it, or steal the idea from a Pinterest save — we can usually cut it.
+              If you can draw it, describe it, or steal the idea from a Pinterest save, we can usually cut it.
             </h2>
             <ul className="mt-6 grid gap-3 text-ink-muted sm:grid-cols-2">
               {[
@@ -458,7 +458,7 @@ export default function ImaginePage() {
               </h2>
               <p className="mt-4 max-w-xl text-lg text-ink-muted">
                 Send a sketch, a photo of something similar, or just describe it. We&apos;ll tell you if it wants
-                laser, CNC, MDF, plexi, Rowmark, or ABS — and what it takes to make it real.
+                laser, CNC, MDF, plexi, Rowmark, or ABS, and what it takes to make it real.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <AnimatedButton href="/contact" variant="primary" size="lg">

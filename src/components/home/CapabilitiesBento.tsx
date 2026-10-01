@@ -10,7 +10,7 @@ const disciplines = [
     index: '01',
     kicker: 'Precision manufacturing',
     title: 'CNC routing & laser fabrication',
-    body: '3 m × 2 m CNC and 1200 × 900 mm laser. Nested cutting for MDF, ABS, acrylic, Rowmark, and industrial plastics — prototypes through programme volume.',
+    body: '3 m × 2 m CNC and 1200 × 900 mm laser. Nested cutting for MDF, ABS, acrylic, Rowmark, and industrial plastics, from prototypes through programme volume.',
     image: '/images/fabrication-lab.png',
     alt: 'CNC and laser fabrication at Xsphere Alberton',
     specs: ['3 × 2 m CNC', '1200 × 900 laser', 'MDF · ABS · Acrylic'],
@@ -20,7 +20,7 @@ const disciplines = [
     index: '02',
     kicker: 'Commercial print',
     title: 'High-volume litho',
-    body: 'Catalogues, NCR, packaging, and long-run collateral with colour-managed proofs — when digital short-run is no longer the economical path.',
+    body: 'Catalogues, NCR, packaging, and long-run collateral with colour-managed proofs, when digital short-run is no longer the economical path.',
     image: '/images/design-studio.png',
     alt: 'Commercial litho and design production',
     specs: ['CMYK + specials', 'Bindery path', 'Proof before press'],
@@ -30,7 +30,7 @@ const disciplines = [
     index: '03',
     kicker: 'Wide format',
     title: '3.2 m UV hybrid',
-    body: 'Flatbed rigid and roll-to-roll for Chromadek, Correx, SAV, banners, fleet skins, and exhibition media — finished for install, not just print.',
+    body: 'Flatbed rigid and roll-to-roll for Chromadek, Correx, SAV, banners, fleet skins, and exhibition media, finished for install, not just print.',
     image: '/images/hero-print.png',
     alt: 'Large format UV printing',
     specs: ['3.2 m width', 'Rigid + roll', 'Install-ready'],
@@ -46,7 +46,7 @@ export default function CapabilitiesBento() {
             <p className="section-eyebrow">Production disciplines</p>
             <h2 className="font-display mt-3 text-balance">Three floors of capacity. One address.</h2>
             <p className="section-lede">
-              Specced for procurement teams who need equipment facts — not slogans — before they issue an RFQ.
+              Specced for procurement teams who need equipment facts, not slogans, before they issue an RFQ.
             </p>
           </div>
           <Link href="/services" className="btn-secondary self-start lg:self-auto">

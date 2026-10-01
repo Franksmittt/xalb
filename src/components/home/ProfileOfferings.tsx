@@ -36,7 +36,7 @@ const columns = [
   {
     title: 'Promo gifting',
     href: '/services/commercial/corporate-gifting',
-    blurb: 'Promotional products that keep your brand top of mind — supplied and branded in volume.',
+    blurb: 'Promotional products that keep your brand top of mind, supplied and branded in volume.',
     items: [
       'Drinkware',
       'Writing instruments',
@@ -58,7 +58,7 @@ export default function ProfileOfferings() {
           <p className="section-eyebrow">Product lines</p>
           <h2 className="mt-3 text-balance">Print media, display systems, and branded merch.</h2>
           <p className="section-lede">
-            Straight from the company profile — every line we sell and produce, not just the machinery headline.
+            Straight from the company profile: every line we sell and produce, not just the machinery headline.
           </p>
         </div>
 

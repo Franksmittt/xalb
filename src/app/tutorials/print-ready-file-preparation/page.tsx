@@ -389,7 +389,7 @@ export default function PrintReadyFilePreparation() {
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-ink mb-6">Understanding Lead Times: Why Printing Takes Time</h2>
             <p className="text-ink-muted mb-8 text-lg">
-              &quot;Can you print this today?&quot; We hear this daily. Here&apos;s why professional printing takes time—and why 
+              &quot;Can you print this today?&quot; We hear this daily. Here&apos;s why professional printing takes time, and why 
               rushing leads to mistakes and poor quality.
             </p>
 
@@ -474,7 +474,7 @@ export default function PrintReadyFilePreparation() {
             </h3>
             <p className="text-ink-muted mb-6 max-w-2xl mx-auto text-lg">
               If you&apos;re unsure about your files, send them to us for a free review. We&apos;ll check resolution, 
-              format, and provide recommendations—no obligation.
+              format, and provide recommendations, no obligation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

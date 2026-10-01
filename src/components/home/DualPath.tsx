@@ -52,7 +52,7 @@ export default function DualPath() {
               <p className="text-xs font-semibold uppercase tracking-wide text-accent-bright">Retail</p>
               <h3 className="mt-2 text-2xl font-bold sm:text-3xl">Walk in with an idea</h3>
               <p className="mt-3 max-w-md text-sm leading-relaxed text-[#d5dccb]">
-                Cards, plans, short-run print, and one-off CNC or laser pieces — guided from sketch to finished object.
+                Cards, plans, short-run print, and one-off CNC or laser pieces, guided from sketch to finished object.
               </p>
               <span className="mt-5 inline-flex border border-ink-inverse/70 px-5 py-3 text-sm font-semibold text-ink-inverse">
                 Start a custom project

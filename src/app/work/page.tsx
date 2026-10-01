@@ -7,7 +7,7 @@ export default function WorkPage() {
       client: 'Commercial rollout',
       category: 'CNC & Laser',
       description:
-        'Layered MDF and plexiglass signage systems for multi-site brand environments — cut, finished, and installed as a set.',
+        'Layered MDF and plexiglass signage systems for multi-site brand environments: cut, finished, and installed as a set.',
       image: '/images/fabrication-lab.png',
       href: '/services/commercial/cnc-laser-cutting',
       metrics: ['Multi-site', 'CNC + laser', 'Install-ready kits'],
@@ -54,7 +54,7 @@ export default function WorkPage() {
       title: 'Facade installation',
       client: 'Property developer',
       category: 'Installation',
-      description: 'Elevated access install for dimensional building identity — fabricated in-house, fixed on site.',
+      description: 'Elevated access install for dimensional building identity, fabricated in-house, fixed on site.',
       image: '/images/install-team.png',
       href: '/services/commercial/installation',
       metrics: ['Working-at-height', 'QA photos', 'Brand-matched'],
@@ -71,7 +71,7 @@ export default function WorkPage() {
               Ideas made physical for brands and spaces
             </h1>
             <p className="mt-5 text-lg text-ink-muted">
-              A sample of CNC, laser, and workshop projects — with print, fleet, and install when a rollout needs
+              A sample of CNC, laser, and workshop projects, with print, fleet, and install when a rollout needs
               the full stack.
             </p>
           </div>

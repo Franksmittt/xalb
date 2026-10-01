@@ -24,7 +24,7 @@ export default function FleetBand() {
           <p className="section-eyebrow">Fleet branding</p>
           <h2 className="mt-3 text-balance">One template. One vinyl spec. A whole fleet that matches.</h2>
           <p className="section-lede">
-            Partial and full wraps, magnets, and compliance numbering — designed for manufacture, laminated, and
+            Partial and full wraps, magnets, and compliance numbering, designed for manufacture, laminated, and
             installed on a Gauteng schedule.
           </p>
           <dl className="section-stack border border-line bg-surface">

@@ -11,7 +11,7 @@ export default function ServicesIndex() {
             <p className="section-eyebrow">Full catalogue</p>
             <h2 className="mt-3 text-balance">Everything on the Alberton floor.</h2>
             <p className="section-lede">
-              Browse by discipline — images are placeholders for now so you can judge the layout before final photography.
+              Browse by discipline. Images are placeholders for now so you can judge the layout before final photography.
             </p>
           </div>
           <Link href="/services" className="btn-secondary self-start">

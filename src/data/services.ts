@@ -19,9 +19,9 @@ export const serviceCatalog: ServiceEntry[] = [
   {
     slug: "fabrication",
     title: "CNC & Laser Engraving",
-    tagline: "Turn ideas into objects — novelty, gifts, signs, and brand pieces in MDF, plexi, Rowmark, and ABS.",
+    tagline: "Turn ideas into objects: novelty, gifts, signs, and brand pieces in MDF, plexi, Rowmark, and ABS.",
     summary:
-      "Our core craft: laser engraving/cutting on a 1200 × 900 mm bed and CNC routing on a 3 m × 2 m bed. Wood and plastic for dimensional signage, gifts, prototypes, and branded environments — not steel fabrication, and not a copy centre.",
+      "Our core craft: laser engraving/cutting on a 1200 × 900 mm bed and CNC routing on a 3 m × 2 m bed. Wood and plastic for dimensional signage, gifts, prototypes, and branded environments, not steel fabrication, and not a copy centre.",
     heroImage: "/images/fabrication-lab.png",
     gallery: [
       "/images/fabrication-lab.png",
@@ -35,7 +35,7 @@ export const serviceCatalog: ServiceEntry[] = [
     bullets: [
       "Laser cut & engrave up to 1200 × 900 mm",
       "CNC route dimensional work up to 3 m × 2 m",
-      "MDF, plexiglass, Rowmark, and ABS — wood and plastic",
+      "MDF, plexiglass, Rowmark, and ABS (wood and plastic)",
       "Novelty, gifts, corporate pieces, signs, and maker prototypes",
     ],
     highlights: [
@@ -54,7 +54,7 @@ export const serviceCatalog: ServiceEntry[] = [
       "In-house finishing so edges, paint, and assembly stay consistent",
     ],
     valueAdds: [
-      "Material advice — which plastic or board fits the brief",
+      "Material advice: which plastic or board fits the brief",
       "Prototypes before large commercial orders",
       "Optional Gauteng installation with the same team",
     ],
@@ -107,7 +107,7 @@ export const serviceCatalog: ServiceEntry[] = [
   {
     slug: "fleet-branding",
     title: "Vehicle Branding & Fleet Solutions",
-    tagline: "Mobile branding programs—from single wraps to national fleets—with logistics baked in.",
+    tagline: "Mobile branding programs, from single wraps to national fleets, with logistics baked in.",
     summary:
       "Dedicated wrap bays, clean rooms, and magnet programs mean your fleet stays in motion while we refresh the brand skin.",
     heroImage: "/images/fleet-lineup.png",

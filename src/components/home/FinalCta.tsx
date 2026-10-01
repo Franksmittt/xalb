@@ -26,7 +26,7 @@ export default function FinalCta() {
                 Send the files. Get a production plan.
               </h2>
               <p className="mt-4 max-w-lg text-base leading-relaxed text-[#c8d0be]">
-                CAD, print-ready artwork, or a walk-in sketch — same Alberton floor for CNC, litho, 3.2 m UV, fleet, and
+                CAD, print-ready artwork, or a walk-in sketch. Same Alberton floor for CNC, litho, 3.2 m UV, fleet, and
                 install across the East Rand.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -54,7 +54,7 @@ export default function FinalCta() {
               <div className="bg-[#121612]/85 p-5 backdrop-blur-sm">
                 <p className="text-xs font-semibold uppercase tracking-wide text-[#8a927c]">Typical reply</p>
                 <p className="mt-3 text-sm leading-relaxed text-[#d5dccb]">
-                  Same-day to 24h on complete briefs — Mon–Fri 08:00–17:00.
+                  Same-day to 24h on complete briefs, Mon–Fri 08:00–17:00.
                 </p>
               </div>
             </div>
