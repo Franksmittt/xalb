@@ -34,9 +34,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Arial Narrow", "sans-serif"],
-        body: ["var(--font-body)", "Segoe UI", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        sans: ["var(--font-sans)", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        display: ["var(--font-sans)", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        body: ["var(--font-sans)", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        mono: ["var(--font-sans)", "Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
       },
       maxWidth: {
         content: "72rem",

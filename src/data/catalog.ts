@@ -624,6 +624,12 @@ export function servicePath(service: CatalogService | string) {
   return `/services/${entry.silo}/${entry.slug}`;
 }
 
+/** Card art for catalogue grids — swap these SVG placeholders for final photography. */
+export function serviceCardImage(service: CatalogService | string) {
+  const slug = typeof service === 'string' ? service : service.slug;
+  return `/images/placeholders/${slug}.svg`;
+}
+
 export const oldSolutionRedirects: Record<string, string> = {
   fabrication: '/services/commercial/cnc-laser-cutting',
   'large-format-printing': '/services/commercial/large-format-printing',
