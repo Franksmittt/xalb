@@ -7,14 +7,14 @@ export default function DualPath() {
       <div className="mx-auto max-w-wide">
         <div className="max-w-2xl">
           <p className="section-eyebrow">How we work with you</p>
-          <h2 className="font-display mt-3 text-balance">Enterprise programmes or walk-in jobs.</h2>
+          <h2 className="mt-3 text-balance">Enterprise programmes or walk-in jobs.</h2>
           <p className="section-lede">Two clear doors. Same production floor. Same quality standard.</p>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="section-stack grid items-stretch gap-5 lg:grid-cols-2">
           <Link
             href="/contact"
-            className="group relative flex min-h-[440px] flex-col justify-end overflow-hidden border border-line"
+            className="group relative flex min-h-[22rem] flex-col justify-end overflow-hidden border border-line lg:min-h-[24rem]"
           >
             <Image
               src="/images/fleet-lineup.png"
@@ -24,13 +24,13 @@ export default function DualPath() {
               sizes="(max-width:1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#121612] via-[#121612]/65 to-transparent" />
-            <div className="relative z-10 p-8 text-ink-inverse sm:p-10">
-              <p className="spec-mono text-[0.7rem] uppercase tracking-[0.14em] text-accent-bright">B2B</p>
-              <h3 className="font-display mt-3 text-3xl font-bold">Scale operations</h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-[#d5dccb] sm:text-base">
+            <div className="relative z-10 p-7 text-ink-inverse sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-accent-bright">B2B</p>
+              <h3 className="mt-2 text-2xl font-bold sm:text-3xl">Scale operations</h3>
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-[#d5dccb]">
                 CNC programmes, litho volume, fleet wraps, and multi-site signage with account-managed timelines.
               </p>
-              <span className="mt-8 inline-flex bg-accent-bright px-5 py-3 text-sm font-semibold text-[#121612]">
+              <span className="mt-5 inline-flex bg-accent-bright px-5 py-3 text-sm font-semibold text-[#121612]">
                 Request enterprise quote
               </span>
             </div>
@@ -38,7 +38,7 @@ export default function DualPath() {
 
           <Link
             href="/services/retail/walk-in-printing"
-            className="group relative flex min-h-[440px] flex-col justify-end overflow-hidden border border-line"
+            className="group relative flex min-h-[22rem] flex-col justify-end overflow-hidden border border-line lg:min-h-[24rem]"
           >
             <Image
               src="/images/install-team.png"
@@ -48,13 +48,13 @@ export default function DualPath() {
               sizes="(max-width:1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#121612] via-[#121612]/65 to-transparent" />
-            <div className="relative z-10 p-8 text-ink-inverse sm:p-10">
-              <p className="spec-mono text-[0.7rem] uppercase tracking-[0.14em] text-accent-bright">Retail</p>
-              <h3 className="font-display mt-3 text-3xl font-bold">Walk in with an idea</h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-[#d5dccb] sm:text-base">
+            <div className="relative z-10 p-7 text-ink-inverse sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-wide text-accent-bright">Retail</p>
+              <h3 className="mt-2 text-2xl font-bold sm:text-3xl">Walk in with an idea</h3>
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-[#d5dccb]">
                 Cards, plans, short-run print, and one-off CNC or laser pieces — guided from sketch to finished object.
               </p>
-              <span className="mt-8 inline-flex border border-ink-inverse/70 px-5 py-3 text-sm font-semibold text-ink-inverse">
+              <span className="mt-5 inline-flex border border-ink-inverse/70 px-5 py-3 text-sm font-semibold text-ink-inverse">
                 Start a custom project
               </span>
             </div>

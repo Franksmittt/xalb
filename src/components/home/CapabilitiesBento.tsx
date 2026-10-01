@@ -54,7 +54,7 @@ export default function CapabilitiesBento() {
           </Link>
         </div>
 
-        <div className="mt-14 space-y-6">
+        <div className="section-stack space-y-5">
           {disciplines.map((item, i) => (
             <motion.div
               key={item.href}
@@ -65,12 +65,12 @@ export default function CapabilitiesBento() {
             >
               <Link
                 href={item.href}
-                className={`group grid overflow-hidden border border-line bg-background transition-colors hover:border-accent lg:min-h-[360px] ${
+                className={`group grid overflow-hidden border border-line bg-background transition-colors hover:border-accent lg:min-h-[300px] lg:items-stretch ${
                   i % 2 === 1 ? 'lg:grid-cols-[1.05fr_0.95fr]' : 'lg:grid-cols-[0.95fr_1.05fr]'
                 }`}
               >
                 <div
-                  className={`relative min-h-[240px] lg:min-h-full ${i % 2 === 1 ? 'lg:order-2' : ''}`}
+                  className={`relative min-h-[18rem] lg:min-h-full ${i % 2 === 1 ? 'lg:order-2' : ''}`}
                 >
                   <Image
                     src={item.image}
