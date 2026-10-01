@@ -4,7 +4,6 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import AnimatedButton from '@/components/AnimatedButton';
 import {
-  CNC_CUT,
   CNC_HOME,
   CNC_LETTER_IDS,
   CNC_PARK,
@@ -23,6 +22,18 @@ function lerp(a: number, b: number, t: number) {
 
 function easeInOut(t: number) {
   return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+}
+
+function isFinitePoint(p: { x: number; y: number } | DOMPoint | SVGPoint) {
+  return Number.isFinite(p.x) && Number.isFinite(p.y);
+}
+
+function pointOnPath(path: SVGPathElement, at: number, fallback: { x: number; y: number }) {
+  const len = path.getTotalLength();
+  if (!Number.isFinite(len) || len <= 0) return fallback;
+  const clamped = Math.max(0, Math.min(at, len));
+  const pt = path.getPointAtLength(clamped);
+  return isFinitePoint(pt) ? { x: pt.x, y: pt.y } : fallback;
 }
 
 export default function LaserCutHero() {
@@ -81,16 +92,22 @@ export default function LaserCutHero() {
       flare.style.opacity = '0';
       if (smoke) smoke.style.opacity = '0';
       setPhase('done');
+      setCoords(CNC_PARK);
       setCooled(CNC_PATHS.map(() => true));
       return;
     }
 
-    const lengths = paths.map((p) => p.getTotalLength() || 1);
+    // Paths use pathLength={1}; normalize cut speed against unit length for stable HUD coords.
+    const lengths = paths.map((p) => {
+      const len = p.getTotalLength();
+      return Number.isFinite(len) && len > 0 ? len : 1;
+    });
     paths.forEach((p) => {
       p.style.strokeDasharray = '1';
       p.style.strokeDashoffset = '1';
     });
     setHot(-1);
+    setCoords(CNC_HOME);
 
     let raf = 0;
     let stopped = false;
@@ -110,6 +127,8 @@ export default function LaserCutHero() {
     let moveTo = { ...pos };
     let moveElapsed = 0;
     let moveDur = 0.2;
+    // Units of path-length per second — tuned for pathLength=1 paths (~1.4s per contour).
+    const cutSpeed = 0.7;
 
     const publish = (nextPhase: Phase, nextCutting: boolean) => {
       if (stopped) return;
@@ -124,11 +143,12 @@ export default function LaserCutHero() {
     };
 
     const armTravel = (to: { x: number; y: number }) => {
-      moveFrom = { ...pos };
-      moveTo = { ...to };
+      const target = isFinitePoint(to) ? to : CNC_PARK;
+      moveFrom = isFinitePoint(pos) ? { ...pos } : { ...CNC_HOME };
+      moveTo = { ...target };
       moveElapsed = 0;
-      const dist = Math.hypot(to.x - pos.x, to.y - pos.y);
-      moveDur = Math.max(0.18, dist / CNC_TRAVEL);
+      const dist = Math.hypot(target.x - moveFrom.x, target.y - moveFrom.y);
+      moveDur = Math.max(0.18, (Number.isFinite(dist) ? dist : 120) / CNC_TRAVEL);
       travelArmed = true;
     };
 
@@ -161,7 +181,7 @@ export default function LaserCutHero() {
         }
       } else if (index < paths.length) {
         const path = paths[index];
-        const start = path.getPointAtLength(0);
+        const start = pointOnPath(path, 0, pos);
 
         if (state === 'rapid') {
           flare.style.opacity = '0';
@@ -171,7 +191,7 @@ export default function LaserCutHero() {
           if (!travelArmed) armTravel(start);
           if (stepTravel(dt)) {
             travelArmed = false;
-            pos = { x: start.x, y: start.y };
+            pos = start;
             state = 'pierce';
             pierceT = 0;
             cutProgress = 0;
@@ -188,8 +208,8 @@ export default function LaserCutHero() {
             publish('cut', true);
           }
         } else if (state === 'cut') {
-          cutProgress += CNC_CUT * dt;
           const len = lengths[index];
+          cutProgress += cutSpeed * len * dt;
           flare.style.opacity = '1';
           if (smoke) smoke.style.opacity = '0.4';
           if (cutProgress >= len) {
@@ -202,7 +222,7 @@ export default function LaserCutHero() {
                 return next;
               });
             }
-            pos = path.getPointAtLength(len);
+            pos = pointOnPath(path, len, pos);
             index += 1;
             travelArmed = false;
             state = 'rapid';
@@ -214,7 +234,7 @@ export default function LaserCutHero() {
             const progress = cutProgress / len;
             path.style.strokeDashoffset = String(1 - progress);
             setHot(index, progress);
-            pos = path.getPointAtLength(cutProgress);
+            pos = pointOnPath(path, cutProgress, pos);
           }
         }
       } else {
@@ -235,14 +255,16 @@ export default function LaserCutHero() {
         }
       }
 
-      place(pos.x, pos.y);
-      if (ts - hudAt > 120) {
-        hudAt = ts;
-        const hx = Math.round(pos.x);
-        const hy = Math.round(pos.y);
-        if (hx !== lastHud.x || hy !== lastHud.y) {
-          lastHud = { x: hx, y: hy };
-          if (!stopped) setCoords(lastHud);
+      if (isFinitePoint(pos)) {
+        place(pos.x, pos.y);
+        if (ts - hudAt > 120) {
+          hudAt = ts;
+          const hx = Math.round(pos.x);
+          const hy = Math.round(pos.y);
+          if (hx !== lastHud.x || hy !== lastHud.y) {
+            lastHud = { x: hx, y: hy };
+            if (!stopped) setCoords(lastHud);
+          }
         }
       }
 
@@ -470,7 +492,8 @@ export default function LaserCutHero() {
           <div className={styles.hud} aria-hidden>
             <span>{statusLabel}</span>
             <span>
-              {coords.x.toFixed(0)} / {coords.y.toFixed(0)}
+              {(Number.isFinite(coords.x) ? coords.x : CNC_HOME.x).toFixed(0)} /{' '}
+              {(Number.isFinite(coords.y) ? coords.y : CNC_HOME.y).toFixed(0)}
             </span>
           </div>
         </div>

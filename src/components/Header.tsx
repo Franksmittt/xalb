@@ -29,7 +29,7 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-surface/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-surface">
       <div className="mx-auto flex h-[4.25rem] max-w-wide items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="relative shrink-0" onClick={() => setMobileMenuOpen(false)}>
           <Image
