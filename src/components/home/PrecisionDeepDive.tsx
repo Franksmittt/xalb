@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const cards = [
   {
@@ -17,32 +18,38 @@ const cards = [
 
 export default function PrecisionDeepDive() {
   return (
-    <section className="bg-[#050505] px-4 py-24 sm:px-6 lg:px-8">
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-16 lg:flex-row">
-        <div className="h-fit lg:sticky lg:top-28 lg:w-2/5">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-red-400">Precision manufacturing</p>
-          <h2 className="font-display mt-3 text-3xl font-bold text-white md:text-4xl">
+    <section className="border-t border-line bg-background px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div className="lg:sticky lg:top-24">
+          <div className="relative mb-8 aspect-[4/3] overflow-hidden border border-line">
+            <Image
+              src="/images/fabrication-lab.png"
+              alt="Precision CNC routing and laser work at Xsphere"
+              fill
+              className="object-cover"
+              sizes="(max-width:1024px) 100vw, 40vw"
+            />
+          </div>
+          <p className="section-eyebrow">Precision manufacturing</p>
+          <h2 className="font-display mt-3 text-3xl font-bold text-foreground md:text-4xl">
             Engineered for wood and plastics. Scaled for commercial runs.
           </h2>
-          <p className="mt-5 text-neutral-400">
+          <p className="mt-5 text-lg leading-relaxed text-muted">
             Multi-tool CNC routing and CO₂ laser on the Alberton floor. Capacity is planned as nested sheet work, not a
             single-spindle hobby cell. CAD in — finished parts out.
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex rounded-full border border-cyan-400/50 bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-300 hover:bg-cyan-400 hover:text-neutral-950"
+            className="mt-8 inline-flex rounded-md bg-accent px-6 py-3 text-sm font-semibold text-ink-inverse hover:bg-[#255a30]"
           >
             Submit CAD for review
           </Link>
         </div>
-        <div className="flex flex-col gap-8 lg:w-3/5">
+        <div className="flex flex-col gap-5">
           {cards.map((card) => (
-            <article
-              key={card.title}
-              className="rounded-2xl border border-neutral-800 bg-neutral-900 p-10 shadow-2xl transition-transform duration-500 hover:-translate-y-1 hover:border-cyan-500/30"
-            >
-              <h3 className="font-display text-xl font-bold text-white">{card.title}</h3>
-              <p className="mt-4 text-neutral-400">{card.body}</p>
+            <article key={card.title} className="border border-line bg-surface p-8">
+              <h3 className="font-display text-xl font-bold text-foreground">{card.title}</h3>
+              <p className="mt-3 leading-relaxed text-muted">{card.body}</p>
             </article>
           ))}
         </div>

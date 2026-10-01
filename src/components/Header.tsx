@@ -41,15 +41,17 @@ export default function Header() {
   ];
 
   return (
-    <motion.header
-      initial={{ y: -24, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 border-b border-white/10 bg-[#050505]"
-    >
+    <header className="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur-sm">
       <nav className="mx-auto flex h-16 max-w-content items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Top">
         <Link href="/" className="relative shrink-0" onClick={() => setMobileMenuOpen(false)}>
-          <Image src="/images/Logows.png" alt="Xsphere" width={150} height={50} className="h-9 w-auto object-contain" priority />
+          <Image
+            src="/images/LogoDark.png"
+            alt="Xsphere Marketing & Design"
+            width={150}
+            height={50}
+            className="h-9 w-auto object-contain"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
@@ -60,7 +62,10 @@ export default function Header() {
               onMouseEnter={() => item.submenu && setOpenMenu(item.name)}
               onMouseLeave={() => item.submenu && setOpenMenu(null)}
             >
-              <Link href={item.href} className="text-sm font-semibold text-neutral-200 transition-colors hover:text-cyan-300">
+              <Link
+                href={item.href}
+                className="text-sm font-semibold text-foreground transition-colors hover:text-accent"
+              >
                 {item.name}
               </Link>
               <AnimatePresence>
@@ -69,13 +74,13 @@ export default function Header() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 6 }}
-                    className="absolute left-0 top-full z-50 mt-3 w-72 overflow-hidden rounded-md border border-white/10 bg-neutral-900 py-2 shadow-lg"
+                    className="absolute left-0 top-full z-50 mt-3 w-72 border border-line bg-surface py-2 shadow-sm"
                   >
                     {item.submenu.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 hover:text-white"
+                        className="block px-4 py-2.5 text-sm text-muted hover:bg-surface-muted hover:text-foreground"
                       >
                         {sub.name}
                       </Link>
@@ -90,15 +95,15 @@ export default function Header() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full border border-cyan-400/50 bg-cyan-400/10 px-5 py-2.5 text-sm font-semibold text-cyan-300 hover:bg-cyan-400 hover:text-neutral-950"
+            className="inline-flex items-center rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-ink-inverse hover:bg-[#255a30]"
           >
-            Initiate a project
+            Request a quote
           </Link>
         </div>
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md border border-white/15 p-2 text-neutral-200 lg:hidden"
+          className="inline-flex items-center justify-center rounded-md border border-line p-2 text-foreground lg:hidden"
           aria-expanded={mobileMenuOpen}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -121,25 +126,25 @@ export default function Header() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-t border-white/10 bg-neutral-900 lg:hidden"
+            className="overflow-hidden border-t border-line bg-surface lg:hidden"
           >
             <div className="space-y-1 px-4 py-4">
               {navigation.map((item) => (
                 <div key={item.name}>
                   <Link
                     href={item.href}
-                    className="block px-2 py-3 text-base font-semibold text-neutral-100"
+                    className="block px-2 py-3 text-base font-semibold text-foreground"
                     onClick={() => !item.submenu && setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                   {item.submenu && (
-                    <div className="mb-2 ml-3 space-y-1 border-l border-white/10 pl-3">
+                    <div className="mb-2 ml-3 space-y-1 border-l border-line pl-3">
                       {item.submenu.map((sub) => (
                         <Link
                           key={sub.href}
                           href={sub.href}
-                          className="block py-2 text-sm text-neutral-400"
+                          className="block py-2 text-sm text-muted"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {sub.name}
@@ -152,14 +157,14 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 block rounded-full bg-cyan-400 px-4 py-3 text-center text-base font-semibold text-neutral-950"
+                className="mt-2 block rounded-md bg-accent px-4 py-3 text-center text-base font-semibold text-ink-inverse"
               >
-                Initiate a project
+                Request a quote
               </Link>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
