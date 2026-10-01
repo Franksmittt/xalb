@@ -1,10 +1,13 @@
 import LaserCutHero from '@/components/LaserCutHero';
 import SpecBar from '@/components/home/SpecBar';
+import PrintBrandDisplay from '@/components/home/PrintBrandDisplay';
+import WhyXsphere from '@/components/home/WhyXsphere';
 import ProcessStrip from '@/components/home/ProcessStrip';
 import CapabilitiesBento from '@/components/home/CapabilitiesBento';
 import PrecisionDeepDive from '@/components/home/PrecisionDeepDive';
 import PrintCarousel from '@/components/home/PrintCarousel';
 import LargeFormatBand from '@/components/home/LargeFormatBand';
+import ProfileOfferings from '@/components/home/ProfileOfferings';
 import FleetBand from '@/components/home/FleetBand';
 import SignageInstall from '@/components/home/SignageInstall';
 import DesignCapability from '@/components/home/DesignCapability';
@@ -23,11 +26,14 @@ export default function Home() {
       <StructuredData data={organizationGraph()} />
       <LaserCutHero />
       <SpecBar />
+      <PrintBrandDisplay />
+      <WhyXsphere />
       <ProcessStrip />
       <CapabilitiesBento />
       <PrecisionDeepDive />
       <PrintCarousel />
       <LargeFormatBand />
+      <ProfileOfferings />
       <FleetBand />
       <SignageInstall />
       <DesignCapability />

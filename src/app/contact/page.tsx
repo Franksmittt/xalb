@@ -1,24 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import { companyContacts, generalContact } from "@/data/contacts";
 
 const contactChannels = [
   {
     title: "Call",
-    value: "+27 11 869 9169",
-    description: "Mon–Fri, 08:00–17:00",
-    href: "tel:+27118699169",
+    value: generalContact.phone,
+    description: generalContact.hours,
+    href: generalContact.phoneHref,
   },
   {
     title: "Email",
-    value: "info@xsphere.co.za",
+    value: generalContact.email,
     description: "We reply within one business day",
-    href: "mailto:info@xsphere.co.za",
+    href: generalContact.emailHref,
   },
   {
     title: "Visit",
-    value: "99 Second Avenue, Florentia, Alberton",
-    description: "Workshop + showroom in Gauteng",
+    value: generalContact.address,
+    description: "Workshop + showroom · Est. 2001",
     href: undefined,
   },
 ];
@@ -136,6 +137,24 @@ export default function ContactPage() {
                   <p className="text-sm text-ink-muted">{channel.description}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="border border-[var(--line)] bg-surface p-6">
+              <p className="section-eyebrow">Direct contacts</p>
+              <ul className="mt-4 space-y-5">
+                {companyContacts.map((person) => (
+                  <li key={person.email}>
+                    <p className="font-semibold text-ink">{person.name}</p>
+                    <p className="text-sm text-ink-muted">{person.role}</p>
+                    <a href={person.phoneHref} className="mt-1 block text-sm font-medium text-accent hover:underline">
+                      {person.phone}
+                    </a>
+                    <a href={person.emailHref} className="block text-sm text-ink-muted hover:text-accent">
+                      {person.email}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="border border-[var(--line)] bg-accent-soft/40 p-6">

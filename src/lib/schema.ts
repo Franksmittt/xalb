@@ -12,9 +12,10 @@ export function organizationGraph() {
         url: baseUrl,
         telephone: '+27118699169',
         email: 'info@xsphere.co.za',
+        foundingDate: '2001',
         image: `${baseUrl}/images/fabrication-lab.png`,
         description:
-          'End-to-end commercial printing and precision CNC manufacturing in Alberton. In-house CNC routing and laser cutting for MDF, ABS, and industrial plastics, plus litho, large format, and a walk-in print centre.',
+          'End-to-end commercial printing and precision CNC manufacturing in Alberton. In-house CNC routing and laser cutting for MDF, ABS, and industrial plastics, plus litho, large format, display branding, corporate gifting, and a walk-in print centre.',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '99 Second Avenue, Florentia',
@@ -49,9 +50,12 @@ export function organizationGraph() {
           '@type': 'OfferCatalog',
           name: 'Manufacturing and print',
           itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Large format printing' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Display branding and exhibition systems' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vehicle branding and fleet wraps' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Corporate gifting and promotional merch' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'CNC routing and laser cutting' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial litho printing' } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Large format printing' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Walk-in retail printing' } },
           ],
         },
