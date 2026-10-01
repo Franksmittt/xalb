@@ -17,7 +17,8 @@
   --ink-inverse: #f4f5f2;
   --hero-shade: rgba(12, 16, 12, 0.55);
 
-  --space-section: clamp(4.5rem, 8vw, 7.5rem);
+  --space-section: clamp(3.75rem, 5.5vw, 5.5rem);
+  --space-stack: 2.5rem;
   --space-gutter: clamp(1rem, 3vw, 2rem);
   --radius: 2px;
 
@@ -85,6 +86,14 @@ h3 {
   .section-pad {
     padding-block: var(--space-section);
     padding-inline: var(--space-gutter);
+  }
+
+  .section-stack {
+    margin-top: var(--space-stack);
+  }
+
+  .section-band {
+    min-height: clamp(22rem, 42vh, 28rem);
   }
 
   .section-eyebrow {

@@ -26,12 +26,12 @@ export default function PrintBrandDisplay() {
     <section className="section-pad border-t border-line bg-surface">
       <div className="mx-auto max-w-wide">
         <p className="section-eyebrow">About Xsphere</p>
-        <p className="font-display mt-4 text-[clamp(2.4rem,6vw,4.5rem)] font-extrabold leading-[0.95] tracking-tight text-foreground">
+        <p className="mt-3 text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-tight tracking-tight text-foreground">
           Print. Brand. Display.
         </p>
-        <p className="mt-3 text-lg font-medium text-accent">Because image is everything.</p>
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-          <div className="max-w-2xl space-y-4 text-base leading-relaxed text-muted">
+        <p className="mt-2 text-lg font-medium text-accent">Because image is everything.</p>
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-10">
+          <div className="max-w-2xl space-y-3 text-base leading-relaxed text-muted">
             <p>
               Established in 2001, Xsphere has built its reputation on exceptional large-format printing, branding
               solutions, and professional installations — now backed by in-house CNC and commercial litho on the same
@@ -42,14 +42,14 @@ export default function PrintBrandDisplay() {
               manages every project from concept through to installation across South Africa.
             </p>
           </div>
-          <p className="spec-mono text-sm uppercase tracking-[0.12em] text-steel lg:pt-2">
+          <p className="text-sm font-semibold uppercase tracking-wide text-steel lg:pt-1">
             Est. 2001 · 25+ years
             <br />
             Alberton · National install
           </p>
         </div>
 
-        <div className="mt-12 grid gap-px border border-line bg-line md:grid-cols-3">
+        <div className="section-stack grid items-stretch gap-px border border-line bg-line md:grid-cols-3">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
@@ -57,10 +57,11 @@ export default function PrintBrandDisplay() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06 }}
+              className="h-full"
             >
-              <Link href={pillar.href} className="group block h-full bg-surface p-7 transition-colors hover:bg-background sm:p-8">
-                <h3 className="font-display text-2xl font-bold text-foreground group-hover:text-accent">{pillar.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{pillar.body}</p>
+              <Link href={pillar.href} className="group flex h-full flex-col bg-surface p-6 transition-colors hover:bg-background sm:p-7">
+                <h3 className="text-2xl font-bold text-foreground group-hover:text-accent">{pillar.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{pillar.body}</p>
                 <span className="mt-5 inline-block text-sm font-semibold text-accent">Explore →</span>
               </Link>
             </motion.div>

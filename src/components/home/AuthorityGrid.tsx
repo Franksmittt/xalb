@@ -28,19 +28,19 @@ const metrics = [
 export default function AuthorityGrid() {
   return (
     <section className="border-t border-line bg-surface">
-      <div className="mx-auto max-w-wide px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-wide px-[var(--space-gutter)] pb-8 pt-[var(--space-section)]">
         <p className="section-eyebrow">Why procurement chooses Xsphere</p>
-        <h2 className="font-display mt-3 max-w-2xl text-balance">Facts you can put in a vendor pack.</h2>
+        <h2 className="mt-3 max-w-2xl text-balance">Facts you can put in a vendor pack.</h2>
       </div>
-      <div className="grid w-full grid-cols-1 gap-px border-y border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid w-full grid-cols-1 items-stretch gap-px border-y border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
         {metrics.map((m) => (
-          <div key={m.label} className="bg-surface px-6 py-8 sm:px-8">
-            <p className="font-display text-5xl font-bold tracking-tight text-foreground">
+          <div key={m.label} className="flex h-full flex-col bg-surface px-6 py-8 sm:px-8">
+            <p className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               {m.value}
-              <span className="ml-2 text-2xl font-semibold text-accent">{m.unit}</span>
+              <span className="ml-2 text-xl font-semibold text-accent sm:text-2xl">{m.unit}</span>
             </p>
-            <p className="spec-mono mt-4 text-[0.7rem] uppercase tracking-[0.14em] text-muted">{m.label}</p>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted">{m.body}</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted">{m.label}</p>
+            <p className="mt-3 max-w-xs flex-1 text-sm leading-relaxed text-muted">{m.body}</p>
           </div>
         ))}
       </div>

@@ -14,12 +14,12 @@ export default function WhyXsphere() {
     <section className="section-pad border-t border-line bg-background">
       <div className="mx-auto max-w-wide">
         <p className="section-eyebrow">Why Xsphere</p>
-        <h2 className="font-display mt-3 max-w-2xl text-balance">What the company profile promises — in practice.</h2>
-        <div className="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <h2 className="mt-3 max-w-2xl text-balance">What the company profile promises — in practice.</h2>
+        <div className="section-stack grid items-stretch gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason) => (
-            <article key={reason.title} className="bg-surface p-6">
-              <h3 className="font-display text-lg font-bold text-foreground">{reason.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{reason.body}</p>
+            <article key={reason.title} className="flex h-full flex-col bg-surface p-5 sm:p-6">
+              <h3 className="text-base font-bold text-foreground sm:text-lg">{reason.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{reason.body}</p>
             </article>
           ))}
         </div>
