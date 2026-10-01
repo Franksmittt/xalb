@@ -22,17 +22,17 @@ export default function AnimatedButton({
   size = 'md',
 }: AnimatedButtonProps) {
   const baseStyles =
-    'relative inline-flex items-center justify-center font-semibold rounded-md transition-colors duration-200';
+    'relative inline-flex items-center justify-center font-semibold rounded-[2px] transition-colors duration-200';
 
   const variantStyles = {
-    primary: 'text-ink-inverse bg-accent hover:bg-[#255a30]',
-    secondary: 'text-ink bg-accent-soft hover:bg-[#cfdcbf]',
-    outline: 'text-ink-inverse border border-white/55 hover:border-white hover:bg-white/10',
+    primary: 'text-ink-inverse bg-accent hover:bg-[#18582a]',
+    secondary: 'text-ink bg-accent-soft hover:bg-[#d2e3c4]',
+    outline: 'text-ink-inverse border border-white/50 hover:border-white hover:bg-white/10',
   };
 
   const sizeStyles = {
     sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
+    md: 'px-6 py-3 text-[0.95rem]',
     lg: 'px-8 py-4 text-lg',
   };
 

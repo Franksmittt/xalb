@@ -1,61 +1,54 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const cards = [
+const points = [
   {
-    title: 'High-volume litho',
-    body: 'Catalogues, financial print, brochures, and packaging when digital short-run is no longer the economical path.',
-    image: '/images/design-studio.png',
-    alt: 'Commercial litho print production',
+    title: 'Press volume',
+    body: 'Catalogues, financial print, brochures, and packaging when the run outgrows digital.',
   },
   {
-    title: 'Colour control',
-    body: 'Proofed CMYK and specials before the long run. Brand colour that survives a pallet, not just a laser print.',
-    image: '/images/hero-print.png',
-    alt: 'Colour-managed print proofing',
+    title: 'Colour discipline',
+    body: 'Proofed CMYK and specials before the long run — brand colour that survives a pallet.',
   },
   {
-    title: 'Bindery path',
-    body: 'Fold, saddle, perfect bind, NCR books, and folders — specified with the press run, not as an afterthought.',
-    image: '/images/install-team.png',
-    alt: 'Finished print and bindery work',
+    title: 'Bindery included',
+    body: 'Fold, saddle, perfect bind, NCR books, and folders specified with the press path.',
   },
 ];
 
 export default function PrintCarousel() {
   return (
-    <section className="border-t border-line bg-surface px-4 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <p className="section-eyebrow">Commercial print</p>
-        <h2 className="font-display mt-3 max-w-3xl text-3xl font-bold text-foreground md:text-4xl">
-          Colour-managed volume for East Rand contracts
-        </h2>
-        <p className="mt-4 max-w-3xl text-lg text-muted">
-          Litho for Johannesburg South procurement — plus digital when the run is still climbing. One prepress language
-          from sample to pallet.
-        </p>
-
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {cards.map((card) => (
-            <article key={card.title} className="flex flex-col border border-line bg-background">
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image src={card.image} alt={card.alt} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-xl font-bold text-foreground">{card.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted sm:text-base">{card.body}</p>
-              </div>
-            </article>
-          ))}
+    <section className="section-pad border-t border-line bg-surface">
+      <div className="mx-auto max-w-wide">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="section-eyebrow">Commercial print</p>
+            <h2 className="font-display mt-3 text-balance">Colour-managed volume for East Rand contracts.</h2>
+            <p className="section-lede">
+              One prepress language from sample to pallet — litho when it counts, digital while the run is still climbing.
+            </p>
+            <Link href="/services/commercial/litho-printing" className="btn-primary mt-8">
+              Litho capabilities
+            </Link>
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden border border-line">
+            <Image
+              src="/images/design-studio.png"
+              alt="Commercial print production at Xsphere"
+              fill
+              className="object-cover"
+              sizes="(max-width:1024px) 100vw, 55vw"
+            />
+          </div>
         </div>
 
-        <div className="mt-10">
-          <Link
-            href="/services/commercial/litho-printing"
-            className="text-sm font-semibold text-accent hover:underline"
-          >
-            Commercial litho services →
-          </Link>
+        <div className="mt-10 grid gap-px border border-line bg-line md:grid-cols-3">
+          {points.map((point) => (
+            <article key={point.title} className="bg-surface p-7 sm:p-8">
+              <h3 className="font-display text-xl font-bold text-foreground">{point.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-[0.95rem]">{point.body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

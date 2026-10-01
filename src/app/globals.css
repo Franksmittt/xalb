@@ -3,19 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #f5f6f2;
-  --foreground: #1c2118;
-  --muted: #5c6554;
+  /* Industrial paper — cool, not cream */
+  --background: #f1f2ee;
+  --foreground: #121612;
+  --muted: #5a6158;
   --surface: #ffffff;
-  --surface-muted: #e9ebe4;
-  --line: rgba(28, 33, 24, 0.12);
-  --accent: #2f6b3a;
-  --accent-bright: #6fae3a;
-  --accent-soft: #dce8d4;
-  --warm: #d9652b;
-  --warm-soft: #f4e4d8;
-  --ink-inverse: #f7f8f4;
-  --hero-shade: rgba(16, 20, 12, 0.58);
+  --surface-muted: #e6e8e2;
+  --line: rgba(18, 22, 18, 0.12);
+  --accent: #1e6b34;
+  --accent-bright: #8bc53f;
+  --accent-soft: #e2edd8;
+  --steel: #6b7168;
+  --ink-inverse: #f4f5f2;
+  --hero-shade: rgba(12, 16, 12, 0.55);
+
+  --space-section: clamp(4.5rem, 8vw, 7.5rem);
+  --space-gutter: clamp(1rem, 3vw, 2rem);
+  --radius: 2px;
+
+  --text-display: clamp(2.75rem, 7vw, 5.25rem);
+  --text-h1: clamp(2.1rem, 4.5vw, 3.5rem);
+  --text-h2: clamp(1.65rem, 3vw, 2.4rem);
+  --text-h3: clamp(1.2rem, 1.6vw, 1.45rem);
+  --text-lede: clamp(1.05rem, 1.4vw, 1.2rem);
 }
 
 html {
@@ -25,8 +35,14 @@ html {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    linear-gradient(rgba(18, 22, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 22, 18, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
   font-family: var(--font-body), "Segoe UI", sans-serif;
+  font-feature-settings: "ss01" on, "kern" on;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,26 +51,129 @@ h1,
 h2,
 h3,
 .font-display {
-  font-family: var(--font-display), Georgia, serif;
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
   letter-spacing: -0.02em;
 }
 
 ::selection {
-  background: rgba(47, 107, 58, 0.22);
-  color: #1c2118;
+  background: rgba(30, 107, 52, 0.22);
+  color: #121612;
+}
+
+@layer components {
+  .page-shell {
+    @apply relative min-h-screen text-[var(--foreground)];
+  }
+
+  .section-pad {
+    padding-block: var(--space-section);
+    padding-inline: var(--space-gutter);
+  }
+
+  .section-eyebrow {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .section-lede {
+    margin-top: 1rem;
+    max-width: 38rem;
+    font-size: var(--text-lede);
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: var(--ink-inverse);
+    padding: 0.85rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background 160ms ease, transform 160ms ease;
+  }
+
+  .btn-primary:hover {
+    background: #18582a;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--foreground);
+    padding: 0.85rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--foreground);
+    background: var(--surface-muted);
+  }
+
+  .btn-ghost-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(244, 245, 242, 0.45);
+    color: var(--ink-inverse);
+    padding: 0.85rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+
+  .btn-ghost-light:hover {
+    border-color: var(--ink-inverse);
+    background: rgba(244, 245, 242, 0.08);
+  }
+
+  .spec-mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  .divider-line {
+    height: 1px;
+    background: var(--line);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-
-  .page-shell {
-    @apply relative min-h-screen text-[var(--foreground)];
-  }
-
-  .section-eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)];
   }
 
   .hide-scrollbar {
