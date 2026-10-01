@@ -27,7 +27,7 @@ export default function AnimatedButton({
   const variantStyles = {
     primary: 'text-ink-inverse bg-accent hover:bg-[#255a30]',
     secondary: 'text-ink bg-accent-soft hover:bg-[#cfdcbf]',
-    outline: 'text-ink-inverse border border-white/70 hover:bg-white/10',
+    outline: 'text-ink-inverse border border-white/55 hover:border-white hover:bg-white/10',
   };
 
   const sizeStyles = {

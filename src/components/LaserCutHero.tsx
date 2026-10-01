@@ -476,19 +476,21 @@ export default function LaserCutHero() {
         </div>
 
         <div className={styles.copy}>
+          <p className={styles.brand}>Xsphere</p>
           <p className={styles.kicker}>Alberton manufacturing · East Rand</p>
           <h1 className={`font-display ${styles.headline}`}>
-            Imagine what is <em>possible</em>.
+            CNC, litho, and large format — from one production floor.
           </h1>
           <p className={styles.lede}>
-            Advanced CNC, commercial litho, and 3.2 m UV — engineered in Alberton. Delivered across Johannesburg South.
+            Precision routing and laser, commercial print volume, and 3.2 m UV. Designed, manufactured, and finished in
+            Alberton for Alrode through Johannesburg South.
           </p>
           <div className={styles.actions}>
             <AnimatedButton href="/contact" variant="primary" size="md">
-              Initiate a project
+              Request a quote
             </AnimatedButton>
             <AnimatedButton href="/services" variant="outline" size="md">
-              Explore capabilities
+              View capabilities
             </AnimatedButton>
           </div>
         </div>
