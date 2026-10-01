@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     template: "%s | Xsphere",
-    default: "Xsphere | Commercial Manufacturing, Print & CNC — Alberton",
+    default: "Xsphere | Commercial Manufacturing, Print & CNC | Alberton",
   },
   description:
     "End-to-end commercial printing and precision CNC manufacturing in Alberton. In-house routing and laser for MDF, ABS, and plastics, 3.2 m UV, litho volume, and walk-in print for the East Rand.",

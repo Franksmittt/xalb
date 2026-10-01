@@ -127,7 +127,7 @@ export default function LaserCutHero() {
     let moveTo = { ...pos };
     let moveElapsed = 0;
     let moveDur = 0.2;
-    // Units of path-length per second — tuned for pathLength=1 paths (~1.4s per contour).
+    // Units of path-length per second, tuned for pathLength=1 paths (~1.4s per contour).
     const cutSpeed = 0.7;
 
     const publish = (nextPhase: Phase, nextCutting: boolean) => {
@@ -505,7 +505,7 @@ export default function LaserCutHero() {
             Design. Produce. Install.
           </h1>
           <p className={styles.lede}>
-            Commercial litho, 3.2 m UV, and precision CNC — one Alberton floor accountable from brief to installed asset
+            Commercial litho, 3.2 m UV, and precision CNC. One Alberton floor accountable from brief to installed asset
             across the East Rand and Johannesburg South.
           </p>
           <div className={styles.actions}>

@@ -44,7 +44,7 @@ export default function ContactPage() {
               Brief a CNC, laser, or full workshop project
             </h1>
             <p className="mt-5 text-lg text-ink-muted">
-              Tell us what you need cut, engraved, printed, or installed. Commercial volumes welcome — we&apos;ll
+              Tell us what you need cut, engraved, printed, or installed. Commercial volumes welcome. We&apos;ll
               come back with a clear path.
             </p>
           </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   required
                   className={`${inputClass} resize-y`}
                   rows={4}
-                  placeholder="CNC / laser / signage / print — volumes, materials, deadlines."
+                  placeholder="CNC / laser / signage / print: volumes, materials, deadlines."
                 />
               </label>
               <label htmlFor="assets" className="block text-sm font-medium text-ink">

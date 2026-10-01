@@ -35,7 +35,7 @@ export default function WorkProof() {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
             <p className="section-eyebrow">Selected output</p>
-            <h2 className="mt-3 text-balance">Proof lives on the floor — and on site.</h2>
+            <h2 className="mt-3 text-balance">Proof lives on the floor and on site.</h2>
             <p className="section-lede">
               Real production photography from the Alberton facility and Gauteng installs. No stock smiling teams.
             </p>

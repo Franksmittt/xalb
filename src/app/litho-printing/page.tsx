@@ -147,7 +147,7 @@ export default function LithoPrintingPage() {
               <h2 className="text-3xl font-bold text-ink mb-6">What is Lithographic Printing?</h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-lg text-ink-muted mb-6 leading-relaxed">
-                  Lithographic printing, also known as offset printing, is a high-quality printing method that uses aluminum printing plates to transfer ink onto paper. The process gets its name from the principle that oil (ink) and water don&apos;t mix—the image areas on the plate attract ink while the non-image areas repel it.
+                  Lithographic printing, also known as offset printing, is a high-quality printing method that uses aluminum printing plates to transfer ink onto paper. The process gets its name from the principle that oil (ink) and water don&apos;t mix. The image areas on the plate attract ink while the non-image areas repel it.
                 </p>
                 <p className="text-lg text-ink-muted mb-6 leading-relaxed">
                   This time-tested technology produces exceptional print quality with sharp text, vibrant colors, and consistent results across high-volume runs. Unlike digital printing, litho becomes more cost-effective as quantities increase, making it ideal for large print jobs like catalogs, brochures, marketing materials, and corporate stationery.
@@ -168,7 +168,7 @@ export default function LithoPrintingPage() {
                 <ol className="space-y-4 text-ink-muted">
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] text-accent flex items-center justify-center text-sm font-bold">1</span>
-                    <span>Printing plates are created from your digital files—one plate per color (CMYK or spot colors).</span>
+                    <span>Printing plates are created from your digital files: one plate per color (CMYK or spot colors).</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#AEDD33]/20 border border-[#AEDD33] text-accent flex items-center justify-center text-sm font-bold">2</span>
@@ -209,7 +209,7 @@ export default function LithoPrintingPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#FF1744] flex-shrink-0" />
-                    <span><strong className="text-white">Consistency:</strong> Every print in the run matches perfectly—no variations.</span>
+                    <span><strong className="text-white">Consistency:</strong> Every print in the run matches perfectly, with no variations.</span>
                   </li>
                 </ul>
               </div>

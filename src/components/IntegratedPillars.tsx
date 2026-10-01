@@ -5,7 +5,7 @@ const pillars = [
     title: 'Design Intelligence',
     subtitle: 'Strategy + Creative + CAD',
     description:
-      'Creative directors convert industrial briefs into production-ready systems—wireframes, CAD overlays, and color-managed asset kits.',
+      'Creative directors convert industrial briefs into production-ready systems: wireframes, CAD overlays, and color-managed asset kits.',
     bullets: [
       'Graphic design + corporate identity suites',
       'Digital wireframes that anticipate fabrication tolerances',
@@ -29,7 +29,7 @@ const pillars = [
     title: 'Deployment Mastery',
     subtitle: 'Installation + Logistics',
     description:
-      'Certified crews, branded fleet, and QA specialists install across Gauteng—buildings, fleets, events—without losing brand integrity.',
+      'Certified crews, branded fleet, and QA specialists install across Gauteng (buildings, fleets, events) without losing brand integrity.',
     bullets: [
       'Vehicle wrapping, fleet branding, magnet programs',
       'On-site signage installation & safety labeling',

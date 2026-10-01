@@ -6,12 +6,12 @@ const steps = [
   {
     num: '01',
     title: 'Design',
-    body: 'Production-aware creative — files built for the bed, the press, and the install crew from day one.',
+    body: 'Production-aware creative: files built for the bed, the press, and the install crew from day one.',
   },
   {
     num: '02',
     title: 'Produce',
-    body: 'Litho volume, 3.2 m UV, CNC routing, and laser cutting nested on the Alberton floor — not outsourced.',
+    body: 'Litho volume, 3.2 m UV, CNC routing, and laser cutting nested on the Alberton floor, not outsourced.',
   },
   {
     num: '03',
@@ -28,7 +28,7 @@ export default function ProcessStrip() {
           <p className="section-eyebrow">Integrated advantage</p>
           <h2 className="mt-3 text-balance">One partner. Zero handoff friction.</h2>
           <p className="section-lede">
-            Most buyers juggle an agency, a print house, and a fabricator. Xsphere owns the full chain — so colour,
+            Most buyers juggle an agency, a print house, and a fabricator. Xsphere owns the full chain, so colour,
             tolerance, and deadline stay under one roof.
           </p>
         </div>

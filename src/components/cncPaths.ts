@@ -7,7 +7,7 @@ export type CncPath = {
   d: string;
 };
 
-/** Syne ExtraBold outlines for "Xsphere" — inner contours first per letter. */
+/** Syne ExtraBold outlines for "Xsphere": inner contours first per letter. */
 export const CNC_PATHS: CncPath[] = [
   { id: 'c0', letter: 'X', kind: 'body', d: 'M148.6 133.7 L187.8 99.2 L233.8 99.2 L169.1 153.8 L167.7 155 L126 191.2 L80 191.2 L147.6 134.6 L148.6 133.7 Z' },
   { id: 'c1', letter: 'X', kind: 'body', d: 'M81.4 99.2 L127.4 99.2 L167.8 134.7 L168.7 135.6 L235.3 191.2 L189.3 191.2 L145.8 153.7 L145.3 153.1 L81.4 99.2 Z' },

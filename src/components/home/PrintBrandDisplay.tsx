@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const pillars = [
   {
     title: 'Print',
-    body: 'Large format, specialised media, and commercial litho — colour-managed for retail and industrial rollouts.',
+    body: 'Large format, specialised media, and commercial litho, colour-managed for retail and industrial rollouts.',
     href: '/services/commercial/large-format-printing',
   },
   {
@@ -16,7 +16,7 @@ const pillars = [
   },
   {
     title: 'Display',
-    body: 'Exhibition and activation systems — pull-ups, gazebos, banner walls — from concept to installed stand.',
+    body: 'Exhibition and activation systems (pull-ups, gazebos, banner walls) from concept to installed stand.',
     href: '/services/commercial/display-branding',
   },
 ];
@@ -34,7 +34,7 @@ export default function PrintBrandDisplay() {
           <div className="max-w-2xl space-y-3 text-base leading-relaxed text-muted">
             <p>
               Established in 2001, Xsphere has built its reputation on exceptional large-format printing, branding
-              solutions, and professional installations — now backed by in-house CNC and commercial litho on the same
+              solutions, and professional installations, now backed by in-house CNC and commercial litho on the same
               Alberton floor.
             </p>
             <p>

@@ -18,7 +18,7 @@ const processSteps = [
     step: "02",
     title: "Design to cut file",
     description:
-      "We turn sketches and brand files into production-ready paths — nesting for CNC and laser, with proofs you can approve before anything hits the bed.",
+      "We turn sketches and brand files into production-ready paths, nesting for CNC and laser, with proofs you can approve before anything hits the bed.",
     cues: [
       "CAD / cut-path preparation",
       "Material recommendation for signs and novelty",
@@ -40,7 +40,7 @@ const processSteps = [
     step: "04",
     title: "Install or dispatch",
     description:
-      "We kit for multi-site rollouts or install across Gauteng — so the finished piece lands the way it looked in the proof.",
+      "We kit for multi-site rollouts or install across Gauteng, so the finished piece lands the way it looked in the proof.",
     cues: [
       "Kitting and labeling for rollouts",
       "Optional on-site installation",
@@ -71,7 +71,7 @@ export default function ProcessPage() {
               From idea to cut file to finished piece
             </h1>
             <p className="mt-5 text-lg text-ink-muted">
-              Built around CNC and laser production for commercial clients — with print, fleet, and install when
+              Built around CNC and laser production for commercial clients, with print, fleet, and install when
               the brief needs more than fabrication.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

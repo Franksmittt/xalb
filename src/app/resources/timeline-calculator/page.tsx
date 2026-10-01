@@ -66,7 +66,7 @@ export default function TimelineCalculatorPage() {
               </span>
             </h1>
             <p className="text-lg text-ink-muted max-w-3xl">
-              Estimate project timelines based on scope, material availability, and site access requirements. This is a guide—actual timelines may vary.
+              Estimate project timelines based on scope, material availability, and site access requirements. This is a guide. Actual timelines may vary.
             </p>
           </div>
 

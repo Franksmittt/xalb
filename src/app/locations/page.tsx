@@ -17,7 +17,7 @@ export default function LocationsIndex() {
           <p className="text-xs uppercase tracking-[0.28em] text-cyan-400">Coverage</p>
           <h1 className="font-display mt-3 text-4xl font-bold">Manufactured in Alberton. Delivered across the East Rand.</h1>
           <p className="mt-5 max-w-2xl text-neutral-400">
-            Suburb pages exist so local search and procurement land on unique logistics context — not duplicated
+            Suburb pages exist so local search and procurement land on unique logistics context, not duplicated
             brochure copy.
           </p>
         </div>

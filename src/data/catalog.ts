@@ -29,7 +29,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'CNC Routing & Laser Cutting',
     navLabel: 'CNC & Laser',
-    tagline: 'In-house routing and engraving for MDF, ABS, acrylic, and industrial plastics — Alrode / Alberton.',
+    tagline: 'In-house routing and engraving for MDF, ABS, acrylic, and industrial plastics. Alrode / Alberton.',
     summary:
       'Xsphere operates dedicated CNC routing and CO₂ laser cutting in Alberton for commercial volumes. Laser bed 1200 × 900 mm. CNC bed 3 m × 2 m. Work is nested, cut, finished, and packed on the same floor so shopfitters and brand teams are not waiting on a third machine shop for wood and plastic.',
     heroImage: '/images/fabrication-lab.png',
@@ -46,7 +46,7 @@ export const commercialServices: CatalogService[] = [
       'High-volume nested routing for shopfitting, POS, and architectural panels',
       'Laser cut and engrave for signs, awards, overlays, and campaign pieces',
       'Edge finishing, paint, and assembly for install-ready parts',
-      'CAD from client DXF, AI, or sketches — we build cut-ready paths',
+      'CAD from client DXF, AI, or sketches. We build cut-ready paths',
     ],
     offerings: [
       'Dimensional letters and logos',
@@ -157,7 +157,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Commercial Litho Printing',
     navLabel: 'Litho Printing',
-    tagline: 'High-volume offset for catalogues, packaging, NCR, and corporate collateral — colour-managed commercial runs.',
+    tagline: 'High-volume offset for catalogues, packaging, NCR, and corporate collateral. Colour-managed commercial runs.',
     summary:
       'Litho is the volume path for catalogues, annual reports, packaging, and long-run flyers. Xsphere specifies, colour-manages, and delivers commercial offset programmes for Johannesburg South and the East Rand, with digital short-run as the on-ramp when quantities are still climbing.',
     heroImage: '/images/hero-print.png',
@@ -200,7 +200,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Large Format Printing & Signage',
     navLabel: 'Large Format',
-    tagline: 'UV and roll-to-roll output to 3.2 m — banners, SAV, Chromadek, Correx, wall graphics, and exhibition media.',
+    tagline: 'UV and roll-to-roll output to 3.2 m: banners, SAV, Chromadek, Correx, wall graphics, and exhibition media.',
     summary:
       'Wide-format UV hybrid printing for rigid boards and roll media. Outdoor durability for Alberton weather, indoor colour for retail, and finishing (weld, eyelet, contour cut, laminate) so panels leave ready to hang or wrap.',
     heroImage: '/images/hero-print.png',
@@ -265,9 +265,9 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Display Branding & Exhibition Systems',
     navLabel: 'Display Branding',
-    tagline: 'Pull-ups, gazebos, banner walls, shark fins, and event display systems — printed and finished for site.',
+    tagline: 'Pull-ups, gazebos, banner walls, shark fins, and event display systems, printed and finished for site.',
     summary:
-      'High-impact portable and event display for retail activations, exhibitions, and roadshows. Hardware and media specified together so the brand is hard to miss — and the kit survives the tour.',
+      'High-impact portable and event display for retail activations, exhibitions, and roadshows. Hardware and media specified together so the brand is hard to miss, and the kit survives the tour.',
     heroImage: '/images/services/large_format/Gemini_Generated_Image_y6btqdy6btqdy6bt.png',
     leadTime: '3–7 days typical',
     capacity: 'Event kits + national rollout support',
@@ -301,7 +301,7 @@ export const commercialServices: CatalogService[] = [
       {
         question: 'Do you supply gazebos and pull-up banners?',
         answer:
-          'Yes. Display branding covers pull-ups, gazebos, shark-fin and telescopic banners, banner walls, A-frames, and branded table cloths — produced from the Alberton facility.',
+          'Yes. Display branding covers pull-ups, gazebos, shark-fin and telescopic banners, banner walls, A-frames, and branded table cloths, produced from the Alberton facility.',
       },
     ],
     related: ['large-format-printing', 'corporate-gifting', 'installation', 'graphic-design'],
@@ -311,9 +311,9 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Corporate Gifting & Promotional Merch',
     navLabel: 'Corporate Gifting',
-    tagline: 'Branded drinkware, apparel, tech, stationery, and event giveaways — supplied and decorated in volume.',
+    tagline: 'Branded drinkware, apparel, tech, stationery, and event giveaways, supplied and decorated in volume.',
     summary:
-      'Promotional products that keep the brand in hand after the campaign. We source and brand quality corporate gifts, apparel, and desk drops — then kit and deliver for launches, conferences, and client programmes.',
+      'Promotional products that keep the brand in hand after the campaign. We source and brand quality corporate gifts, apparel, and desk drops, then kit and deliver for launches, conferences, and client programmes.',
     heroImage: '/images/design-studio.png',
     leadTime: '7–14 days typical (item dependent)',
     capacity: 'Campaign kits & bulk decoration',
@@ -340,14 +340,14 @@ export const commercialServices: CatalogService[] = [
       'Desk drops',
       'Event giveaways',
     ],
-    problem: 'Promo junk that looks nothing like the brand — or arrives after the event.',
+    problem: 'Promo junk that looks nothing like the brand, or arrives after the event.',
     solution:
       'Xsphere treats gifting as part of the brand programme: consistent artwork, reliable decoration, and the option to escalate premium pieces to in-house laser engraving.',
     faqs: [
       {
         question: 'Can Xsphere brand corporate gifts and apparel?',
         answer:
-          'Yes. Corporate gifting covers drinkware, writing instruments, tech, stationery, apparel, headwear, desk drops, and event giveaways — supplied and branded for South African campaigns.',
+          'Yes. Corporate gifting covers drinkware, writing instruments, tech, stationery, apparel, headwear, desk drops, and event giveaways, supplied and branded for South African campaigns.',
       },
     ],
     related: ['graphic-design', 'display-branding', 'cnc-laser-cutting', 'litho-printing'],
@@ -357,7 +357,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Rigid Substrate & Flatbed Printing',
     navLabel: 'Rigid & Flatbed',
-    tagline: 'Direct print to Correx, foam, acrylic, ACM, Chromadek, and display boards — cut and finished for site.',
+    tagline: 'Direct print to Correx, foam, acrylic, ACM, Chromadek, and display boards, cut and finished for site.',
     summary:
       'Flatbed and hybrid UV onto rigid sheets used every day in South African signage: Correx, Chromadek, DiBond/ACM, Perspex, foam board, and Xanita. Contour cut and CNC-trimmed so the print and the edge are one job.',
     heroImage: '/images/services/large_format/Gemini_Generated_Image_m4v1gsm4v1gsm4v1.png',
@@ -393,7 +393,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Vehicle Branding & Fleet Wraps',
     navLabel: 'Fleet Branding',
-    tagline: 'Partial and full wraps, magnets, and fleet numbering — cast vinyl, laminated, installed in Gauteng.',
+    tagline: 'Partial and full wraps, magnets, and fleet numbering: cast vinyl, laminated, installed in Gauteng.',
     summary:
       'Mobile branding from a single bakkie to a scheduled fleet. Cast films for compound curves, polymeric for simpler panels, magnets for temporary programmes, and photo QA after install.',
     heroImage: '/images/fleet-lineup.png',
@@ -414,7 +414,7 @@ export const commercialServices: CatalogService[] = [
     ],
     offerings: ['One-off wraps', 'Fleet programmes', 'Compliance numbering', 'Boat / trailer graphics'],
     problem: 'Inconsistent templates across a fleet make the brand look like three different suppliers.',
-    solution: 'One template set, one vinyl spec, one install standard — then a photo log per vehicle.',
+    solution: 'One template set, one vinyl spec, one install standard, then a photo log per vehicle.',
     faqs: [
       {
         question: 'Do you wrap vehicles in Alberton?',
@@ -429,7 +429,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Dimensional Signage & Lightboxes',
     navLabel: 'Dimensional Signs',
-    tagline: 'Cut letters, built-up logos, acrylic faces, and lightboxes — fabricated in wood and plastics, installed on site.',
+    tagline: 'Cut letters, built-up logos, acrylic faces, and lightboxes, fabricated in wood and plastics, installed on site.',
     summary:
       'The commercial product of CNC plus print: flat-cut and built-up letters, reception logos, blade signs, and lightboxes in acrylic, MDF, and ACM trays. Illumination specified where the site allows.',
     heroImage: '/images/install-team.png',
@@ -450,7 +450,7 @@ export const commercialServices: CatalogService[] = [
     ],
     offerings: ['Reception logos', 'Shop fascia', 'Totem faces', 'Interior directories'],
     problem: 'A printed board on a wall is not a brand presence; procurement still needs something that reads at 20 metres.',
-    solution: 'Dimensional fabrication in the materials we actually machine — acrylic, MDF, ABS — with print and install attached.',
+    solution: 'Dimensional fabrication in the materials we actually machine (acrylic, MDF, ABS), with print and install attached.',
     faqs: [
       {
         question: 'Do you fabricate 3D letters in-house?',
@@ -465,7 +465,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Installation & Site Logistics',
     navLabel: 'Installation',
-    tagline: 'Gauteng install crews for signage, interiors, facades, and fleet — method statements and photo close-out.',
+    tagline: 'Gauteng install crews for signage, interiors, facades, and fleet, with method statements and photo close-out.',
     summary:
       'Making the piece is half the job. Certified crews install interior identity, shop-fronts, and selected elevated work across Gauteng, with landlord coordination and a punchlist.',
     heroImage: '/images/services/installation/Gemini_Generated_Image_nvcg3fnvcg3fnvcg.png',
@@ -486,7 +486,7 @@ export const commercialServices: CatalogService[] = [
     ],
     offerings: ['Site survey', 'Method statements', 'De-install / make-good', 'Maintenance visits'],
     problem: 'A perfect panel that nobody can legally hang still fails the campaign date.',
-    solution: 'Survey, fabricate, and install are one programme — not three WhatsApp groups.',
+    solution: 'Survey, fabricate, and install are one programme, not three WhatsApp groups.',
     faqs: [
       {
         question: 'Do you install signage in Germiston and Johannesburg South?',
@@ -501,7 +501,7 @@ export const commercialServices: CatalogService[] = [
     silo: 'commercial',
     title: 'Graphic Design for Manufacture',
     navLabel: 'Design',
-    tagline: 'Artwork built for CNC paths, vinyl plots, and press — not just a screen mock.',
+    tagline: 'Artwork built for CNC paths, vinyl plots, and press, not just a screen mock.',
     summary:
       'Design that already knows the bed size, the fold, and the wrap template. Identity, campaigns, and production files so the factory is not reverse-engineering a JPEG.',
     heroImage: '/images/design-studio.png',
@@ -522,7 +522,7 @@ export const commercialServices: CatalogService[] = [
     ],
     offerings: ['Brand kits', 'Campaign suites', 'CNC pathing', 'Large-format adaptations'],
     problem: 'Beautiful files that cannot be nested, weeded, or held in register.',
-    solution: 'Designers sit next to CNC and print — the proof is a physical constraint check, not a PDF flatten.',
+    solution: 'Designers sit next to CNC and print. The proof is a physical constraint check, not a PDF flatten.',
     faqs: [
       {
         question: 'Can you design and manufacture from a rough sketch?',
@@ -542,7 +542,7 @@ export const retailServices: CatalogService[] = [
     navLabel: 'Walk-in Print',
     tagline: 'Alberton counter service: documents, plans, scanning, binding, laminating, and same-day digital.',
     summary:
-      'A dedicated retail path for short runs and walk-ins — without putting a 40,000 litho job in the same queue as a thesis. Plans, copies, binding, and laminating for Alberton, Brackenhurst, and Meyersdal customers who need it today.',
+      'A dedicated retail path for short runs and walk-ins, without putting a 40,000 litho job in the same queue as a thesis. Plans, copies, binding, and laminating for Alberton, Brackenhurst, and Meyersdal customers who need it today.',
     heroImage: '/images/hero-print.png',
     leadTime: 'While-you-wait to same day',
     capacity: 'A4–A0 plans and digital short run',
@@ -577,7 +577,7 @@ export const retailServices: CatalogService[] = [
     silo: 'retail',
     title: 'Business Cards, Flyers & Stationery',
     navLabel: 'Cards & Flyers',
-    tagline: 'Short-run digital cards, flyers, letterheads, and NCR pads — design help at the counter if you need it.',
+    tagline: 'Short-run digital cards, flyers, letterheads, and NCR pads, with design help at the counter if you need it.',
     summary:
       'The local B2C and micro-business stack: cards, flyers, compliment slips, and small NCR books. When the reprint becomes 10,000 flyers, the same artwork moves to litho without a redesign.',
     heroImage: '/images/design-studio.png',
@@ -624,7 +624,7 @@ export function servicePath(service: CatalogService | string) {
   return `/services/${entry.silo}/${entry.slug}`;
 }
 
-/** Card art for catalogue grids — swap these SVG placeholders for final photography. */
+/** Card art for catalogue grids. Swap these SVG placeholders for final photography. */
 export function serviceCardImage(service: CatalogService | string) {
   const slug = typeof service === 'string' ? service : service.slug;
   return `/images/placeholders/${slug}.svg`;
@@ -651,7 +651,7 @@ export const suburbs: Suburb[] = [
     name: 'Alberton',
     emphasis: 'retail',
     context:
-      'The workshop sits in Florentia, Alberton — walk-in print and commercial manufacturing share the same address for local collection and Gauteng dispatch.',
+      'The workshop sits in Florentia, Alberton. Walk-in print and commercial manufacturing share the same address for local collection and Gauteng dispatch.',
   },
   {
     slug: 'alrode',
@@ -679,7 +679,7 @@ export const suburbs: Suburb[] = [
     name: 'Germiston',
     emphasis: 'industrial',
     context:
-      'From Alberton we feed Germiston industry via N3/N12 logistics — litho pallets, CNC packs, and rigid signage without a Johannesburg CBD detour.',
+      'From Alberton we feed Germiston industry via N3/N12 logistics: litho pallets, CNC packs, and rigid signage without a Johannesburg CBD detour.',
   },
   {
     slug: 'east-rand',
@@ -693,7 +693,7 @@ export const suburbs: Suburb[] = [
     name: 'Johannesburg South',
     emphasis: 'industrial',
     context:
-      'Johannesburg South procurement reaches a manufacturing floor in Alberton rather than a city copy shop — CNC, litho, and 3.2 m UV under one programme.',
+      'Johannesburg South procurement reaches a manufacturing floor in Alberton rather than a city copy shop. CNC, litho, and 3.2 m UV under one programme.',
   },
 ];
 
@@ -723,7 +723,7 @@ export const locationServiceMeta: Record<
   'large-format-printing': {
     title: 'Large Format Printing',
     catalogSlug: 'large-format-printing',
-    blurb: 'UV hybrid output to 3.2 m — banners, SAV, Correx, Chromadek, and exhibition media.',
+    blurb: 'UV hybrid output to 3.2 m: banners, SAV, Correx, Chromadek, and exhibition media.',
   },
 };
 

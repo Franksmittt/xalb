@@ -22,7 +22,7 @@ export default function LargeFormatBand() {
             Scale the graphic to the environment.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[#d5dccb]">
-            3.2-metre UV hybrid — flatbed rigid and roll-to-roll. Fleet skins, building banners, Chromadek, Correx, and
+            3.2-metre UV hybrid: flatbed rigid and roll-to-roll. Fleet skins, building banners, Chromadek, Correx, and
             lightbox faces finished so install crews are not trimming white edges on site.
           </p>
           <Link

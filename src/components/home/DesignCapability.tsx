@@ -17,7 +17,7 @@ export default function DesignCapability() {
           <p className="section-eyebrow">Graphic design for manufacture</p>
           <h2 className="mt-3 text-balance">Artwork that already knows the bed size.</h2>
           <p className="section-lede">
-            Designers sit next to CNC and print — so identity, campaigns, and production files survive nesting, weeding,
+            Designers sit next to CNC and print, so identity, campaigns, and production files survive nesting, weeding,
             and register. Not a JPEG reverse-engineered on press day.
           </p>
           <ul className="section-stack flex flex-wrap gap-2">

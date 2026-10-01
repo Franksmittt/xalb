@@ -17,11 +17,11 @@ const serviceGroups = [
   {
     title: 'Precision Fabrication & Laser Cutting',
     description:
-      'Laser engraving on a 1200 × 900 mm bed and CNC routing on 3 m × 2 m — MDF, plexiglass, Rowmark, and ABS.',
+      'Laser engraving on a 1200 × 900 mm bed and CNC routing on 3 m × 2 m for MDF, plexiglass, Rowmark, and ABS.',
     services: [
       'Laser cut & engrave for novelty, gifts, signs, and labels',
       'CNC routing + finishing for dimensional logos and fixtures',
-      'Materials: MDF, plexiglass, Rowmark, ABS — wood and plastic',
+      'Materials: MDF, plexiglass, Rowmark, ABS (wood and plastic)',
       'From sketch to finished piece for makers and commercial clients',
     ],
     image: '/images/fabrication-lab.png',
@@ -30,7 +30,7 @@ const serviceGroups = [
   {
     title: 'Vehicle Branding & Fleet Solutions',
     description:
-      'Mobile branding programs—from single wraps to entire fleets—plus magnets for rapid deployment.',
+      'Mobile branding programs, from single wraps to entire fleets, plus magnets for rapid deployment.',
     services: [
       'Full + partial vehicle wraps with protective laminates',
       'Fleet branding and compliance-ready numbering',
@@ -76,7 +76,7 @@ export default function ServicesMatrix() {
           <p className="text-xs uppercase tracking-[0.4em] text-[#AEDD33]">Offer Catalogue</p>
           <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">Full-Stack Capabilities</h2>
           <p className="mt-4 text-slate-300 max-w-3xl mx-auto">
-            Xsphere owns the entire communications value chain—from the first sketch to the last rivet. Below is the
+            Xsphere owns the entire communications value chain, from the first sketch to the last rivet. Below is the
             service-to-outcome map you can remix for each client journey.
           </p>
         </div>

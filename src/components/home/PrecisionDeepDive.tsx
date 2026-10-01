@@ -26,9 +26,9 @@ export default function PrecisionDeepDive() {
 
         <div className="flex flex-col">
           <p className="section-eyebrow">Material science</p>
-          <h2 className="mt-3 text-balance">Built for wood and plastics — not a metal job shop.</h2>
+          <h2 className="mt-3 text-balance">Built for wood and plastics, not a metal job shop.</h2>
           <p className="section-lede">
-            Feeds, finishes, and nesting strategies tuned for sheet goods. CAD in. Finished parts out — for Alrode
+            Feeds, finishes, and nesting strategies tuned for sheet goods. CAD in. Finished parts out for Alrode
             industry and Gauteng retail alike.
           </p>
 

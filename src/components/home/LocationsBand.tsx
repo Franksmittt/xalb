@@ -10,7 +10,7 @@ export default function LocationsBand() {
             <p className="section-eyebrow">Service area</p>
             <h2 className="mt-3 text-balance">Alberton base. East Rand reach.</h2>
             <p className="section-lede">
-              Production at 99 Second Avenue, Florentia — serving Alrode industry, Germiston, and Johannesburg South with
+              Production at 99 Second Avenue, Florentia, serving Alrode industry, Germiston, and Johannesburg South with
               short-haul logistics and on-site install.
             </p>
             <Link href="/locations" className="btn-secondary mt-8 self-start">

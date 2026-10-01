@@ -8,7 +8,7 @@ const points = [
   },
   {
     title: 'Colour discipline',
-    body: 'Proofed CMYK and specials before the long run — brand colour that survives a pallet.',
+    body: 'Proofed CMYK and specials before the long run. Brand colour that survives a pallet.',
   },
   {
     title: 'Bindery included',
@@ -25,7 +25,7 @@ export default function PrintCarousel() {
             <p className="section-eyebrow">Commercial print</p>
             <h2 className="mt-3 text-balance">Colour-managed volume for East Rand contracts.</h2>
             <p className="section-lede">
-              One prepress language from sample to pallet — litho when it counts, digital while the run is still climbing.
+              One prepress language from sample to pallet: litho when it counts, digital while the run is still climbing.
             </p>
             <Link href="/services/commercial/litho-printing" className="btn-primary mt-8 self-start">
               Litho capabilities

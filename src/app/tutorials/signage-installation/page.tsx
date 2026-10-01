@@ -205,7 +205,7 @@ export default function SignageInstallationTutorial() {
                 <p className="text-ink-muted">
                   We&apos;ve seen it countless times: beautiful signage that fails within weeks because of improper installation. 
                   Wrong adhesive, poor surface prep, or skipped weatherproofing all lead to costly failures. This guide shows 
-                  you what professional installation involves—and why it&apos;s worth hiring experts.
+                  you what professional installation involves, and why it&apos;s worth hiring experts.
                 </p>
               </div>
             </div>
@@ -362,7 +362,7 @@ export default function SignageInstallationTutorial() {
             </h3>
             <p className="text-ink-muted mb-6 max-w-2xl mx-auto text-lg">
               Professional installers bring certified expertise, proper equipment, insurance coverage, and warranty protection. 
-              A failed installation costs more than professional installation—and risks damage to your building.
+              A failed installation costs more than professional installation, and risks damage to your building.
             </p>
             <ul className="grid sm:grid-cols-2 gap-4 mb-8 text-left max-w-3xl mx-auto">
               <li className="flex items-start gap-3 text-ink-muted">
