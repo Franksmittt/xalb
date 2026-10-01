@@ -1,57 +1,54 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const cards = [
-  {
-    title: 'Beds & nesting',
-    body: 'Laser 1200 × 900 mm. CNC 3 m × 2 m. Nested cutting for yield on MDF and plastic sheets — prototypes through programme volume.',
-  },
-  {
-    title: 'Substrate focus',
-    body: 'MDF, ABS, acrylic/Perspex, Rowmark, HDPE, PETG, PVC foam. Plastic-specific feeds, polish, and paint — not a metal job shop.',
-  },
-  {
-    title: 'What leaves the floor',
-    body: 'Dimensional letters, POS, guards, awards, and architectural panels for the Alrode industrial sector and Gauteng retail.',
-  },
+const materials = [
+  { name: 'MDF', use: 'Dimensional letters, POS, prototypes' },
+  { name: 'ABS', use: 'Durable housings, tags, functional parts' },
+  { name: 'Acrylic', use: 'Awards, lightbox faces, layered logos' },
+  { name: 'Rowmark', use: 'Nameplates, directories, control overlays' },
+  { name: 'HDPE / PETG', use: 'Industrial plastics, guards, panels' },
+  { name: 'PVC foam', use: 'Lightweight signage and display' },
 ];
 
 export default function PrecisionDeepDive() {
   return (
-    <section className="border-t border-line bg-background px-4 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div className="lg:sticky lg:top-24">
-          <div className="relative mb-8 aspect-[4/3] overflow-hidden border border-line">
-            <Image
-              src="/images/fabrication-lab.png"
-              alt="Precision CNC routing and laser work at Xsphere"
-              fill
-              className="object-cover"
-              sizes="(max-width:1024px) 100vw, 40vw"
-            />
-          </div>
-          <p className="section-eyebrow">Precision manufacturing</p>
-          <h2 className="font-display mt-3 text-3xl font-bold text-foreground md:text-4xl">
-            Engineered for wood and plastics. Scaled for commercial runs.
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted">
-            Multi-tool CNC routing and CO₂ laser on the Alberton floor. Capacity is planned as nested sheet work, not a
-            single-spindle hobby cell. CAD in — finished parts out.
+    <section className="section-pad border-t border-line bg-background">
+      <div className="mx-auto grid max-w-wide gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-center">
+        <div className="relative aspect-[4/3] overflow-hidden border border-line lg:aspect-auto lg:min-h-[520px]">
+          <Image
+            src="/images/fabrication-lab.png"
+            alt="Precision CNC nesting and laser cutting"
+            fill
+            className="object-cover"
+            sizes="(max-width:1024px) 100vw, 50vw"
+          />
+        </div>
+
+        <div>
+          <p className="section-eyebrow">Material science</p>
+          <h2 className="font-display mt-3 text-balance">Built for wood and plastics — not a metal job shop.</h2>
+          <p className="section-lede">
+            Feeds, finishes, and nesting strategies tuned for sheet goods. CAD in. Finished parts out — for Alrode
+            industry and Gauteng retail alike.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex rounded-md bg-accent px-6 py-3 text-sm font-semibold text-ink-inverse hover:bg-[#255a30]"
-          >
+
+          <div className="mt-10 border border-line bg-surface">
+            {materials.map((m, i) => (
+              <div
+                key={m.name}
+                className={`grid grid-cols-[7rem_1fr] gap-4 px-5 py-4 sm:grid-cols-[9rem_1fr] sm:px-6 ${
+                  i !== materials.length - 1 ? 'border-b border-line' : ''
+                }`}
+              >
+                <p className="spec-mono text-sm font-medium text-foreground">{m.name}</p>
+                <p className="text-sm text-muted">{m.use}</p>
+              </div>
+            ))}
+          </div>
+
+          <Link href="/contact" className="btn-primary mt-8">
             Submit CAD for review
           </Link>
-        </div>
-        <div className="flex flex-col gap-5">
-          {cards.map((card) => (
-            <article key={card.title} className="border border-line bg-surface p-8">
-              <h3 className="font-display text-xl font-bold text-foreground">{card.title}</h3>
-              <p className="mt-3 leading-relaxed text-muted">{card.body}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

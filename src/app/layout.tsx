@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
-import { Syne, Source_Sans_3 } from "next/font/google";
+import { Bricolage_Grotesque, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const display = Syne({
+const display = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["500", "600", "700", "800"],
 });
 
-const body = Source_Sans_3({
+const body = IBM_Plex_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700"],
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
 });
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://xsphere.co.za";
@@ -21,8 +27,8 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://xsphere.co.za";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    template: "%s | Xsphere Commercial Manufacturing",
-    default: "Xsphere Marketing & Design | High-Volume Litho & CNC Manufacturing",
+    template: "%s | Xsphere",
+    default: "Xsphere | Commercial Manufacturing, Print & CNC — Alberton",
   },
   description:
     "End-to-end commercial printing and precision CNC manufacturing in Alberton. In-house routing and laser for MDF, ABS, and plastics, 3.2 m UV, litho volume, and walk-in print for the East Rand.",
@@ -61,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Xsphere | CNC & Laser Engraving",
+    title: "Xsphere | CNC, Litho & Large Format",
     description:
       "Dimensional signage, engraved detail, and custom fabricated pieces for brands across Gauteng.",
   },
@@ -84,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-ZA" className={`${display.variable} ${body.variable}`}>
+    <html lang="en-ZA" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="font-body">
         <Header />
         {children}
