@@ -1,40 +1,40 @@
 const metrics = [
   {
-    value: '17',
+    value: '25+',
     unit: 'years',
-    label: 'Same Alberton address',
-    body: 'Commercial floor and retail counter in Florentia — continuity procurement can verify.',
+    label: 'Established 2001',
+    body: 'Print, brand, and display experience — now with CNC and litho on the same Alberton floor.',
   },
   {
     value: '1',
     unit: 'vendor',
-    label: 'Design to install',
-    body: 'Creative, press, CNC, and install under one account-managed timeline.',
+    label: 'End-to-end management',
+    body: 'Design, produce, gift, display, and install under one accountable timeline.',
   },
   {
-    value: 'East',
-    unit: 'Rand',
-    label: 'Local logistics',
-    body: 'Alrode, Germiston, Johannesburg South — short haul from the production floor.',
+    value: 'ZA',
+    unit: 'wide',
+    label: 'National installations',
+    body: 'Gauteng base with rollout support for multi-site retail and exhibition programmes.',
   },
   {
-    value: 'CAD',
-    unit: 'ready',
-    label: 'Technical intake',
-    body: 'Drop drawings and print specs. Nested capacity planning, not a black-box quote.',
+    value: 'In',
+    unit: 'house',
+    label: 'Design + production',
+    body: 'Artwork, UV, litho, CNC, display kits, and gifting — not three WhatsApp groups.',
   },
 ];
 
 export default function AuthorityGrid() {
   return (
     <section className="border-t border-line bg-surface">
-      <div className="mx-auto max-w-wide px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-wide px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
         <p className="section-eyebrow">Why procurement chooses Xsphere</p>
         <h2 className="font-display mt-3 max-w-2xl text-balance">Facts you can put in a vendor pack.</h2>
       </div>
       <div className="grid w-full grid-cols-1 gap-px border-y border-line bg-line sm:grid-cols-2 xl:grid-cols-4">
         {metrics.map((m) => (
-          <div key={m.label} className="bg-surface px-6 py-10 sm:px-8">
+          <div key={m.label} className="bg-surface px-6 py-8 sm:px-8">
             <p className="font-display text-5xl font-bold tracking-tight text-foreground">
               {m.value}
               <span className="ml-2 text-2xl font-semibold text-accent">{m.unit}</span>

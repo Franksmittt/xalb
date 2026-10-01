@@ -1,9 +1,9 @@
 const specs = [
-  { value: '17 yrs', label: 'Florentia workshop' },
+  { value: 'Est. 2001', label: '25+ years' },
   { value: '3 × 2 m', label: 'CNC bed' },
   { value: '1200 × 900', label: 'Laser bed' },
   { value: '3.2 m', label: 'UV hybrid width' },
-  { value: 'In-house', label: 'Design → install' },
+  { value: 'National', label: 'Install reach' },
 ];
 
 export default function SpecBar() {
